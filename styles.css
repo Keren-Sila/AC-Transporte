@@ -511,17 +511,41 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--slate-muted);
 }
 
-/* SEÇÃO OPERAÇÃO (ETAPAS 01 A 05 DA CARGA) */
-.operacao-section { padding: 90px 0; background: var(--navy-dark); }
-.operacao-wrapper { position: relative; margin-top: 40px; }
+/* SEÇÃO OPERAÇÃO (ETAPAS 01 A 05 DA CARGA COM PISTA E CAMINHÃO RODOVIÁRIO) */
+.operacao-section { padding: 90px 0; background: var(--navy-dark); position: relative; overflow: hidden; }
+.operacao-wrapper { position: relative; margin-top: 50px; }
 
-.operacao-track {
+.operacao-highway-track {
   position: absolute;
   left: 50%;
   top: 0;
   bottom: 0;
-  width: 4px;
-  background: var(--border-color);
+  width: 52px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.road-asphalt {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #080C16;
+  border-left: 2px solid rgba(255, 102, 0, 0.4);
+  border-right: 2px solid rgba(255, 102, 0, 0.4);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.road-center-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  border-left: 2px dashed rgba(255, 255, 255, 0.25);
   transform: translateX(-50%);
 }
 
@@ -531,7 +555,9 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   height: 0%;
-  background: var(--primary-orange);
+  background: linear-gradient(180deg, rgba(255, 102, 0, 0.2) 0%, rgba(255, 102, 0, 0.85) 100%);
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
+  transition: height 0.1s linear;
 }
 
 .operacao-truck-marker {
@@ -539,35 +565,82 @@ h1, h2, h3, h4, h5, h6 {
   left: 50%;
   top: 0%;
   transform: translate(-50%, -50%);
-  z-index: 3;
+  z-index: 10;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.7));
+  will-change: transform, top;
 }
 
-.steps-grid { display: flex; flex-direction: column; gap: 40px; }
+/* FEIXE DE LUZ DOS FARÓIS DO CAMINHÃO */
+.truck-light-beam {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  width: 65px;
+  height: 60px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, rgba(255, 240, 180, 0.45) 0%, rgba(255, 200, 0, 0) 100%);
+  clip-path: polygon(30% 100%, 70% 100%, 100% 0%, 0% 0%);
+  pointer-events: none;
+  animation: headlightPulse 2s infinite ease-in-out;
+}
+
+@keyframes headlightPulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.steps-grid { display: flex; flex-direction: column; gap: 48px; }
 .step-card {
   background: var(--navy-surface);
   border: 1px solid var(--border-color);
-  padding: 24px 28px;
+  padding: 26px 30px;
   border-radius: var(--radius-md);
-  max-width: 540px;
-  transition: all var(--transition);
+  max-width: 500px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
 }
 
 .step-card:nth-child(odd) { margin-right: auto; }
 .step-card:nth-child(even) { margin-left: auto; }
 
-.step-badge {
-  display: inline-block;
-  padding: 2px 8px;
-  background: rgba(255, 102, 0, 0.15);
-  color: var(--primary-orange);
-  font-size: 0.72rem;
-  font-weight: 800;
-  border-radius: var(--radius-sm);
-  margin-bottom: 8px;
+.step-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.step-card h3 { font-size: 1.15rem; margin-bottom: 6px; }
-.step-card p { color: var(--slate-muted); font-size: 0.92rem; }
+.step-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(255, 102, 0, 0.12);
+  border: 1px solid rgba(255, 102, 0, 0.25);
+  color: var(--primary-orange);
+  font-size: 0.74rem;
+  font-weight: 800;
+  border-radius: var(--radius-sm);
+}
+
+.step-status-indicator {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--slate-muted);
+}
+
+.step-card h3 { font-size: 1.2rem; margin-bottom: 8px; transition: color var(--transition); }
+.step-card p { color: var(--slate-muted); font-size: 0.94rem; line-height: 1.55; }
+
+/* ESTADO ATIVO DO PASSO DA OPERAÇÃO */
+.step-card.active {
+  border-color: var(--primary-orange);
+  background: #182238;
+  box-shadow: 0 8px 30px rgba(255, 102, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.step-card.active h3 { color: var(--primary-orange); }
+.step-card.active .step-status-indicator { color: var(--primary-orange); }
 
 .step-card.active {
   border-color: var(--primary-orange);
@@ -699,9 +772,9 @@ label { font-size: 0.86rem; font-weight: 700; color: var(--text-white); }
   .nav-list { flex-direction: column; align-items: stretch; gap: 14px; }
   .nav-link { padding: 8px 10px; width: 100%; }
   
-  .operacao-track { left: 16px; transform: none; }
-  .operacao-truck-marker { left: 16px; }
-  .step-card { max-width: 100%; margin-left: 36px !important; }
+  .operacao-highway-track { left: 20px; transform: none; }
+  .operacao-truck-marker { left: 20px; }
+  .step-card { max-width: 100%; margin-left: 45px !important; }
   
   .calc-form-grid { grid-template-columns: 1fr; }
   .calc-form, .agregamento-card { padding: 20px; }

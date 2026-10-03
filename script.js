@@ -87,7 +87,7 @@ function initHeroTruckPhysics() {
   animateHeroTruck();
 }
 
-/* 4. FLUXO DA OPERAÇÃO — CAMINHÃO GUIADO PELO SCROLL NAS ETAPAS (60 FPS LERP) */
+/* 4. FLUXO DA OPERAÇÃO — CAMINHÃO ANIMADO GUIADO PELO SCROLL (60 FPS LERP) */
 function initOperacaoTimeline() {
   const operacaoSection = document.getElementById('operacao');
   const operacaoLine = document.getElementById('roadProgressLine');
@@ -109,34 +109,47 @@ function initOperacaoTimeline() {
     const sectionHeight = operacaoSection.offsetHeight;
     const windowHeight = window.innerHeight;
 
-    if (rect.top <= windowHeight && rect.bottom >= 0) {
-      let progress = ((windowHeight - rect.top) / (sectionHeight + windowHeight)) * 100;
+    // Calcula a porcentagem do scroll entre a entrada e saída da seção na tela
+    const startPoint = windowHeight * 0.6;
+    const scrollDistance = startPoint - rect.top;
+    const totalDistance = sectionHeight - 100;
+
+    if (totalDistance > 0) {
+      let progress = (scrollDistance / totalDistance) * 100;
       targetProgress = Math.min(Math.max(progress, 0), 100);
     }
   }
 
   window.addEventListener('scroll', updateProgress, { passive: true });
   window.addEventListener('resize', updateProgress, { passive: true });
+  updateProgress();
 
   function renderOperacaoProgress() {
-    currentProgress += (targetProgress - currentProgress) * 0.1;
+    // Lerp suave a 60 FPS
+    currentProgress += (targetProgress - currentProgress) * 0.08;
 
-    operacaoLine.style.height = `${currentProgress}%`;
-    truckMarker.style.top = `${currentProgress}%`;
+    if (operacaoLine) {
+      operacaoLine.style.height = `${currentProgress}%`;
+    }
 
-    if (currentProgress >= 15 && cp1) cp1.classList.add('active');
+    if (truckMarker) {
+      truckMarker.style.top = `${currentProgress}%`;
+    }
+
+    // Ativação visual síncrona dos cards das etapas
+    if (currentProgress >= 5 && cp1) cp1.classList.add('active');
     else if (cp1) cp1.classList.remove('active');
 
-    if (currentProgress >= 35 && cp2) cp2.classList.add('active');
+    if (currentProgress >= 25 && cp2) cp2.classList.add('active');
     else if (cp2) cp2.classList.remove('active');
 
-    if (currentProgress >= 55 && cp3) cp3.classList.add('active');
+    if (currentProgress >= 48 && cp3) cp3.classList.add('active');
     else if (cp3) cp3.classList.remove('active');
 
-    if (currentProgress >= 75 && cp4) cp4.classList.add('active');
+    if (currentProgress >= 70 && cp4) cp4.classList.add('active');
     else if (cp4) cp4.classList.remove('active');
 
-    if (currentProgress >= 90 && cp5) cp5.classList.add('active');
+    if (currentProgress >= 88 && cp5) cp5.classList.add('active');
     else if (cp5) cp5.classList.remove('active');
 
     requestAnimationFrame(renderOperacaoProgress);

@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   
   <!-- CSS Principal -->
-  <link rel="stylesheet" href="styles.css?v=4.1">
+  <link rel="stylesheet" href="styles.css?v=5.0">
 </head>
 <body>
 
@@ -327,13 +327,59 @@
       </div>
 
       <div class="operacao-wrapper">
-        <div class="operacao-track">
-          <div class="operacao-line" id="roadProgressLine"></div>
-          <div class="operacao-truck-marker" id="scrollTruckMarker" title="Progresso da operação">
-            <svg viewBox="0 0 60 100" width="36" height="60">
-              <rect x="10" y="30" width="40" height="65" rx="3" fill="#FFFFFF" stroke="#FF6600" stroke-width="2" />
-              <path d="M 12 15 C 12 8 20 5 30 5 C 40 5 48 8 48 15 L 48 30 L 12 30 Z" fill="#FF6600" />
-              <path d="M 16 18 C 16 12 22 8 30 8 C 38 8 44 12 44 18 L 44 24 L 16 24 Z" fill="#0F172A" />
+        <div class="operacao-highway-track">
+          <div class="road-asphalt">
+            <div class="road-center-line"></div>
+            <div class="operacao-line" id="roadProgressLine"></div>
+          </div>
+
+          <!-- CAMINHÃO AC TRANSPORTE ANIMADO GUIADO PELO SCROLL -->
+          <div class="operacao-truck-marker" id="scrollTruckMarker" title="Progresso da Operação AC Transporte">
+            <div class="truck-light-beam"></div>
+            <svg viewBox="0 0 80 140" width="56" height="98" class="operacao-truck-svg">
+              <defs>
+                <linearGradient id="truckOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FF6600" />
+                  <stop offset="100%" stop-color="#D94600" />
+                </linearGradient>
+                <filter id="headlightGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="4" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+
+              <!-- Sombra do Veículo na Pista -->
+              <rect x="10" y="12" width="60" height="120" rx="8" fill="#000000" opacity="0.5" />
+
+              <!-- Rodas Traseiras e Dianteiras -->
+              <rect x="4" y="78" width="8" height="20" rx="2" fill="#0F172A" />
+              <rect x="4" y="104" width="8" height="20" rx="2" fill="#0F172A" />
+              <rect x="68" y="78" width="8" height="20" rx="2" fill="#0F172A" />
+              <rect x="68" y="104" width="8" height="20" rx="2" fill="#0F172A" />
+              
+              <rect x="6" y="26" width="8" height="18" rx="2" fill="#0F172A" />
+              <rect x="66" y="26" width="8" height="18" rx="2" fill="#0F172A" />
+
+              <!-- Baú Branco com Identidade da AC Transporte -->
+              <rect x="14" y="44" width="52" height="88" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5" />
+              <line x1="14" y1="64" x2="66" y2="64" stroke="#F1F5F9" stroke-width="1.5" />
+              <line x1="14" y1="84" x2="66" y2="84" stroke="#F1F5F9" stroke-width="1.5" />
+              <line x1="14" y1="104" x2="66" y2="104" stroke="#F1F5F9" stroke-width="1.5" />
+
+              <!-- Grafismo Laranja Diagonal -->
+              <path d="M 14 72 L 66 50 L 66 68 L 14 90 Z" fill="url(#truckOrangeGrad)" />
+              <text x="40" y="96" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="11" fill="#0F172A">AC</text>
+              <text x="40" y="108" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="5.5" fill="#FF6600" letter-spacing="1">TRANSPORTE</text>
+
+              <!-- Cabine Laranja -->
+              <path d="M 18 44 L 18 18 C 18 10 26 5 40 5 C 54 5 62 10 62 18 L 62 44 Z" fill="url(#truckOrangeGrad)" />
+              <path d="M 22 24 C 22 16 28 10 40 10 C 52 10 58 16 58 24 L 58 32 L 22 32 Z" fill="#0F172A" />
+              <rect x="4" y="22" width="6" height="12" rx="1.5" fill="#334155" />
+              <rect x="70" y="22" width="6" height="12" rx="1.5" fill="#334155" />
+
+              <!-- Faróis Iluminados Super Brilhantes -->
+              <circle cx="24" cy="7" r="3.5" fill="#FFFBEB" filter="url(#headlightGlow)" />
+              <circle cx="56" cy="7" r="3.5" fill="#FFFBEB" filter="url(#headlightGlow)" />
             </svg>
           </div>
         </div>
@@ -341,33 +387,48 @@
         <div class="steps-grid">
           
           <div class="step-card" id="cp1">
-            <span class="step-badge">ETAPA 01</span>
+            <div class="step-header-row">
+              <span class="step-badge">ETAPA 01</span>
+              <span class="step-status-indicator">01 / 05</span>
+            </div>
             <h3>01 — Solicitação</h3>
-            <p>Você informa origem, destino e características da carga para nossa equipe.</p>
+            <p>Você informa a origem, o destino e as características da carga diretamente com nossa equipe.</p>
           </div>
 
           <div class="step-card" id="cp2">
-            <span class="step-badge">ETAPA 02</span>
+            <div class="step-header-row">
+              <span class="step-badge">ETAPA 02</span>
+              <span class="step-status-indicator">02 / 05</span>
+            </div>
             <h3>02 — Planejamento</h3>
-            <p>A equipe avalia a operação e define a melhor estratégia de rota e veículo.</p>
+            <p>A equipe analisa as especificações e define a melhor rota, tipo de veículo e cronograma.</p>
           </div>
 
           <div class="step-card" id="cp3">
-            <span class="step-badge">ETAPA 03</span>
+            <div class="step-header-row">
+              <span class="step-badge">ETAPA 03</span>
+              <span class="step-status-indicator">03 / 05</span>
+            </div>
             <h3>03 — Coleta</h3>
-            <p>A carga é coletada no local indicado conforme o horário e planejamento combinados.</p>
+            <p>A carga é acondicionada e coletada no local indicado com pontualidade no horário combinado.</p>
           </div>
 
           <div class="step-card" id="cp4">
-            <span class="step-badge">ETAPA 04</span>
-            <h3>04 — Transporte</h3>
-            <p>A operação segue em deslocamento acompanhada ativamente pela equipe.</p>
+            <div class="step-header-row">
+              <span class="step-badge">ETAPA 04</span>
+              <span class="step-status-indicator">04 / 05</span>
+            </div>
+            <h3>04 — Transporte em Trânsito</h3>
+            <p>O deslocamento rodoviário é monitorado ativamente e você recebe atualizações sobre o percurso.</p>
           </div>
 
           <div class="step-card" id="cp5">
-            <span class="step-badge">ETAPA 05</span>
-            <h3>05 — Entrega</h3>
-            <p>A carga chega ao destino com verificação de integridade e confirmação.</p>
+            <div class="step-header-row">
+              <span class="step-badge">ETAPA 05</span>
+              <span class="step-status-indicator">05 / 05</span>
+            </div>
+            <h3>05 — Entrega & Confirmação</h3>
+            <p>Chegada ao destino final com conferência da carga e confirmação de entrega concluída.</p>
           </div>
 
         </div>
@@ -762,6 +823,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=4.1"></script>
+  <script src="script.js?v=5.0"></script>
 </body>
 </html>
