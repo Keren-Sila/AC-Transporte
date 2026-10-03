@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   
   <!-- CSS Principal -->
-  <link rel="stylesheet" href="styles.css?v=8.0">
+  <link rel="stylesheet" href="styles.css?v=9.0">
 </head>
 <body>
 
@@ -24,7 +24,7 @@
   <div class="topbar-corporate">
     <div class="container topbar-container">
       <div class="topbar-left">
-        <span class="tb-cnpj">AC TRANSPORTE LTDA • CNPJ Registrado</span>
+        <span class="tb-cnpj">AC TRANSPORTE LTDA · SÃO PAULO, SP</span>
         <span class="tb-sep">|</span>
         <span class="tb-location hidden-mobile">São Paulo • Bases em Mauá, Arujá e Cajamar</span>
       </div>
@@ -93,357 +93,87 @@
     </div>
   </header>
 
-  <!-- HERO BANNER — A PRIMEIRA TELA -->
+  <!-- HERO PRINCIPAL -->
   <section class="hero-section" id="inicio">
     <div class="container hero-grid">
       <div class="hero-text-col">
-        <div class="hero-badge-clean">
-          <span>Transporte Rodoviário de Cargas em SP</span>
-        </div>
-        
+        <span class="hero-kicker"><span class="kicker-dot"></span> TRANSPORTE RODOVIÁRIO · SÃO PAULO</span>
         <h1 class="hero-headline">
-          Seu transporte.<br>
-          <span class="hero-headline-orange">Sem complicação.</span>
+          Transporte que mantém <span class="hero-headline-orange">seu negócio em movimento.</span>
         </h1>
-        
         <p class="hero-subline">
-          Transporte rodoviário de cargas com atendimento direto e operação planejada para cada necessidade.
+          Atendimento direto, planejamento claro e acompanhamento da coleta à entrega — com soluções adequadas a cada operação.
         </p>
-
         <div class="hero-actions-row">
           <a href="#cotacao" class="btn btn-primary btn-lg">
-            <span>Solicitar Cotação</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span>Solicitar cotação</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="#sobre" class="btn btn-secondary btn-lg">
-            <span>Conheça a AC Transporte</span>
-          </a>
+          <a href="#operacao" class="hero-text-link">Conheça nossa operação <span aria-hidden="true">↗</span></a>
         </div>
-
-        <div class="hero-stats-strip">
-          <div class="stat-box">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Prazo Combinado</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-box">
-            <span class="stat-number">3 Bases</span>
-            <span class="stat-label">Mauá, Arujá & Cajamar</span>
-          </div>
-          <div class="stat-divider"></div>
-          <div class="stat-box">
-            <span class="stat-number">Direto</span>
-            <span class="stat-label">Sem Intermediários</span>
-          </div>
+        <div class="hero-assurances" aria-label="Características do atendimento">
+          <span><i aria-hidden="true">✓</i> Contato direto com a equipe</span>
+          <span><i aria-hidden="true">✓</i> Rotas e prazos combinados</span>
         </div>
       </div>
 
-      <!-- APRESENTAÇÃO VISUAL DA FROTA OPERACIONAL ESTILO LOGIO DRIBBBLE -->
-      <div class="hero-stage-col">
-        <div class="hero-stage-card">
-          <div class="stage-header-bar">
-            <span class="stage-badge">● OPERAÇÃO EM TRÂNSITO</span>
-            <span class="stage-live-tag">ROTA MONITORADA • SP</span>
-          </div>
-          <div class="stage-visual-container">
-            <div class="road-backdrop"></div>
-            
-            <div class="hero-truck-graphic" id="heroInteractiveTruck">
-              <svg viewBox="0 0 160 300" width="140" height="260" aria-label="Caminhão AC Transporte">
-                <defs>
-                  <linearGradient id="roofOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#FF6600" />
-                    <stop offset="100%" stop-color="#D94600" />
-                  </linearGradient>
-                </defs>
-
-                <!-- Sombra -->
-                <rect x="25" y="20" width="110" height="270" rx="10" fill="#000000" opacity="0.4" filter="blur(4px)" />
-
-                <!-- Pneus -->
-                <rect x="14" y="170" width="14" height="32" rx="3" fill="#0F172A" />
-                <rect x="14" y="210" width="14" height="32" rx="3" fill="#0F172A" />
-                <rect x="132" y="170" width="14" height="32" rx="3" fill="#0F172A" />
-                <rect x="132" y="210" width="14" height="32" rx="3" fill="#0F172A" />
-
-                <!-- Baú Branco -->
-                <rect x="26" y="95" width="108" height="190" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
-                <line x1="26" y1="135" x2="134" y2="135" stroke="#F1F5F9" stroke-width="2" />
-                <line x1="26" y1="175" x2="134" y2="175" stroke="#F1F5F9" stroke-width="2" />
-                <line x1="26" y1="215" x2="134" y2="215" stroke="#F1F5F9" stroke-width="2" />
-
-                <path d="M 26 155 L 134 110 L 134 140 L 26 185 Z" fill="url(#roofOrangeGrad)" />
-                <text x="80" y="220" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#0F172A">AC</text>
-                <text x="80" y="238" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="9.5" fill="#FF6600" letter-spacing="2">TRANSPORTE</text>
-
-                <!-- Cabine do Veículo -->
-                <path d="M 34 95 L 34 45 C 34 32 46 18 80 18 C 114 18 126 32 126 45 L 126 95 Z" fill="url(#roofOrangeGrad)" />
-                <path d="M 42 55 C 42 42 54 32 80 32 C 106 32 118 42 118 55 L 118 68 L 42 68 Z" fill="#0F172A" />
-                <rect x="8" y="58" width="10" height="16" rx="2" fill="#334155" />
-                <rect x="142" y="58" width="10" height="16" rx="2" fill="#334155" />
-              </svg>
-            </div>
-
-            <!-- EMBEDDED TELEMETRY BADGES LOGIO STYLE -->
-            <div class="telemetry-pill top-right">
-              <span class="t-icon">📍</span>
-              <div>
-                <strong>Bases SP</strong>
-                <small>Mauá • Arujá • Cajamar</small>
-              </div>
-            </div>
-
-            <div class="telemetry-pill bottom-left">
-              <span class="t-icon">⚡</span>
-              <div>
-                <strong>Prazo Combinado</strong>
-                <small>Compromisso Rigoroso 100%</small>
-              </div>
-            </div>
-
-          </div>
-          <div class="stage-footer">
-            <strong>Operação Rodoviária Planejada</strong>
-            <small>Atendimento direto e acompanhamento até a entrega final</small>
-          </div>
+      <figure class="hero-photo-card">
+        <img src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=82&amp;w=1800" alt="Caminhão de carga em uma rodovia ao entardecer. Imagem ilustrativa." fetchpriority="high">
+        <div class="hero-photo-overlay" aria-hidden="true"></div>
+        <div class="hero-photo-label"><span class="photo-label-dot"></span> LOGÍSTICA RODOVIÁRIA</div>
+        <figcaption class="hero-photo-caption">
+          <span class="photo-caption-eyebrow">AC TRANSPORTE</span>
+          <strong>Cargas em movimento.<br>Destinos conectados.</strong>
+          <small>Foto ilustrativa · Caleb Ruiter / Unsplash</small>
+        </figcaption>
+        <div class="hero-route-card" aria-label="Bases operacionais em São Paulo">
+          <span class="route-pin" aria-hidden="true">⌖</span>
+          <span><small>BASES OPERACIONAIS</small><strong>Mauá · Arujá · Cajamar</strong></span>
         </div>
-      </div>
+      </figure>
     </div>
   </section>
 
-  <!-- SEÇÃO DE 3 CARDS DE DESTAQUE ESTILO LUCMAR -->
-  <section class="lucmar-cards-section">
-    <div class="container lucmar-grid">
-      <div class="lucmar-card card-seguranca">
-        <div class="lc-icon">🛡️</div>
-        <h3>Segurança & Cuidado</h3>
-        <p>Conferência rigorosa e responsabilidade no manuseio e transporte da sua carga.</p>
-      </div>
-
-      <div class="lucmar-card card-compromisso">
-        <div class="lc-icon">⏱️</div>
-        <h3>Compromisso com Prazos</h3>
-        <p>Pontualidade no horário combinado de coleta e entrega sem atrasos injustificados.</p>
-      </div>
-
-      <div class="lucmar-card card-atuacao">
-        <div class="lc-icon">📍</div>
-        <h3>São Paulo & Região</h3>
-        <p>Atendimento na capital, interior, litoral paulista e conexões entre terminais.</p>
-      </div>
+  <!-- EXPERIÊNCIA EM OPERAÇÕES -->
+  <section class="client-proof" aria-label="Experiência em operações de transporte">
+    <div class="container client-proof-inner">
+      <p>Experiência em operações para</p>
+      <div class="proof-brand proof-brand-madero">MADERO</div>
+      <span class="proof-divider" aria-hidden="true"></span>
+      <div class="proof-brand proof-brand-ml"><span class="proof-ml-mark" aria-hidden="true">↔</span> mercado livre</div>
     </div>
   </section>
-
-  <!-- SEÇÃO DESTAQUE OPERACIONAL — ESTILO NASH KONTINENT -->
-  <section class="nash-spotlight-section">
-    <div class="container">
-      
-      <div class="nash-header">
-        <div class="nash-title-col">
-          <span class="section-tag">OPERAÇÃO & LOGÍSTICA</span>
-          <h2 class="section-title text-white">AC TRANSPORTE LTDA</h2>
-        </div>
-        <div class="nash-desc-col">
-          <p>
-            Fundada em <strong>2026 em São Paulo</strong>, a <strong>AC Transporte</strong> opera com foco em transporte rodoviário, agilidade em coletas e entregas, e atendimento direto com quem organiza a carga. Atendemos com máxima pontualidade, bases em Mauá, Arujá e Cajamar, e acompanhamento em cada etapa da jornada.
-          </p>
-        </div>
-      </div>
-
-      <!-- PAINEL CENTRAL COM IMAGEM CIRCULAR E CARDS FLUTUANTES NASH KONTINENT -->
-      <div class="nash-stage-wrapper">
-        <div class="nash-oval-frame">
-          <svg viewBox="0 0 400 280" width="100%" height="100%" class="nash-svg-graphic">
-            <defs>
-              <linearGradient id="nashGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#141C2E" />
-                <stop offset="100%" stop-color="#0B0F19" />
-              </linearGradient>
-            </defs>
-            <ellipse cx="200" cy="140" rx="190" ry="130" fill="url(#nashGrad)" stroke="#FF6600" stroke-width="2" />
-            
-            <g transform="translate(70, 40)">
-              <rect x="140" y="30" width="120" height="130" rx="6" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2" />
-              <path d="M 140 70 L 260 40 L 260 60 L 140 90 Z" fill="#FF6600" opacity="0.85" />
-              <text x="200" y="115" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="14" fill="#0F172A">AC TRANSPORTE</text>
-              
-              <rect x="40" y="90" width="70" height="70" rx="4" fill="#FF6600" />
-              <rect x="50" y="60" width="50" height="30" rx="2" fill="#0F172A" />
-              <circle cx="55" cy="160" r="12" fill="#0F172A" stroke="#FFFFFF" stroke-width="2" />
-              <circle cx="95" cy="160" r="12" fill="#0F172A" stroke="#FFFFFF" stroke-width="2" />
-              <rect x="105" y="80" width="30" height="30" rx="2" fill="#D97706" />
-              <rect x="105" y="115" width="30" height="30" rx="2" fill="#D97706" />
-            </g>
-          </svg>
-        </div>
-
-        <!-- 4 CARDS FLUTUANTES NASH KONTINENT -->
-        <div class="nash-node node-top-left">
-          <span class="n-plus">+</span>
-          <p>Entregas no prazo combinado com atendimento direto sem enrolação.</p>
-        </div>
-
-        <div class="nash-node node-top-right">
-          <span class="n-plus">+</span>
-          <p>Operação adaptada para fretes fracionados, dedicados e urbano em SP.</p>
-        </div>
-
-        <div class="nash-node node-bottom-left">
-          <span class="n-plus">+</span>
-          <p>Carga tratada com responsabilidade e cuidado em todo o percurso.</p>
-        </div>
-
-        <div class="nash-node node-bottom-right">
-          <span class="n-plus">+</span>
-          <p>Transparência em valores, prazos e rotas combinadas desde a saída.</p>
-        </div>
-      </div>
-
-      <!-- MÉTRICAS GRANDES NASH KONTINENT -->
-      <div class="nash-metrics-grid">
-        <div class="nm-card">
-          <strong>100%</strong>
-          <span>Prazo Cumprido</span>
-        </div>
-        <div class="nm-card">
-          <strong>3 Bases</strong>
-          <span>Mauá • Arujá • Cajamar</span>
-        </div>
-        <div class="nm-card">
-          <strong>2026</strong>
-          <span>Empresa Fundada em SP</span>
-        </div>
-        <div class="nm-card">
-          <strong>5 Pilares</strong>
-          <span>Valores Corporativos</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SEÇÃO QUEM SOMOS / SOBRE A EMPRESA (INSPIRADA NA ESTRUTURA CORPORATIVA DA VIP CARGAS) -->
+  <!-- SOBRE A EMPRESA -->
   <section class="about-section theme-light-section" id="sobre">
     <div class="container">
-      
-      <div class="section-header">
-        <span class="section-tag light-tag">QUEM SOMOS</span>
-        <h2 class="section-title dark-title">
-          Uma empresa de transporte focada em eficiência e atendimento.
-        </h2>
+      <div class="about-intro">
+        <div>
+          <span class="section-tag light-tag">QUEM SOMOS</span>
+          <h2 class="section-title dark-title">Atendimento próximo.<br><span>Operação organizada.</span></h2>
+        </div>
+        <p class="about-lead dark-p">A AC Transporte é uma empresa de transporte rodoviário com base em São Paulo. Cada solicitação é avaliada conforme a origem, o destino, as características da carga e a disponibilidade da operação.</p>
       </div>
 
-      <div class="about-main-grid">
-        <div class="about-text-card light-card">
-          <h3 class="dark-h3">Transparência, Cuidado e Foco no Básico Bem-Feito</h3>
-          <p class="dark-p">
-            A <strong>AC Transporte</strong> é uma transportadora de cargas com base em São Paulo. Atendemos coletas e entregas na cidade e na região, e também rotas entre cidades e estados, conforme a carga e a necessidade de cada cliente.
-          </p>
-          <p class="dark-p">
-            Nosso jeito de trabalhar é simples: você conta o que precisa levar, combinamos rota, valor e prazo, e acompanhamos a carga até a chegada. Sem fila de atendimento e sem enrolação.
-          </p>
-          <div class="about-founded-note">
-            <strong>Empresa fundada em 2026</strong>
-            <p class="dark-small">Com foco em fazer o básico muito bem: chegar no horário, cuidar da carga e manter você informado.</p>
-          </div>
-        </div>
-
-        <div class="mvv-column">
-          <div class="mvv-card light-card">
-            <div class="mvv-icon">🎯</div>
-            <div>
-              <h4 class="dark-h4">Missão</h4>
-              <p class="dark-p">Transportar cargas com responsabilidade, cumprindo o prazo combinado e mantendo o cliente informado em cada etapa, da saída até a entrega.</p>
-            </div>
-          </div>
-
-          <div class="mvv-card light-card">
-            <div class="mvv-icon">👁️</div>
-            <div>
-              <h4 class="dark-h4">Visão</h4>
-              <p class="dark-p">Ser uma transportadora de confiança em São Paulo, lembrada pelo cuidado com a carga e pela facilidade de falar com a equipe.</p>
-            </div>
-          </div>
-        </div>
+      <div class="about-feature-grid">
+        <article class="about-story-card">
+          <span class="about-card-index">01 / COMO TRABALHAMOS</span>
+          <h3>Do primeiro contato à entrega</h3>
+          <p>Você conversa diretamente com a equipe, compartilha os detalhes da carga e recebe uma proposta com rota, valor e prazo alinhados antes da coleta.</p>
+          <a href="#operacao" class="about-link">Veja as etapas do transporte <span aria-hidden="true">↗</span></a>
+        </article>
+        <aside class="about-bases-card" aria-labelledby="bases-title">
+          <span class="about-card-index">PRESENÇA OPERACIONAL</span>
+          <h3 id="bases-title">São Paulo e região</h3>
+          <p>Pontos de apoio em locais estratégicos para atender diferentes demandas de coleta e entrega.</p>
+          <ul class="base-list">
+            <li><span>01</span> Mauá <small>ABC Paulista</small></li>
+            <li><span>02</span> Arujá <small>Alto Tietê</small></li>
+            <li><span>03</span> Cajamar <small>Região noroeste</small></li>
+          </ul>
+        </aside>
       </div>
-
-      <!-- VALORES DA EMPRESA (5 PILARES CONFIRMADOS) -->
-      <div class="values-block">
-        <h3 class="dark-h3 values-title text-center">Nossos Valores</h3>
-        <div class="values-grid">
-          
-          <div class="value-card light-card">
-            <span class="val-num">01</span>
-            <h4 class="dark-h4">Responsabilidade</h4>
-            <p class="dark-p">A carga do cliente é tratada como se fosse nossa.</p>
-          </div>
-
-          <div class="value-card light-card">
-            <span class="val-num">02</span>
-            <h4 class="dark-h4">Pontualidade</h4>
-            <p class="dark-p">Prazo combinado é prazo cumprido.</p>
-          </div>
-
-          <div class="value-card light-card">
-            <span class="val-num">03</span>
-            <h4 class="dark-h4">Transparência</h4>
-            <p class="dark-p">Valor, prazo e andamento ditos com clareza, sem surpresas.</p>
-          </div>
-
-          <div class="value-card light-card">
-            <span class="val-num">04</span>
-            <h4 class="dark-h4">Atendimento Direto</h4>
-            <p class="dark-p">O cliente fala diretamente com quem organiza a operação.</p>
-          </div>
-
-          <div class="value-card light-card full-value-card">
-            <span class="val-num">05</span>
-            <h4 class="dark-h4">Compromisso com o Cliente</h4>
-            <p class="dark-p">Se algo mudar no caminho, avisamos antes que ele precise perguntar.</p>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- PADRÃO OPERACIONAL E CONEXÃO LOGÍSTICA DE ALTO DESEMPENHO -->
-      <div class="enterprise-standards-card">
-        <div class="es-badge-tag">PADRÃO DE QUALIDADE & EFICIÊNCIA</div>
-        <div class="es-grid">
-          <div class="es-info">
-            <h3 class="es-title">Logística Preparada para Padrões Industriais e de Varejo</h3>
-            <p class="es-desc">
-              Operamos com o rigor, pontualidade e controle exigidos por grandes redes de distribuição (como padrões de e-commerce e varejo alimentar). Suporte completo em coletas urbanas, fretes fracionados, cargas dedicadas e conexões entre terminais de São Paulo.
-            </p>
-          </div>
-          <div class="es-pillars">
-            <div class="es-pillar-item">
-              <span class="es-icon">🚚</span>
-              <div>
-                <strong>Conexão Intermodal & Terminais</strong>
-                <span>Integrando rotas rodoviárias e hubs estratégicos em SP</span>
-              </div>
-            </div>
-            <div class="es-pillar-item">
-              <span class="es-icon">⏱️</span>
-              <div>
-                <strong>Cumprimento de Janelas</strong>
-                <span>Horários de coleta e entrega monitorados com precisão</span>
-              </div>
-            </div>
-            <div class="es-pillar-item">
-              <span class="es-icon">📋</span>
-              <div>
-                <strong>Comunicação Transparente</strong>
-                <span>Feedback proativo sobre o status da carga em cada etapa</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
-
   <!-- SEÇÃO OPERAÇÃO (ETAPAS 01 A 05 DA CARGA COM ANIMAÇÃO SUAVE DE ROTA) -->
   <section class="operacao-section" id="operacao">
     <div class="container">
@@ -459,63 +189,6 @@
       </div>
 
       <div class="operacao-wrapper">
-        <div class="operacao-highway-track">
-          <div class="road-asphalt">
-            <div class="road-center-line"></div>
-            <div class="operacao-line" id="roadProgressLine"></div>
-          </div>
-
-          <!-- CAMINHÃO AC TRANSPORTE ANIMADO GUIADO PELO SCROLL -->
-          <div class="operacao-truck-marker" id="scrollTruckMarker" title="Progresso da Operação AC Transporte">
-            <div class="truck-light-beam"></div>
-            <svg viewBox="0 0 80 140" width="56" height="98" class="operacao-truck-svg">
-              <defs>
-                <linearGradient id="truckOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#FF6600" />
-                  <stop offset="100%" stop-color="#D94600" />
-                </linearGradient>
-                <filter id="headlightGlow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="4" result="blur" />
-                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                </filter>
-              </defs>
-
-              <!-- Sombra do Veículo na Pista -->
-              <rect x="10" y="12" width="60" height="120" rx="8" fill="#000000" opacity="0.5" />
-
-              <!-- Rodas Traseiras e Dianteiras -->
-              <rect x="4" y="78" width="8" height="20" rx="2" fill="#0F172A" />
-              <rect x="4" y="104" width="8" height="20" rx="2" fill="#0F172A" />
-              <rect x="68" y="78" width="8" height="20" rx="2" fill="#0F172A" />
-              <rect x="68" y="104" width="8" height="20" rx="2" fill="#0F172A" />
-              
-              <rect x="6" y="26" width="8" height="18" rx="2" fill="#0F172A" />
-              <rect x="66" y="26" width="8" height="18" rx="2" fill="#0F172A" />
-
-              <!-- Baú Branco com Identidade da AC Transporte -->
-              <rect x="14" y="44" width="52" height="88" rx="4" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.5" />
-              <line x1="14" y1="64" x2="66" y2="64" stroke="#F1F5F9" stroke-width="1.5" />
-              <line x1="14" y1="84" x2="66" y2="84" stroke="#F1F5F9" stroke-width="1.5" />
-              <line x1="14" y1="104" x2="66" y2="104" stroke="#F1F5F9" stroke-width="1.5" />
-
-              <!-- Grafismo Laranja Diagonal -->
-              <path d="M 14 72 L 66 50 L 66 68 L 14 90 Z" fill="url(#truckOrangeGrad)" />
-              <text x="40" y="96" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="11" fill="#0F172A">AC</text>
-              <text x="40" y="108" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="5.5" fill="#FF6600" letter-spacing="1">TRANSPORTE</text>
-
-              <!-- Cabine Laranja -->
-              <path d="M 18 44 L 18 18 C 18 10 26 5 40 5 C 54 5 62 10 62 18 L 62 44 Z" fill="url(#truckOrangeGrad)" />
-              <path d="M 22 24 C 22 16 28 10 40 10 C 52 10 58 16 58 24 L 58 32 L 22 32 Z" fill="#0F172A" />
-              <rect x="4" y="22" width="6" height="12" rx="1.5" fill="#334155" />
-              <rect x="70" y="22" width="6" height="12" rx="1.5" fill="#334155" />
-
-              <!-- Faróis Iluminados Super Brilhantes -->
-              <circle cx="24" cy="7" r="3.5" fill="#FFFBEB" filter="url(#headlightGlow)" />
-              <circle cx="56" cy="7" r="3.5" fill="#FFFBEB" filter="url(#headlightGlow)" />
-            </svg>
-          </div>
-        </div>
-
         <div class="steps-grid">
           
           <div class="step-card" id="cp1">
@@ -542,7 +215,7 @@
               <span class="step-status-indicator">03 / 05</span>
             </div>
             <h3>03 — Coleta</h3>
-            <p>A carga é acondicionada e coletada no local indicado com pontualidade no horário combinado.</p>
+            <p>A coleta é realizada no local combinado, conforme a programação definida com a equipe.</p>
           </div>
 
           <div class="step-card" id="cp4">
@@ -551,7 +224,7 @@
               <span class="step-status-indicator">04 / 05</span>
             </div>
             <h3>04 — Transporte em Trânsito</h3>
-            <p>O deslocamento rodoviário é monitorado ativamente e você recebe atualizações sobre o percurso.</p>
+            <p>Durante o trajeto, a equipe acompanha as etapas e mantém você informado conforme o combinado.</p>
           </div>
 
           <div class="step-card" id="cp5">
@@ -577,7 +250,7 @@
         <span class="section-tag light-tag">SOLUÇÕES LOGÍSTICAS</span>
         <h2 class="section-title dark-title">Nossos Serviços</h2>
         <p class="section-description dark-desc">
-          Transporte rodoviário planejado com atendimento direto, transparência e cuidado absoluto com sua carga.
+          Soluções de transporte avaliadas de acordo com a carga, a rota e a necessidade da sua operação.
         </p>
       </div>
 
@@ -585,11 +258,11 @@
         
         <div class="service-card light-card logio-service-box">
           <div class="sc-top-bar">
-            <span class="service-icon-box">🚛</span>
+            <span class="service-icon-box">ROD</span>
             <span class="service-num-badge">01</span>
           </div>
           <h3 class="dark-h3">Transporte Rodoviário de Cargas</h3>
-          <p class="dark-p">Transporte entre municípios e regiões com rotas otimizadas, monitoramento ativo e cumprimento rigoroso dos prazos.</p>
+          <p class="dark-p">Fretes entre municípios e regiões, planejados conforme as características da carga e a disponibilidade da operação.</p>
           <a href="#cotacao" class="service-link" data-service="Transporte Rodoviário">
             <span>Solicitar cotação</span>
             <span class="sc-arrow-btn">↗</span>
@@ -598,11 +271,11 @@
 
         <div class="service-card light-card logio-service-box">
           <div class="sc-top-bar">
-            <span class="service-icon-box">📦</span>
+            <span class="service-icon-box">C&amp;E</span>
             <span class="service-num-badge">02</span>
           </div>
           <h3 class="dark-h3">Coleta e Entrega Dedicada</h3>
-          <p class="dark-p">Operações ágeis de coleta e entrega porta a porta em São Paulo e região, adequadas ao volume e tipo da carga.</p>
+          <p class="dark-p">Coleta e entrega em São Paulo e região, com planejamento compatível com o volume e o tipo de carga.</p>
           <a href="#cotacao" class="service-link" data-service="Coleta e Entrega">
             <span>Solicitar cotação</span>
             <span class="sc-arrow-btn">↗</span>
@@ -611,11 +284,11 @@
 
         <div class="service-card light-card logio-service-box">
           <div class="sc-top-bar">
-            <span class="service-icon-box">⚙️</span>
+            <span class="service-icon-box">ESP</span>
             <span class="service-num-badge">03</span>
           </div>
           <h3 class="dark-h3">Operações Personalizadas</h3>
-          <p class="dark-p">Soluções logísticas flexíveis e dedicadas, planejadas sob medida para atender demandas comerciais e industriais.</p>
+          <p class="dark-p">Soluções combinadas a partir da rotina, do volume e das rotas necessárias para cada operação.</p>
           <a href="#cotacao" class="service-link" data-service="Operações Personalizadas">
             <span>Solicitar cotação</span>
             <span class="sc-arrow-btn">↗</span>
@@ -624,11 +297,11 @@
 
         <div class="service-card light-card logio-service-box">
           <div class="sc-top-bar">
-            <span class="service-icon-box">🏠</span>
+            <span class="service-icon-box">URB</span>
             <span class="service-num-badge">04</span>
           </div>
           <h3 class="dark-h3">Fretes Urbanos & Mudanças</h3>
-          <p class="dark-p">Transporte seguro para mudanças residenciais e comerciais na grande São Paulo, interior e litoral com todo o cuidado.</p>
+          <p class="dark-p">Fretes urbanos e mudanças residenciais ou comerciais, com atendimento sob consulta na região de São Paulo.</p>
           <a href="#cotacao" class="service-link" data-service="Fretes Urbanos e Mudanças">
             <span>Solicitar cotação</span>
             <span class="sc-arrow-btn">↗</span>
@@ -688,17 +361,17 @@
           <span class="section-tag light-tag">ONDE ATUAMOS</span>
           <h2 class="section-title dark-title">Área de Atuação</h2>
           <p class="dark-p lead-text">
-            Com sede em <strong>São Paulo</strong>, atendemos demandas em toda a capital, região metropolitana, interior e litoral paulista, além de rotas intermunicipais e estaduais sob consulta.
+            Com base em <strong>São Paulo</strong>, atendemos a capital, a região metropolitana e outras rotas sob consulta, conforme o perfil da carga e a disponibilidade.
           </p>
           
           <div class="coverage-list">
             <div class="cov-item light-card">
               <strong>São Paulo — Capital & Grande SP</strong>
-              <p class="dark-small">Atendimento urbano rápido na metrópole</p>
+              <p class="dark-small">Rotas avaliadas conforme a operação</p>
             </div>
             <div class="cov-item light-card">
               <strong>Interior & Litoral Paulista</strong>
-              <p class="dark-small">Conexão direta pelas principais rodovias</p>
+              <p class="dark-small">Atendimento sob consulta</p>
             </div>
             <div class="cov-item light-card">
               <strong>Bases de Carregamento</strong>
@@ -744,21 +417,17 @@
         <div class="ag-badge">OPORTUNIDADE DE TRABALHO</div>
         <h2 class="ag-title">Estamos Agregando Motoristas</h2>
         <p class="ag-subtitle">
-          Agregue seu veículo na AC Transporte com demandas nas bases de Mauá, Arujá e Cajamar.
+          Converse com a equipe sobre rotas disponíveis, perfil do veículo e condições de cada operação.
         </p>
 
         <div class="ag-info-row">
           <div class="ag-info-item">
-            <span>Faturamento Estimado:</span>
-            <strong>R$ 18.000 a R$ 20.000 /mês</strong>
-          </div>
-          <div class="ag-info-item">
             <span>Pagamento:</span>
-            <strong>Pagamento Semanal</strong>
+            <strong>Semanal, conforme condições da operação</strong>
           </div>
           <div class="ag-info-item">
-            <span>Veículos Aceitos:</span>
-            <strong>3/4 Baú • VUC Baú • VAN Furgão • HR / Bongo</strong>
+            <span>Veículos aceitos:</span>
+            <strong>3/4 Baú · VUC Baú · Van Furgão · HR / Bongo</strong>
           </div>
         </div>
 
@@ -902,7 +571,7 @@
         </p>
         <div class="footer-cnpj-badge">
           <strong>AC TRANSPORTE LTDA</strong><br>
-          <small>Sede e Operação: São Paulo - SP • Fundada em 2026</small>
+          <small>Sede e operação: São Paulo - SP</small>
         </div>
       </div>
 
@@ -931,7 +600,6 @@
         <h4 class="footer-heading">Legal</h4>
         <ul class="footer-links">
           <li><button class="btn-text-link" id="openPrivacyModalBtn">Política de Privacidade (LGPD)</button></li>
-          <li><span class="footer-legal-note">Operação em Conformidade ANTT</span></li>
         </ul>
       </div>
     </div>
