@@ -1,10 +1,11 @@
 /* ==========================================================================
-   AC TRANSPORTE - SCRIPT PRINCIPAL CORPORATIVO
+   AC TRANSPORTE - SCRIPT PRINCIPAL E TRACKER DE SCROLL VERTICAL
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initScrollAnimations();
+  initRoadTimeline();
   initPrivacyModal();
   initCalculatorForm();
 });
@@ -30,7 +31,7 @@ function initMobileMenu() {
   }
 }
 
-/* 2. HIGHLIGHT E SCROLL DOS LINKS DA NAVBAR */
+/* 2. HIGHLIGHT DOS LINKS DA NAVBAR */
 function initScrollAnimations() {
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section[id]');
@@ -56,7 +57,42 @@ function initScrollAnimations() {
   });
 }
 
-/* 3. MODAL DA POLÍTICA DE PRIVACIDADE (LGPD) */
+/* 3. A ROTA DA CARGA - TIMELINE VERTICAL E CAMINHÃO (VISTA TOP-DOWN) */
+function initRoadTimeline() {
+  const roadSection = document.getElementById('jornada');
+  const roadLine = document.getElementById('roadProgressLine');
+  const truckMarker = document.getElementById('scrollTruckMarker');
+  const cp1 = document.getElementById('cp1');
+  const cp2 = document.getElementById('cp2');
+  const cp3 = document.getElementById('cp3');
+
+  if (!roadSection || !roadLine || !truckMarker) return;
+
+  window.addEventListener('scroll', () => {
+    const rect = roadSection.getBoundingClientRect();
+    const sectionHeight = roadSection.offsetHeight;
+    const windowHeight = window.innerHeight;
+
+    if (rect.top <= windowHeight && rect.bottom >= 0) {
+      let progress = ((windowHeight - rect.top) / (sectionHeight + windowHeight)) * 100;
+      progress = Math.min(Math.max(progress, 0), 100);
+
+      roadLine.style.height = `${progress}%`;
+      truckMarker.style.top = `${progress}%`;
+
+      if (progress >= 20 && cp1) cp1.classList.add('active');
+      else if (cp1) cp1.classList.remove('active');
+
+      if (progress >= 55 && cp2) cp2.classList.add('active');
+      else if (cp2) cp2.classList.remove('active');
+
+      if (progress >= 85 && cp3) cp3.classList.add('active');
+      else if (cp3) cp3.classList.remove('active');
+    }
+  });
+}
+
+/* 4. MODAL DA POLÍTICA DE PRIVACIDADE (LGPD) */
 function initPrivacyModal() {
   const modal = document.getElementById('privacyModal');
   const openBtn = document.getElementById('openPrivacyModalBtn');
@@ -90,7 +126,7 @@ function initPrivacyModal() {
   });
 }
 
-/* 4. SELEÇÃO DIRETA DE SERVIÇOS NOS CARDS */
+/* 5. SELEÇÃO DIRETA DE SERVIÇOS NOS CARDS */
 window.selectServiceInForm = function(serviceName) {
   const selectElem = document.getElementById('tipoServicoSelect');
   if (selectElem) {
@@ -102,7 +138,7 @@ window.selectServiceInForm = function(serviceName) {
   }
 };
 
-/* 5. FORMULÁRIO CALCULADORA DE FRETE CORPORATIVA */
+/* 6. FORMULÁRIO CALCULADORA DE FRETE CORPORATIVA */
 function initCalculatorForm() {
   const quoteForm = document.getElementById('quoteForm');
   if (!quoteForm) return;
@@ -118,7 +154,6 @@ function initCalculatorForm() {
 
     let isValid = true;
 
-    // Validação dos campos obrigatórios
     if (!origem.value.trim()) {
       showInputError(origem, true);
       isValid = false;
@@ -151,7 +186,6 @@ function initCalculatorForm() {
     const dataPref = document.getElementById('dataPreferencial').value;
     const obs = document.getElementById('observacoesCarga').value.trim();
 
-    // Formatação de mensagem profissional para WhatsApp
     let msg = `🚛 *SOLICITAÇÃO DE COTAÇÃO - AC TRANSPORTE LTDA*\n`;
     msg += `_Atendimento Corporativo & Fretes_\n\n`;
     msg += `*Cliente/Empresa:* ${nome.value.trim()}\n`;
