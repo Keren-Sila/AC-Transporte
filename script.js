@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initHeroTruckPhysics();
   initRoadTimeline();
+  initServiceCardSelection();
   initPrivacyModal();
   initCalculatorForm();
 });
@@ -176,17 +177,24 @@ function initPrivacyModal() {
   });
 }
 
-/* 6. SELEÇÃO DIRETA DE SERVIÇOS NOS CARDS */
-window.selectServiceInForm = function(serviceName) {
+/* 6. SELEÇÃO DIRETA DE SERVIÇOS NOS CARDS (VIA ADDEVENTLISTENER) */
+function initServiceCardSelection() {
+  const serviceLinks = document.querySelectorAll('.service-link[data-service]');
   const selectElem = document.getElementById('tipoServicoSelect');
-  if (selectElem) {
-    selectElem.value = serviceName;
-  }
   const cotacaoSec = document.getElementById('cotacao');
-  if (cotacaoSec) {
-    cotacaoSec.scrollIntoView({ behavior: 'smooth' });
-  }
-};
+
+  serviceLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const serviceName = link.getAttribute('data-service');
+      if (selectElem && serviceName) {
+        selectElem.value = serviceName;
+      }
+      if (cotacaoSec) {
+        cotacaoSec.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+}
 
 /* 7. FORMULÁRIO CALCULADORA DE FRETE CORPORATIVA */
 function initCalculatorForm() {
