@@ -371,12 +371,28 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: var(--shadow-card);
 }
 
+.stage-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
 .stage-badge {
   font-size: 0.72rem;
   font-weight: 800;
   color: var(--primary-orange);
   letter-spacing: 1.2px;
-  margin-bottom: 12px;
+}
+
+.stage-live-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--slate-muted);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
 }
 
 .stage-visual-container {
@@ -388,6 +404,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  min-height: 290px;
 }
 
 .road-backdrop {
@@ -405,12 +422,99 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
 }
 
+/* PÍLULAS DE TELEMETRIA DO CARD HERO (LOGIO STYLE) */
+.telemetry-pill {
+  position: absolute;
+  z-index: 5;
+  background: rgba(20, 28, 46, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.telemetry-pill.top-right {
+  top: 16px;
+  right: 16px;
+  border-left: 3px solid var(--primary-orange);
+}
+
+.telemetry-pill.bottom-left {
+  bottom: 16px;
+  left: 16px;
+  border-left: 3px solid #10B981;
+}
+
+.t-icon { font-size: 1.1rem; }
+.telemetry-pill strong { display: block; font-size: 0.8rem; color: var(--text-white); }
+.telemetry-pill small { color: var(--slate-muted); font-size: 0.72rem; }
+
 .stage-footer {
   margin-top: 14px;
   text-align: center;
 }
 .stage-footer strong { display: block; font-size: 0.9rem; color: var(--text-white); }
 .stage-footer small { color: var(--slate-muted); font-size: 0.78rem; }
+
+/* SEÇÃO DE PILARES DE DESTAQUE (LOGIO FEATURES STRIP) */
+.logio-features-section {
+  background: #080C14;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 40px 0;
+}
+
+.logio-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.logio-feat-card {
+  background: var(--navy-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: all var(--transition);
+}
+
+.logio-feat-card:hover {
+  border-color: var(--primary-orange);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card);
+}
+
+.lf-icon-box {
+  font-size: 1.6rem;
+  background: rgba(255, 102, 0, 0.12);
+  border: 1px solid rgba(255, 102, 0, 0.25);
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lf-content h4 {
+  font-size: 1.05rem;
+  color: var(--text-white);
+  margin-bottom: 6px;
+}
+
+.lf-content p {
+  color: var(--slate-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
 
 /* SEÇÃO SOBRE A EMPRESA (QUEM SOMOS) */
 .about-section { padding: 90px 0; }
