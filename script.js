@@ -20,12 +20,14 @@ function initMobileMenu() {
   if (hamburgerBtn && navMenu) {
     hamburgerBtn.addEventListener('click', () => {
       const isOpen = navMenu.classList.toggle('active');
+      hamburgerBtn.classList.toggle('active', isOpen);
       hamburgerBtn.setAttribute('aria-expanded', isOpen);
     });
 
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
+        hamburgerBtn.classList.remove('active');
         hamburgerBtn.setAttribute('aria-expanded', 'false');
       });
     });
