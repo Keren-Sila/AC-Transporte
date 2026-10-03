@@ -3,73 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AC Transporte | Fretes e Mudanças em São Paulo e Região</title>
-  <meta name="description" content="AC Transporte - Fretes, Mudanças e Transporte Rodoviário em São Paulo e Região. Atendimento rápido, ágil e confiável com frota VUC, HR, Van e 3/4. Bases em Mauá, Arujá e Cajamar.">
-  <meta name="theme-color" content="#FF6600">
+  <title>AC Transporte | Transporte Rodoviário de Cargas, Fretes e Mudanças em SP</title>
+  <meta name="description" content="AC Transporte LTDA - Soluções em transporte rodoviário de cargas, fretes dedicados e mudanças residenciais/comerciais em São Paulo e região. Bases em Mauá, Arujá e Cajamar. Frota VUC, HR, 3/4 e Vans.">
+  <meta name="theme-color" content="#0F172A">
   
-  <!-- Favicon / Fontes -->
+  <!-- Fontes Corporativas -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   
   <!-- CSS Principal -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Barra de Acessibilidade / Skip Link -->
-  <a href="#cotacao" class="skip-link">Ir direto para a Cotação</a>
+  <!-- BARRA SUPERIOR INSTITUCIONAL / TOPBAR -->
+  <div class="topbar">
+    <div class="container topbar-container">
+      <div class="topbar-info">
+        <span class="info-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <strong>AC TRANSPORTE LTDA</strong> • CNPJ: Reg. SP
+        </span>
+        <span class="info-item hidden-mobile">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Bases Operacionais: Mauá | Arujá | Cajamar | São Paulo
+        </span>
+      </div>
+      <div class="topbar-contacts">
+        <span class="topbar-clock hidden-mobile">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Atendimento Seg a Sáb
+        </span>
+        <a href="https://wa.me/5511912349106" target="_blank" rel="noopener noreferrer" class="topbar-phone">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          (11) 91234-9106
+        </a>
+      </div>
+    </div>
+  </div>
 
-  <!-- HEADER / NAVEGAÇÃO -->
+  <!-- HEADER PRINCIPAL / NAVBAR -->
   <header class="navbar" id="top">
     <div class="container navbar-container">
       <a href="#top" class="logo-link" aria-label="Página Inicial AC Transporte">
-        <svg class="logo-svg" viewBox="0 0 350 75" width="230" height="48" aria-hidden="true">
+        <svg class="logo-svg" viewBox="0 0 360 70" width="240" height="46" aria-hidden="true">
           <defs>
-            <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#FF7700" />
+            <linearGradient id="brandOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FF6600" />
               <stop offset="100%" stop-color="#E65100" />
             </linearGradient>
           </defs>
-          <!-- Ícone do Caminhão Baú VUC/HR Oficial no Logo -->
-          <g transform="translate(4, 6)">
-            <!-- Traços de Velocidade AC em Laranja e Branco -->
-            <path d="M 0 15 L 14 15 M -4 26 L 18 26 M 2 37 L 16 37" stroke="url(#orangeGrad)" stroke-width="4" stroke-linecap="round" />
+          <g transform="translate(2, 4)">
+            <!-- Traços Vetoriais de Velocidade -->
+            <path d="M 0 16 L 16 16 M -4 28 L 20 28 M 2 40 L 18 40" stroke="url(#brandOrange)" stroke-width="4" stroke-linecap="round" />
             <!-- Baú do Caminhão -->
-            <rect x="20" y="8" width="34" height="30" rx="3" fill="#FFFFFF" stroke="url(#orangeGrad)" stroke-width="2" />
-            <path d="M 24 14 L 30 8 L 48 8 L 48 34 Z" fill="url(#orangeGrad)" opacity="0.25" />
-            <!-- Cabine HR/VUC com Inclinação Característica -->
-            <path d="M 54 18 L 68 18 L 74 27 L 74 38 L 54 38 Z" fill="url(#orangeGrad)" />
-            <path d="M 57 21 L 66 21 L 70 27 L 57 27 Z" fill="#0A0A0C" />
-            <!-- Para-choque e Rodas -->
-            <rect x="54" y="38" width="22" height="4" fill="#27272A" />
-            <circle cx="32" cy="40" r="5.5" fill="#0A0A0C" stroke="url(#orangeGrad)" stroke-width="2" />
-            <circle cx="66" cy="40" r="5.5" fill="#0A0A0C" stroke="#FFFFFF" stroke-width="2" />
+            <rect x="22" y="10" width="36" height="32" rx="3" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1.5" />
+            <path d="M 26 16 L 34 10 L 54 10 L 54 38 Z" fill="url(#brandOrange)" opacity="0.2" />
+            <!-- Cabine VUC / HR -->
+            <path d="M 58 20 L 72 20 L 78 29 L 78 42 L 58 42 Z" fill="url(#brandOrange)" />
+            <path d="M 61 23 L 70 23 L 74 29 L 61 29 Z" fill="#0F172A" />
+            <!-- Rodas e Chassi -->
+            <rect x="58" y="42" width="22" height="4" fill="#1E293B" />
+            <circle cx="34" cy="44" r="5.5" fill="#0F172A" stroke="url(#brandOrange)" stroke-width="2" />
+            <circle cx="70" cy="44" r="5.5" fill="#0F172A" stroke="#FFFFFF" stroke-width="2" />
           </g>
-          <!-- Texto "AC TRANSPORTE" -->
-          <text x="92" y="36" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="26" fill="#FFFFFF" letter-spacing="1">AC</text>
-          <text x="138" y="36" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="26" fill="url(#orangeGrad)" letter-spacing="2">TRANSPORTE</text>
-          <!-- Sub-texto oficial do logo: FRETES E MUDANÇAS -->
-          <text x="93" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="10" fill="#A1A1AA" letter-spacing="3">— FRETES E MUDANÇAS —</text>
+          <!-- Texto AC TRANSPORTE -->
+          <text x="96" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="27" fill="#FFFFFF" letter-spacing="0.5">AC</text>
+          <text x="142" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="27" fill="url(#brandOrange)" letter-spacing="1.5">TRANSPORTE</text>
+          <text x="97" y="55" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="9.5" fill="#94A3B8" letter-spacing="2.5">— FRETES E MUDANÇAS —</text>
         </svg>
       </a>
 
-      <!-- Menu Desktop -->
+      <!-- Menu de Navegação Corporativo -->
       <nav class="nav-menu" id="navMenu">
         <ul class="nav-list">
           <li><a href="#inicio" class="nav-link active">Início</a></li>
           <li><a href="#servicos" class="nav-link">Serviços</a></li>
-          <li><a href="#frota" class="nav-link">Nossa Frota</a></li>
-          <li><a href="#bases" class="nav-link">Bases & Cobertura</a></li>
-          <li><a href="#agregamento" class="nav-link Highlight-link">Trabalhe Conosco</a></li>
-          <li><a href="#cotacao" class="nav-link">Cotação</a></li>
+          <li><a href="#frota" class="nav-link">Frota</a></li>
+          <li><a href="#unidades" class="nav-link">Unidades & Bases</a></li>
+          <li><a href="#agregamento" class="nav-link highlight-menu">Trabalhe Conosco</a></li>
+          <li><a href="#cotacao" class="nav-link">Simular Frete</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <a href="https://wa.me/5511912349106?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AC%20Transporte%20e%20gostaria%20de%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-nav">
-          <span>(11) 91234-9106</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <a href="#cotacao" class="btn btn-primary btn-nav">
+          <span>Solicitar Cotação</span>
         </a>
         <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir Menu de Navegação" aria-expanded="false">
           <span class="bar"></span>
@@ -80,216 +100,207 @@
     </div>
   </header>
 
-  <!-- HERO SECTION OFICIAL -->
+  <!-- HERO BANNER CORPORATIVO -->
   <section class="hero-section" id="inicio">
-    <div class="hero-bg-glow"></div>
+    <div class="hero-overlay"></div>
     <div class="container hero-container">
       <div class="hero-content">
-        <div class="badge">
+        <div class="hero-badge">
           <span class="badge-dot"></span>
-          <span>Fretes & Mudanças • Cobertura em Toda a Região de SP</span>
+          <span>Transporte Rodoviário de Cargas • Grande SP & Interior</span>
         </div>
         
         <h1 class="hero-title">
           Precisa transportar?<br>
-          <span class="text-gradient">Chama a AC Transporte!</span>
+          <span class="text-orange">Chama a AC Transporte!</span>
         </h1>
         
         <p class="hero-subtitle">
-          Atendimento rápido, ágil e confiável em São Paulo e região. Soluções em transportes rodoviários, fretes urbanos, mudanças e entregas dedicadas com a segurança e o cuidado que sua carga merece.
+          Soluções logísticas completas em fretes dedicados, transportes urbanos e mudanças residenciais e comerciais. Atendimento rápido, transparente e seguro em São Paulo e região.
         </p>
 
         <div class="hero-buttons">
           <a href="#cotacao" class="btn btn-primary btn-lg">
-            <span>Pedir Cotação Rápida</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <span>Simular Frete Agora</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a href="https://wa.me/5511912349106?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AC%20Transporte%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-whatsapp">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-            <span>WhatsApp Direto</span>
+          <a href="https://wa.me/5511912349106?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o%20de%20frete." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Falar com Atendimento</span>
           </a>
         </div>
 
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-number">3 Bases</span>
-            <span class="stat-label">Mauá • Arujá • Cajamar</span>
+        <div class="hero-trust-bar">
+          <div class="trust-item">
+            <span class="trust-title">3 BASES ATIVAS</span>
+            <span class="trust-sub">Mauá • Arujá • Cajamar</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-number">Frota Diversa</span>
-            <span class="stat-label">3/4, Van, VUC e HR</span>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <span class="trust-title">REGULARIDADE ANTT</span>
+            <span class="trust-sub">Operação Fiscal 100% Legal</span>
           </div>
-          <div class="stat-divider"></div>
-          <div class="stat-item">
-            <span class="stat-number">3 Contatos</span>
-            <span class="stat-label">Atendimento Imediato</span>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <span class="trust-title">FROTA DIVERSA</span>
+            <span class="trust-sub">3/4, Van, VUC e HR</span>
           </div>
         </div>
       </div>
 
-      <!-- Ilustração Vetorial do Caminhão Baú VUC/HR no Hero -->
-      <div class="hero-visual">
-        <div class="truck-stage">
-          <div class="truck-glow-bg"></div>
-          <div class="truck-wrapper" id="heroTruck">
-            <svg class="truck-graphic" viewBox="0 0 500 240" width="100%" height="auto">
-              <defs>
-                <linearGradient id="truckBodyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#FFFFFF" />
-                  <stop offset="60%" stop-color="#F4F4F5" />
-                  <stop offset="100%" stop-color="#E4E4E7" />
-                </linearGradient>
-                <linearGradient id="truckOrange" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#FF7700" />
-                  <stop offset="100%" stop-color="#D94600" />
-                </linearGradient>
-                <filter id="headlightBeam">
-                  <feGaussianBlur stdDeviation="8" />
-                </filter>
-              </defs>
-
-              <!-- Luz dos Faróis -->
-              <polygon points="410,145 495,125 495,185 410,160" fill="#FFB703" opacity="0.4" filter="url(#headlightBeam)" />
-              <polygon points="410,145 490,135 490,175 410,160" fill="#FFFFFF" opacity="0.6" filter="url(#headlightBeam)" />
-
-              <!-- Sombra e Pista Inferior -->
-              <ellipse cx="250" cy="205" rx="210" ry="14" fill="#000000" opacity="0.6" />
-              
-              <!-- Chassi -->
-              <rect x="50" y="160" width="350" height="16" rx="4" fill="#111113" />
-
-              <!-- Baú de Carga Branco (Fiel ao Logo da AC) -->
-              <rect x="50" y="45" width="280" height="120" rx="6" fill="url(#truckBodyGrad)" stroke="#A1A1AA" stroke-width="2" />
-              
-              <!-- Detalhes do Baú / Frisos Vetoriais -->
-              <line x1="110" y1="45" x2="110" y2="165" stroke="#E4E4E7" stroke-width="2" />
-              <line x1="170" y1="45" x2="170" y2="165" stroke="#E4E4E7" stroke-width="2" />
-              <line x1="230" y1="45" x2="230" y2="165" stroke="#E4E4E7" stroke-width="2" />
-              <line x1="290" y1="45" x2="290" y2="165" stroke="#E4E4E7" stroke-width="2" />
-
-              <!-- Faixa Diagonal Laranja no Baú (Speed Stripes AC) -->
-              <path d="M 60 165 L 140 45 L 175 45 L 95 165 Z" fill="url(#truckOrange)" opacity="0.95" />
-              <path d="M 180 165 L 260 45 L 285 45 L 205 165 Z" fill="#18181B" opacity="0.85" />
-
-              <!-- Marca AC TRANSPORTE no Baú -->
-              <text x="175" y="105" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="28" fill="#18181B" letter-spacing="2">AC</text>
-              <text x="223" y="105" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="28" fill="url(#truckOrange)" letter-spacing="2">TRANSPORTE</text>
-              <text x="176" y="124" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="10" fill="#71717A" letter-spacing="3">— FRETES E MUDANÇAS —</text>
-
-              <!-- Cabine do Caminhão VUC / HR Branco -->
-              <path d="M 330 80 L 390 80 L 420 115 L 420 165 L 330 165 Z" fill="#FFFFFF" stroke="#A1A1AA" stroke-width="1.5" />
-              <path d="M 360 88 L 390 88 L 410 115 L 360 115 Z" fill="#0A0A0C" stroke="#FF7700" stroke-width="1.5" />
-              <path d="M 330 135 L 420 135" stroke="url(#truckOrange)" stroke-width="4" />
-              
-              <!-- Farol Dianteiro -->
-              <rect x="415" y="142" width="8" height="15" rx="2" fill="#FFB703" />
-
-              <!-- Para-choque Dianteiro -->
-              <rect x="410" y="158" width="16" height="12" rx="3" fill="#27272A" />
-
-              <!-- Rodas Triplas -->
-              <g class="truck-wheel-group">
-                <circle cx="100" cy="175" r="22" fill="#09090B" stroke="#3F3F46" stroke-width="3" />
-                <circle cx="100" cy="175" r="10" fill="#27272A" />
-                <circle cx="100" cy="175" r="4" fill="url(#truckOrange)" />
-                
-                <circle cx="155" cy="175" r="22" fill="#09090B" stroke="#3F3F46" stroke-width="3" />
-                <circle cx="155" cy="175" r="10" fill="#27272A" />
-                <circle cx="155" cy="175" r="4" fill="url(#truckOrange)" />
-
-                <circle cx="375" cy="175" r="22" fill="#09090B" stroke="#FF7700" stroke-width="3" />
-                <circle cx="375" cy="175" r="10" fill="#27272A" />
-                <circle cx="375" cy="175" r="4" fill="#FFFFFF" />
-              </g>
-            </svg>
+      <!-- Card Ilustrativo de Status Logístico em Tempo Real -->
+      <div class="hero-card-display">
+        <div class="status-card-box">
+          <div class="status-card-header">
+            <div class="status-indicator-dot"></div>
+            <span>Monitoramento Operacional AC</span>
+          </div>
+          <div class="status-card-body">
+            <div class="route-preview">
+              <div class="route-node">
+                <span class="node-city">SÃO PAULO / MAUÁ</span>
+                <span class="node-label">Coleta / Origem</span>
+              </div>
+              <div class="route-line-anim">
+                <div class="truck-mini-icon">🚚</div>
+              </div>
+              <div class="route-node text-right">
+                <span class="node-city">DESTINO FINAL</span>
+                <span class="node-label">Entrega Programada</span>
+              </div>
+            </div>
+            <div class="status-metrics-grid">
+              <div class="s-metric">
+                <small>Modalidade</small>
+                <strong>Frete Dedicado / VUC</strong>
+              </div>
+              <div class="s-metric">
+                <small>Previsão</small>
+                <strong>Pontualidade Garantida</strong>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO A ROTA DA CARGA (TIMELINE) -->
-  <section class="road-section" id="jornada">
+  <!-- BARRA DE CERTIFICAÇÕES E DIFERENCIAIS TÉCNICOS -->
+  <section class="trust-banner">
+    <div class="container trust-container">
+      <div class="trust-box">
+        <div class="trust-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h4>Cargas com Proteção Integral</h4>
+          <p>Acondicionamento correto e transporte seguro de mercadorias e mudanças.</p>
+        </div>
+      </div>
+
+      <div class="trust-box">
+        <div class="trust-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <h4>Pontualidade e Compromisso</h4>
+          <p>Cumprimento rigoroso dos horários de coleta e prazos pactuados.</p>
+        </div>
+      </div>
+
+      <div class="trust-box">
+        <div class="trust-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div>
+          <h4>Atendimento via WhatsApp</h4>
+          <p>Comunicação direta com a equipe de logística durante todo o trajeto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO SERVIÇOS CORPORATIVOS -->
+  <section class="services-section" id="servicos">
     <div class="container">
       <div class="section-header text-center">
-        <span class="section-tag">A Rota do Transporte</span>
-        <h2 class="section-title">Saída, Rota e Chegada</h2>
+        <span class="section-tag">Soluções Logísticas</span>
+        <h2 class="section-title">Serviços Especializados de Transporte</h2>
         <p class="section-description">
-          Acompanhe a jornada do seu frete com segurança, pontualidade e o cuidado que sua carga merece.
+          Oferecemos soluções sob medida para empresas, comércios e clientes pessoa física em São Paulo e região.
         </p>
       </div>
 
-      <div class="road-interactive-container">
-        <div class="road-track">
-          <div class="road-progress-line" id="roadProgressLine"></div>
-          <div class="scroll-truck-marker" id="scrollTruckMarker" title="Caminhão em trânsito">
-            <svg viewBox="0 0 60 35" width="40" height="24">
-              <path d="M 0 5 L 35 5 L 35 30 L 0 30 Z" fill="#FFFFFF" stroke="#FF7700" stroke-width="1.5" />
-              <path d="M 35 12 L 48 12 L 55 22 L 55 30 L 35 30 Z" fill="#FF7700" />
-              <circle cx="12" cy="30" r="4" fill="#000" />
-              <circle cx="45" cy="30" r="4" fill="#000" />
-            </svg>
+      <div class="services-grid">
+        
+        <!-- Card 1 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
           </div>
+          <h3>Mudanças Residenciais & Comerciais</h3>
+          <p class="service-subtitle">Residências, escritórios e comércios</p>
+          <p>Equipe preparada para transportar móveis, eletrodomésticos e equipamentos comerciais com proteção total e acomodação profissional no caminhão baú.</p>
+          <a href="#cotacao" class="service-link" onclick="selectServiceInForm('Mudanças Residenciais / Comerciais')">
+            <span>Simular Frete</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
 
-        <div class="checkpoints-grid">
-          
-          <div class="checkpoint-card" id="cp1">
-            <div class="checkpoint-badge">
-              <span class="cp-number">01</span>
-              <div class="cp-icon-wrap">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M5 12l6-6M5 12l6 6"/></svg>
-              </div>
-            </div>
-            <div class="cp-node-dot"></div>
-            <div class="cp-content">
-              <h3>1. Coleta e Organização (Saída)</h3>
-              <p>Coleta pontual na sua empresa ou residência em SP, Mauá, Arujá, Cajamar ou região metropolitana. Acondicionamento protegido no veículo.</p>
-            </div>
+        <!-- Card 2 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
           </div>
-
-          <div class="checkpoint-card" id="cp2">
-            <div class="checkpoint-badge">
-              <span class="cp-number">02</span>
-              <div class="cp-icon-wrap">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              </div>
-            </div>
-            <div class="cp-node-dot"></div>
-            <div class="cp-content">
-              <h3>2. Em Trânsito com Comunicação Ativa</h3>
-              <p>Deslocamento ágil por rodovias e vias urbanas. Atualização constante do status do transporte direto pelo WhatsApp com a equipe.</p>
-            </div>
-          </div>
-
-          <div class="checkpoint-card" id="cp3">
-            <div class="checkpoint-badge">
-              <span class="cp-number">03</span>
-              <div class="cp-icon-wrap">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              </div>
-            </div>
-            <div class="cp-node-dot"></div>
-            <div class="cp-content">
-              <h3>3. Entrega Concluída com Sucesso</h3>
-              <p>Descarregamento no destino final, conferência de integridade dos volumes e confirmação imediata de recebimento.</p>
-            </div>
-          </div>
-
+          <h3>Fretes Urbanos & Distribuição</h3>
+          <p class="service-subtitle">Capital SP e Região Metropolitana</p>
+          <p>Agilidade no transporte urbano de mercadorias entre empresas, lojas e centros de distribuição com frota VUC e HR sem restrições de trânsito.</p>
+          <a href="#cotacao" class="service-link" onclick="selectServiceInForm('Fretes Urbanos')">
+            <span>Simular Frete</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
+
+        <!-- Card 3 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Cargas Dedicadas & Urgentes</h3>
+          <p class="service-subtitle">Prioridade e Exclusividade</p>
+          <p>Veículo dedicado exclusivamente para o seu transporte, garantindo coleta agendada e entrega direta no destino sem paradas intermediárias.</p>
+          <a href="#cotacao" class="service-link" onclick="selectServiceInForm('Entregas Dedicadas')">
+            <span>Simular Frete</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Transporte Intermunicipal</h3>
+          <p class="service-subtitle">Conexões no Estado de SP</p>
+          <p>Ligação eficiente entre a Grande SP e cidades do interior e litoral (Campinas, Santos, Sorocaba, Jundiaí e Vale do Paraíba).</p>
+          <a href="#cotacao" class="service-link" onclick="selectServiceInForm('Transporte Intermunicipal')">
+            <span>Simular Frete</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO FROTA OFICIAL (3/4, VAN, VUC, HR) -->
+  <!-- SEÇÃO NOSSA FROTA OPERACIONAL -->
   <section class="fleet-section" id="frota">
     <div class="container">
       <div class="section-header text-center">
-        <span class="section-tag">Nossa Frota</span>
-        <h2 class="section-title">Veículos Adequados para Cada Necessidade</h2>
+        <span class="section-tag">Frota Operacional</span>
+        <h2 class="section-title">Veículos Dimensionados para sua Necessidade</h2>
         <p class="section-description">
-          Operamos com veículos próprios e agregados preparados para circular sem restrições nas vias urbanas e rodovias de São Paulo.
+          Operamos com veículos adequados às normas de circulação urbana (ZMRC) e preparados para estradas.
         </p>
       </div>
 
@@ -297,466 +308,322 @@
         
         <!-- HR / Bongo -->
         <div class="fleet-card">
-          <div class="fleet-badge">Urbano Rápido</div>
-          <div class="fleet-icon-box">
-            <svg width="50" height="35" viewBox="0 0 60 35">
-              <rect x="2" y="8" width="34" height="20" rx="2" fill="#FFFFFF" stroke="#FF7700" stroke-width="2"/>
-              <path d="M 36 12 L 48 12 L 56 20 L 56 28 L 36 28 Z" fill="#FF7700"/>
-              <circle cx="14" cy="28" r="4" fill="#000"/>
-              <circle cx="46" cy="28" r="4" fill="#000"/>
-            </svg>
+          <div class="fleet-header-tag">Urbano Rápido</div>
+          <h3>HR / Bongo Baú</h3>
+          <p class="fleet-desc">Ideal para entregas rápidas na capital paulista e centro urbano, com livre circulação e agilidade.</p>
+          <div class="fleet-specs-box">
+            <div class="spec-item">
+              <span>Capacidade:</span>
+              <strong>Até 1.8 Toneladas</strong>
+            </div>
+            <div class="spec-item">
+              <span>Uso Ideal:</span>
+              <strong>Fretes rápidos, caixas e eletros</strong>
+            </div>
           </div>
-          <h3>Caminhão HR / Bongo</h3>
-          <p class="fleet-desc">Agilidade máxima para coletas e entregas rápidas na capital e centro urbano sem restrição de rodízio de carga.</p>
-          <ul class="fleet-specs">
-            <li><strong>Capacidade:</strong> Até 1.5 a 2 toneladas</li>
-            <li><strong>Ideal para:</strong> Fretes rápidos, mercadorias e comércios</li>
-          </ul>
         </div>
 
         <!-- VUC -->
-        <div class="fleet-card highlighted-card">
-          <div class="fleet-badge primary-badge">Mais Solicitado</div>
-          <div class="fleet-icon-box">
-            <svg width="50" height="35" viewBox="0 0 60 35">
-              <rect x="2" y="5" width="36" height="23" rx="2" fill="#FFFFFF" stroke="#FF7700" stroke-width="2"/>
-              <path d="M 38 10 L 48 10 L 56 18 L 56 28 L 38 28 Z" fill="#FF7700"/>
-              <circle cx="14" cy="28" r="4" fill="#000"/>
-              <circle cx="48" cy="28" r="4" fill="#000"/>
-            </svg>
-          </div>
+        <div class="fleet-card active-fleet-card">
+          <div class="fleet-header-tag tag-primary">Padrão SP</div>
           <h3>VUC (Veículo Urbano de Carga)</h3>
-          <p class="fleet-desc">O padrão ideal para transporte de médio porte na Grande São Paulo com dimensões autorizadas pela ZMRC.</p>
-          <ul class="fleet-specs">
-            <li><strong>Capacidade:</strong> Até 3 a 3.5 toneladas</li>
-            <li><strong>Ideal para:</strong> Mudanças, paletes e volumes industriais</li>
-          </ul>
+          <p class="fleet-desc">O veículo de transporte de médio porte ideal para São Paulo. Excelente capacidade de carga e circulação liberada.</p>
+          <div class="fleet-specs-box">
+            <div class="spec-item">
+              <span>Capacidade:</span>
+              <strong>Até 3.5 Toneladas</strong>
+            </div>
+            <div class="spec-item">
+              <span>Uso Ideal:</span>
+              <strong>Mudanças e volumes industriais</strong>
+            </div>
+          </div>
         </div>
 
         <!-- VAN -->
         <div class="fleet-card">
-          <div class="fleet-badge">Furgão / Carga</div>
-          <div class="fleet-icon-box">
-            <svg width="50" height="35" viewBox="0 0 60 35">
-              <path d="M 2 12 C 2 8 6 6 12 6 L 42 6 L 56 16 L 56 28 L 2 28 Z" fill="#FFFFFF" stroke="#FF7700" stroke-width="2"/>
-              <path d="M 40 9 L 52 16 L 40 16 Z" fill="#FF7700"/>
-              <circle cx="14" cy="28" r="4" fill="#000"/>
-              <circle cx="46" cy="28" r="4" fill="#000"/>
-            </svg>
-          </div>
+          <div class="fleet-header-tag">Furgão Fechado</div>
           <h3>VAN / Furgão de Carga</h3>
-          <p class="fleet-desc">Proteção total e rapidez para malotes, caixas e encomendas delicadas que exigem espaço fechado.</p>
-          <ul class="fleet-specs">
-            <li><strong>Capacidade:</strong> Até 1.2 a 1.8 toneladas</li>
-            <li><strong>Ideal para:</strong> Entregas expressas e e-commerce</li>
-          </ul>
+          <p class="fleet-desc">Espaço totalmente fechado para proteção máxima contra intempéries. Excelente para encomendas e volumes urgentes.</p>
+          <div class="fleet-specs-box">
+            <div class="spec-item">
+              <span>Capacidade:</span>
+              <strong>Até 1.5 Toneladas</strong>
+            </div>
+            <div class="spec-item">
+              <span>Uso Ideal:</span>
+              <strong>Entregas rápidas e malotes</strong>
+            </div>
+          </div>
         </div>
 
         <!-- 3/4 -->
         <div class="fleet-card">
-          <div class="fleet-badge">Grande Porte</div>
-          <div class="fleet-icon-box">
-            <svg width="50" height="35" viewBox="0 0 60 35">
-              <rect x="2" y="3" width="38" height="25" rx="2" fill="#FFFFFF" stroke="#FF7700" stroke-width="2"/>
-              <path d="M 40 8 L 50 8 L 58 16 L 58 28 L 40 28 Z" fill="#FF7700"/>
-              <circle cx="12" cy="28" r="4" fill="#000"/>
-              <circle cx="24" cy="28" r="4" fill="#000"/>
-              <circle cx="50" cy="28" r="4" fill="#000"/>
-            </svg>
-          </div>
+          <div class="fleet-header-tag">Grande Volume</div>
           <h3>Caminhão 3/4 Baú</h3>
-          <p class="fleet-desc">Robustez para fretes de maior volume e peso entre municípios e regiões metropolitanas de SP.</p>
-          <ul class="fleet-specs">
-            <li><strong>Capacidade:</strong> Até 4 a 5 toneladas</li>
-            <li><strong>Ideal para:</strong> Cargas industriais e mudanças grandes</li>
-          </ul>
+          <p class="fleet-desc">Caminhão de maior porte para mudanças completas e transporte de grandes volumes entre municípios de SP.</p>
+          <div class="fleet-specs-box">
+            <div class="spec-item">
+              <span>Capacidade:</span>
+              <strong>Até 5.0 Toneladas</strong>
+            </div>
+            <div class="spec-item">
+              <span>Uso Ideal:</span>
+              <strong>Grandes cargas e mudanças pesadas</strong>
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO SERVIÇOS DE FRETES E MUDANÇAS -->
-  <section class="services-section" id="servicos">
+  <!-- SEÇÃO UNIDADES E BASES OPERACIONAIS -->
+  <section class="bases-section" id="unidades">
     <div class="container">
-      <div class="section-header text-center">
-        <span class="section-tag">Nossas Soluções</span>
-        <h2 class="section-title">Fretes & Mudanças Residênciais e Comerciais</h2>
-        <p class="section-description">
-          Serviços sob medida para a sua necessidade de transporte em São Paulo e região.
-        </p>
-      </div>
-
-      <div class="services-grid">
-        
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
-          <h3>Mudanças Residenciais & Comerciais</h3>
-          <p class="service-subtitle">Cuidado total com seu patrimônio</p>
-          <p>Transporte seguro de móveis, eletrodomésticos e utensílios com acomodação adequada no caminhão baú.</p>
-          <a href="#cotacao" class="service-link" onclick="selectServiceInForm('Mudanças Residenciais / Comerciais')">
-            <span>Pedir Cotação</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          </div>
-          <h3>Fretes Urbanos e Regionais</h3>
-          <p class="service-subtitle">São Paulo e Grande SP</p>
-          <p>Transporte de mercadorias entre empresas, lojas, galpões e clientes finais com rapidez e acompanhamento.</p>
-          <a href="#cotacao" class="service-link" onclick="selectServiceInForm('Fretes Urbanos')">
-            <span>Pedir Cotação</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          </div>
-          <h3>Entregas Dedicadas & Rápidas</h3>
-          <p class="service-subtitle">Prioridade Total</p>
-          <p>Veículo exclusivo para a sua carga com horário marcado e entrega direta sem paradas intermediárias.</p>
-          <a href="#cotacao" class="service-link" onclick="selectServiceInForm('Entregas Dedicadas')">
-            <span>Pedir Cotação</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-
-        <div class="service-card">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <h3>Transporte Intermunicipal</h3>
-          <p class="service-subtitle">Ligação entre Cidades</p>
-          <p>Coleta e distribuição entre São Paulo, Mauá, Arujá, Cajamar, Campinas, Santos e demais municípios paulistas.</p>
-          <a href="#cotacao" class="service-link" onclick="selectServiceInForm('Transporte Intermunicipal')">
-            <span>Pedir Cotação</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SEÇÃO BASES DE CARREGAMENTO & COBERTURA -->
-  <section class="bases-section" id="bases">
-    <div class="container">
-      <div class="bases-box">
-        <div class="bases-info">
-          <span class="section-tag">Bases Estratégicas</span>
-          <h2 class="section-title">Bases de Carregamento & Logística</h2>
-          <p>
-            Para garantir agilidade no atendimento e rápido tempo de resposta, a AC Transporte conta com pontos estratégicos de carregamento e operação:
+      <div class="bases-wrapper">
+        <div class="bases-main-info">
+          <span class="section-tag">Nossa Presença</span>
+          <h2 class="section-title">Bases Estratégicas de Carregamento</h2>
+          <p class="lead-desc">
+            Para proporcionar respostas ágeis e rápida mobilização de veículos, possuímos pontos operacionais chave na Região Metropolitana de São Paulo:
           </p>
-          <div class="bases-pills">
-            <div class="base-pill">
-              <span class="base-pin">📍</span>
-              <div>
-                <strong>MAUÁ - SP</strong>
-                <small>Região do ABC Paulista e Zona Leste</small>
+
+          <div class="bases-cards-grid">
+            <div class="base-unit-card">
+              <div class="unit-icon">📍</div>
+              <div class="unit-details">
+                <h4>BASE MAUÁ - SP</h4>
+                <p>Atendimento ao ABC Paulista (Santo André, Bernardo, Caetano), Zona Leste e conexões Rodoanel.</p>
               </div>
             </div>
-            <div class="base-pill">
-              <span class="base-pin">📍</span>
-              <div>
-                <strong>ARUJÁ - SP</strong>
-                <small>Eixo Dutra / Ayrton Senna e Alto Tietê</small>
+
+            <div class="base-unit-card">
+              <div class="unit-icon">📍</div>
+              <div class="unit-details">
+                <h4>BASE ARUJÁ - SP</h4>
+                <p>Polo de ligação estratégica com a Rodovia Presidente Dutra, Ayrton Senna e Alto Tietê.</p>
               </div>
             </div>
-            <div class="base-pill">
-              <span class="base-pin">📍</span>
-              <div>
-                <strong>CAJAMAR - SP</strong>
-                <small>Polo Logístico Anhanguera / Bandeirantes</small>
+
+            <div class="base-unit-card">
+              <div class="unit-icon">📍</div>
+              <div class="unit-details">
+                <h4>BASE CAJAMAR - SP</h4>
+                <p>Centro logístico de alta performance nas rodovias Anhanguera e Bandeirantes.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="bases-contacts-card">
-          <h3>Fale com a Nossa Equipe</h3>
-          <p>Atendimento direto e imediato via WhatsApp:</p>
-          <div class="contact-buttons-list">
-            <a href="https://wa.me/5511912349106?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20equipe%20da%20AC%20Transporte." target="_blank" rel="noopener noreferrer" class="contact-btn-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-              <span>(11) 91234-9106</span>
-            </a>
-            <a href="https://wa.me/5511961566639?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20equipe%20da%20AC%20Transporte." target="_blank" rel="noopener noreferrer" class="contact-btn-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-              <span>(11) 96156-6639</span>
-            </a>
-            <a href="https://wa.me/5511975156404?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20equipe%20da%20AC%20Transporte." target="_blank" rel="noopener noreferrer" class="contact-btn-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-              <span>(11) 97515-6404</span>
-            </a>
+
+        <div class="bases-contact-panel">
+          <div class="panel-box">
+            <h3>Central de Atendimento ao Cliente</h3>
+            <p>Entre em contato direto com a nossa equipe comercial para dúvidas e orçamentos:</p>
+            
+            <div class="direct-phones-list">
+              <a href="https://wa.me/5511912349106" target="_blank" rel="noopener noreferrer" class="phone-link-card">
+                <div class="phone-icon-wrap">📲</div>
+                <div>
+                  <strong>(11) 91234-9106</strong>
+                  <small>Atendimento Principal WhatsApp</small>
+                </div>
+              </a>
+              <a href="https://wa.me/5511961566639" target="_blank" rel="noopener noreferrer" class="phone-link-card">
+                <div class="phone-icon-wrap">📲</div>
+                <div>
+                  <strong>(11) 96156-6639</strong>
+                  <small>Equipe de Logística</small>
+                </div>
+              </a>
+              <a href="https://wa.me/5511975156404" target="_blank" rel="noopener noreferrer" class="phone-link-card">
+                <div class="phone-icon-wrap">📲</div>
+                <div>
+                  <strong>(11) 97515-6404</strong>
+                  <small>Cotações e Agregamento</small>
+                </div>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO TRABALHE CONOSCO / AGREGAMENTO DE MOTORISTAS -->
-  <section class="hiring-section" id="agregamento">
+  <!-- SEÇÃO TRABALHE CONOSCO / AGREGAMENTO -->
+  <section class="agregamento-section" id="agregamento">
     <div class="container">
-      <div class="hiring-card-wrapper">
-        <div class="hiring-header">
-          <div class="hiring-badge">Oportunidade para Motoristas</div>
-          <h2>Estamos Agregando Motoristas com Veículo Próprio!</h2>
-          <p>Venha agregar seu veículo na AC Transporte. Oferecemos demandas constantes de transporte nas nossas bases estratégicas.</p>
-        </div>
+      <div class="agregamento-box">
+        <div class="ag-badge">Oportunidade para Motoristas</div>
+        <h2 class="ag-title">Agregamento de Veículos Próprios</h2>
+        <p class="ag-subtitle">
+          Buscamos motoristas parceiros com veículo próprio para atender nossa demanda crescente de fretes em São Paulo.
+        </p>
 
-        <div class="hiring-features-grid">
-          <div class="hiring-feat-item">
-            <span class="feat-icon">💰</span>
-            <div>
-              <strong>Faturamento Estimado</strong>
-              <p>R$ 18.000,00 até R$ 20.000,00 / mês</p>
-            </div>
+        <div class="ag-stats-grid">
+          <div class="ag-stat-card">
+            <span class="ag-label">Faturamento Estimado</span>
+            <strong class="ag-val">R$ 18.000 a R$ 20.000 /mês</strong>
           </div>
-          <div class="hiring-feat-item">
-            <span class="feat-icon">📅</span>
-            <div>
-              <strong>Pagamento Semanal</strong>
-              <p>Recebimento pontual do seu frete</p>
-            </div>
+          <div class="ag-stat-card">
+            <span class="ag-label">Frequência de Pagamento</span>
+            <strong class="ag-val">Pagamento Semanal</strong>
           </div>
-          <div class="hiring-feat-item">
-            <span class="feat-icon">📍</span>
-            <div>
-              <strong>Bases de Carregamento</strong>
-              <p>Mauá • Arujá • Cajamar</p>
-            </div>
+          <div class="ag-stat-card">
+            <span class="ag-label">Locais de Carregamento</span>
+            <strong class="ag-val">Mauá • Arujá • Cajamar</strong>
           </div>
         </div>
 
-        <div class="hiring-vehicles-accepted">
-          <h4>Veículos Aceitos para Agregamento:</h4>
-          <div class="v-tags">
-            <span class="v-tag">3/4 Baú</span>
-            <span class="v-tag">VAN Furgão</span>
-            <span class="v-tag">VUC Baú</span>
-            <span class="v-tag">HR / Bongo</span>
+        <div class="ag-vehicles-list">
+          <span>Veículos Aceitos:</span>
+          <div class="ag-pills">
+            <span class="ag-pill">3/4 Baú</span>
+            <span class="ag-pill">VUC Baú</span>
+            <span class="ag-pill">VAN Furgão</span>
+            <span class="ag-pill">HR / Bongo</span>
           </div>
         </div>
 
-        <div class="hiring-cta text-center">
-          <a href="https://wa.me/5511912349106?text=Ol%C3%A1!%20Tenho%20ve%C3%ADculo%20pr%C3%B3prio%20e%20gostaria%20de%20me%20agregar%20%C3%A0%20AC%20Transporte." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-            <span>Falar com a Equipe de Agregamento</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <div class="ag-cta">
+          <a href="https://wa.me/5511912349106?text=Ol%C3%A1!%20Tenho%20ve%C3%ADculo%20pr%C3%B3prio%20e%20quero%20me%20agregar%20%C3%A0%20AC%20Transporte." target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <span>Quero me Agregar à AC Transporte</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO COTAÇÃO EM 4 PASSOS -->
+  <!-- CALCULADORA CORPORATIVA DE FRETE -->
   <section class="quote-section" id="cotacao">
     <div class="container">
       <div class="section-header text-center">
-        <span class="section-tag">Calculadora de Frete</span>
-        <h2 class="section-title">Simule sua Cotação em 4 Passos</h2>
+        <span class="section-tag">Calculadora ERP de Frete</span>
+        <h2 class="section-title">Simule a Cotação do seu Frete</h2>
         <p class="section-description">
-          Preencha os dados abaixo para receber uma estimativa rápida de valor de frete ou mudança.
+          Preencha os dados da coleta e entrega para receber uma estimativa rápida de valores e prazos.
         </p>
       </div>
 
-      <div class="quote-wizard-card">
-        
-        <div class="wizard-steps-header">
-          <div class="step-indicator active" id="stepIndicator1">
-            <span class="step-num">1</span>
-            <span class="step-name">Origem</span>
-          </div>
-          <div class="step-line" id="stepLine1"></div>
-          
-          <div class="step-indicator" id="stepIndicator2">
-            <span class="step-num">2</span>
-            <span class="step-name">Destino</span>
-          </div>
-          <div class="step-line" id="stepLine2"></div>
-
-          <div class="step-indicator" id="stepIndicator3">
-            <span class="step-num">3</span>
-            <span class="step-name">Carga / Frota</span>
-          </div>
-          <div class="step-line" id="stepLine3"></div>
-
-          <div class="step-indicator" id="stepIndicator4">
-            <span class="step-num">4</span>
-            <span class="step-name">Contato</span>
+      <div class="calculator-card">
+        <div class="calc-header-bar">
+          <div class="calc-title-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <span>Sistema Integrado de Cotação AC Transporte</span>
           </div>
         </div>
 
-        <form id="quoteForm" class="wizard-form" novalidate>
-          
-          <!-- ETAPA 1: ORIGEM -->
-          <div class="wizard-step-pane active" id="paneStep1">
-            <h3 class="pane-title">Passo 1: Onde vamos coletar a carga?</h3>
-            <div class="form-grid">
-              <div class="form-group full-width">
-                <label for="origemCidade">Cidade e Estado de Origem *</label>
-                <input type="text" id="origemCidade" class="form-control" placeholder="Ex: São Paulo, Mauá, Arujá, Cajamar..." required>
-                <span class="error-msg" id="errOrigemCidade">Por favor, informe a cidade de origem.</span>
-              </div>
-              <div class="form-group">
-                <label for="origemBairro">Bairro / CEP (Opcional)</label>
-                <input type="text" id="origemBairro" class="form-control" placeholder="Ex: Centro, Vila Silva Teles...">
-              </div>
-              <div class="form-group">
-                <label for="origemTipo">Tipo de Local</label>
-                <select id="origemTipo" class="form-control">
-                  <option value="Empresa / Indústria">Empresa / Indústria</option>
-                  <option value="Comércio / Loja">Comércio / Loja</option>
-                  <option value="Residência / Casa / Ap">Residência / Casa / Ap (Mudança)</option>
-                  <option value="Galpão / Depósito">Galpão / Depósito</option>
-                </select>
-              </div>
+        <form id="quoteForm" class="calc-form" novalidate>
+          <div class="calc-form-grid">
+            
+            <!-- Coleta / Origem -->
+            <div class="calc-group">
+              <label for="origemCidade">Cidade e UF de Origem (Coleta) *</label>
+              <input type="text" id="origemCidade" class="form-input" placeholder="Ex: São Paulo - SP, Mauá - SP..." required>
+              <span class="error-msg" id="errOrigemCidade">Informe a cidade de origem.</span>
             </div>
-            <div class="pane-actions align-right">
-              <button type="button" class="btn btn-primary" onclick="nextWizardStep(1)">
-                <span>Próximo Passo: Destino</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
+
+            <!-- Destino / Entrega -->
+            <div class="calc-group">
+              <label for="destinoCidade">Cidade e UF de Destino (Entrega) *</label>
+              <input type="text" id="destinoCidade" class="form-input" placeholder="Ex: Campinas - SP, Santos - SP..." required>
+              <span class="error-msg" id="errDestinoCidade">Informe a cidade de destino.</span>
             </div>
+
+            <!-- Modalidade -->
+            <div class="calc-group">
+              <label for="tipoServicoSelect">Modalidade do Transporte *</label>
+              <select id="tipoServicoSelect" class="form-input" required>
+                <option value="">Selecione o serviço...</option>
+                <option value="Fretes Urbanos">Frete Urbano / Cargas Gerais</option>
+                <option value="Mudanças Residenciais / Comerciais">Mudança Residencial / Comercial</option>
+                <option value="Entregas Dedicadas">Entrega Dedicada / Urgência</option>
+                <option value="Transporte Intermunicipal">Transporte Intermunicipal</option>
+              </select>
+              <span class="error-msg" id="errTipoServico">Selecione uma modalidade.</span>
+            </div>
+
+            <!-- Veículo Preferencial -->
+            <div class="calc-group">
+              <label for="tipoVeiculoSelect">Tipo de Veículo Recomendado</label>
+              <select id="tipoVeiculoSelect" class="form-input">
+                <option value="Aconselhado pela AC">Indicação da Transportadora</option>
+                <option value="HR / Bongo Baú">HR / Bongo Baú (Até 1.8t)</option>
+                <option value="VUC Baú">VUC Baú (Até 3.5t)</option>
+                <option value="VAN Furgão">VAN / Furgão Fechado</option>
+                <option value="Caminhão 3/4 Baú">Caminhão 3/4 Baú (Até 5.0t)</option>
+              </select>
+            </div>
+
+            <!-- Peso / Volume -->
+            <div class="calc-group">
+              <label for="pesoEstimado">Peso / Volume Estimado (Opcional)</label>
+              <input type="text" id="pesoEstimado" class="form-input" placeholder="Ex: 500 kg, 10 caixas, móveis...">
+            </div>
+
+            <!-- Data Preferencial -->
+            <div class="calc-group">
+              <label for="dataPreferencial">Data Preferencial de Coleta</label>
+              <input type="date" id="dataPreferencial" class="form-input">
+            </div>
+
+            <!-- Nome do Solicitante -->
+            <div class="calc-group">
+              <label for="clienteNome">Seu Nome / Razão Social *</label>
+              <input type="text" id="clienteNome" class="form-input" placeholder="Ex: Roberto Silva" required>
+              <span class="error-msg" id="errClienteNome">Informe seu nome ou empresa.</span>
+            </div>
+
+            <!-- Telefone WhatsApp -->
+            <div class="calc-group">
+              <label for="clienteTelefone">Seu WhatsApp com DDD *</label>
+              <input type="tel" id="clienteTelefone" class="form-input" placeholder="Ex: (11) 99999-8888" required>
+              <span class="error-msg" id="errClienteTelefone">Informe seu WhatsApp.</span>
+            </div>
+
+            <!-- Observações -->
+            <div class="calc-group full-width">
+              <label for="observacoesCarga">Observações da Carga ou Mudança (Opcional)</label>
+              <textarea id="observacoesCarga" class="form-input" rows="2" placeholder="Informações de acesso, escadas, ajudantes necessários..."></textarea>
+            </div>
+
           </div>
 
-          <!-- ETAPA 2: DESTINO -->
-          <div class="wizard-step-pane" id="paneStep2">
-            <h3 class="pane-title">Passo 2: Qual o destino da entrega?</h3>
-            <div class="form-grid">
-              <div class="form-group full-width">
-                <label for="destinoCidade">Cidade e Estado de Destino *</label>
-                <input type="text" id="destinoCidade" class="form-control" placeholder="Ex: Campinas - SP, Santos - SP, Guarulhos - SP..." required>
-                <span class="error-msg" id="errDestinoCidade">Por favor, informe a cidade de destino.</span>
-              </div>
-              <div class="form-group">
-                <label for="destinoBairro">Bairro / CEP (Opcional)</label>
-                <input type="text" id="destinoBairro" class="form-control" placeholder="Ex: Centro, Distrito Industrial...">
-              </div>
-              <div class="form-group">
-                <label for="dataPreferencial">Data Preferencial de Coleta</label>
-                <input type="date" id="dataPreferencial" class="form-control">
-              </div>
-            </div>
-            <div class="pane-actions">
-              <button type="button" class="btn btn-secondary" onclick="prevWizardStep(2)">Voltar</button>
-              <button type="button" class="btn btn-primary" onclick="nextWizardStep(2)">
-                <span>Próximo Passo: Dados da Carga</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-            </div>
+          <div class="calc-footer-actions">
+            <button type="submit" class="btn btn-primary btn-calc-submit">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>Gerar Orçamento no WhatsApp</span>
+            </button>
           </div>
-
-          <!-- ETAPA 3: DADOS DA CARGA -->
-          <div class="wizard-step-pane" id="paneStep3">
-            <h3 class="pane-title">Passo 3: Descreva o serviço e tipo de veículo</h3>
-            <div class="form-grid">
-              <div class="form-group">
-                <label for="tipoServicoSelect">Tipo de Serviço *</label>
-                <select id="tipoServicoSelect" class="form-control" required>
-                  <option value="">Selecione o serviço...</option>
-                  <option value="Fretes Urbanos">Frete Urbano / Carga Geral</option>
-                  <option value="Mudanças Residenciais / Comerciais">Mudança Residencial / Comercial</option>
-                  <option value="Entregas Dedicadas">Entrega Dedicada / Rápida</option>
-                  <option value="Transporte Intermunicipal">Transporte Intermunicipal / Estadual</option>
-                </select>
-                <span class="error-msg" id="errTipoServico">Selecione uma modalidade.</span>
-              </div>
-
-              <div class="form-group">
-                <label for="tipoVeiculoSelect">Preferência de Veículo (Opcional)</label>
-                <select id="tipoVeiculoSelect" class="form-control">
-                  <option value="Aconselhado pela AC">Aconselhado pela AC Transporte</option>
-                  <option value="Caminhão HR / Bongo">HR / Bongo</option>
-                  <option value="VUC (Urbano)">VUC (Veículo Urbano de Carga)</option>
-                  <option value="VAN Furgão">VAN / Furgão</option>
-                  <option value="Caminhão 3/4 Baú">Caminhão 3/4 Baú</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="pesoEstimado">Peso Estimado / Volume (Opcional)</label>
-                <input type="text" id="pesoEstimado" class="form-control" placeholder="Ex: 500 kg, 10 caixas, móveis...">
-              </div>
-
-              <div class="form-group full-width">
-                <label for="observacoesCarga">Observações Adicionais (Opcional)</label>
-                <textarea id="observacoesCarga" class="form-control" rows="3" placeholder="Ajudantes necessários, escadas, urgência do frete..."></textarea>
-              </div>
-            </div>
-            <div class="pane-actions">
-              <button type="button" class="btn btn-secondary" onclick="prevWizardStep(3)">Voltar</button>
-              <button type="button" class="btn btn-primary" onclick="nextWizardStep(3)">
-                <span>Próximo Passo: Seus Contatos</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-            </div>
-          </div>
-
-          <!-- ETAPA 4: CONTATO -->
-          <div class="wizard-step-pane" id="paneStep4">
-            <h3 class="pane-title">Passo 4: Como deseja receber seu orçamento?</h3>
-            <div class="form-grid">
-              <div class="form-group">
-                <label for="clienteNome">Seu Nome / Empresa *</label>
-                <input type="text" id="clienteNome" class="form-control" placeholder="Ex: Roberto Silva" required>
-                <span class="error-msg" id="errClienteNome">Informe seu nome ou empresa.</span>
-              </div>
-              <div class="form-group">
-                <label for="clienteTelefone">WhatsApp / Telefone com DDD *</label>
-                <input type="tel" id="clienteTelefone" class="form-control" placeholder="Ex: (11) 99999-8888" required>
-                <span class="error-msg" id="errClienteTelefone">Informe seu WhatsApp de contato.</span>
-              </div>
-            </div>
-
-            <div class="quote-summary-box">
-              <h4>Resumo da sua Solicitação:</h4>
-              <div class="summary-details" id="summaryDetailsText">
-                <p><em>Preencha as etapas anteriores para ver o resumo completo.</em></p>
-              </div>
-            </div>
-
-            <div class="pane-actions">
-              <button type="button" class="btn btn-secondary" onclick="prevWizardStep(4)">Voltar</button>
-              <button type="submit" class="btn btn-primary btn-submit-quote">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-                <span>Enviar Cotação para WhatsApp</span>
-              </button>
-            </div>
-          </div>
-
         </form>
       </div>
     </div>
   </section>
 
-  <!-- RODAPÉ INSTITUCIONAL -->
+  <!-- RODAPÉ INSTITUCIONAL CORPORATIVO -->
   <footer class="footer">
     <div class="container footer-grid">
-      <div class="footer-col footer-brand">
+      <div class="footer-brand-col">
         <a href="#top" class="logo-link">
-          <svg class="logo-svg" viewBox="0 0 350 75" width="200" height="42" aria-hidden="true">
-            <g transform="translate(4, 6)">
-              <rect x="20" y="8" width="34" height="30" rx="3" fill="#FFFFFF" />
-              <path d="M 54 18 L 68 18 L 74 27 L 74 38 L 54 38 Z" fill="#FF7700" />
-              <circle cx="32" cy="40" r="5.5" fill="#0A0A0C" stroke="#FF7700" stroke-width="2" />
-              <circle cx="66" cy="40" r="5.5" fill="#0A0A0C" stroke="#FFFFFF" stroke-width="2" />
+          <svg class="logo-svg" viewBox="0 0 360 70" width="220" height="44" aria-hidden="true">
+            <g transform="translate(2, 4)">
+              <rect x="22" y="10" width="36" height="32" rx="3" fill="#FFFFFF" />
+              <path d="M 58 20 L 72 20 L 78 29 L 78 42 L 58 42 Z" fill="#FF6600" />
+              <circle cx="34" cy="44" r="5.5" fill="#0F172A" stroke="#FF6600" stroke-width="2" />
+              <circle cx="70" cy="44" r="5.5" fill="#0F172A" stroke="#FFFFFF" stroke-width="2" />
             </g>
-            <text x="92" y="36" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="26" fill="#FFFFFF">AC</text>
-            <text x="138" y="36" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="26" fill="#FF7700">TRANSPORTE</text>
-            <text x="93" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="10" fill="#A1A1AA">— FRETES E MUDANÇAS —</text>
+            <text x="96" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="27" fill="#FFFFFF">AC</text>
+            <text x="142" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="27" fill="#FF6600">TRANSPORTE</text>
+            <text x="97" y="55" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="9.5" fill="#94A3B8">— FRETES E MUDANÇAS —</text>
           </svg>
         </a>
-        <p class="footer-tagline">Soluções em transporte rodoviário, fretes e mudanças com rapidez, segurança e atendimento confiável em São Paulo.</p>
-        <div class="footer-legal-badge">
-          <span>Razão Social: AC Transporte LTDA</span><br>
-          <small>Bases: Mauá • Arujá • Cajamar • Sede: São Paulo - SP</small>
+        <p class="footer-desc">
+          Empresa especializada em transporte rodoviário de cargas, fretes urbanos e mudanças em São Paulo e região metropolitana.
+        </p>
+        <div class="footer-cnpj-badge">
+          <strong>Razão Social: AC Transporte LTDA</strong><br>
+          <small>Sede e Operação: São Paulo - SP</small>
         </div>
       </div>
 
@@ -764,83 +631,65 @@
         <h4 class="footer-heading">Navegação</h4>
         <ul class="footer-links">
           <li><a href="#inicio">Início</a></li>
-          <li><a href="#servicos">Fretes e Mudanças</a></li>
-          <li><a href="#frota">Nossa Frota (VUC/HR/3/4)</a></li>
-          <li><a href="#bases">Bases de Carregamento</a></li>
+          <li><a href="#servicos">Serviços de Transporte</a></li>
+          <li><a href="#frota">Frota Operacional (3/4, VUC, HR)</a></li>
+          <li><a href="#unidades">Bases de Carregamento</a></li>
           <li><a href="#agregamento">Trabalhe Conosco (Agregamento)</a></li>
-          <li><a href="#cotacao">Solicitar Cotação</a></li>
+          <li><a href="#cotacao">Calculadora de Frete</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4 class="footer-heading">Bases & Frota</h4>
+        <h4 class="footer-heading">Bases Operacionais</h4>
         <ul class="footer-links">
-          <li><a href="#bases">Base Mauá - SP</a></li>
-          <li><a href="#bases">Base Arujá - SP</a></li>
-          <li><a href="#bases">Base Cajamar - SP</a></li>
-          <li><a href="#frota">Caminhões VUC / HR / 3/4</a></li>
-          <li><a href="#frota">Vans e Furgões de Carga</a></li>
+          <li><a href="#unidades">Base Mauá (ABC Paulista)</a></li>
+          <li><a href="#unidades">Base Arujá (Rod. Dutra / Alto Tietê)</a></li>
+          <li><a href="#unidades">Base Cajamar (Anhanguera / Bandeirantes)</a></li>
+          <li><a href="#unidades">São Paulo (Capital e Região Metropolitan)</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4 class="footer-heading">Telefones de Atendimento</h4>
-        <p class="contact-line">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF7700" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <a href="https://wa.me/5511912349106" target="_blank" style="color:inherit;text-decoration:none;">(11) 91234-9106</a>
-        </p>
-        <p class="contact-line">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF7700" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <a href="https://wa.me/5511961566639" target="_blank" style="color:inherit;text-decoration:none;">(11) 96156-6639</a>
-        </p>
-        <p class="contact-line">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF7700" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <a href="https://wa.me/5511975156404" target="_blank" style="color:inherit;text-decoration:none;">(11) 97515-6404</a>
-        </p>
-        <p class="contact-line">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF7700" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>São Paulo e Região</span>
-        </p>
+        <h4 class="footer-heading">Atendimento Comercial</h4>
+        <div class="footer-contacts-list">
+          <a href="https://wa.me/5511912349106" target="_blank" rel="noopener noreferrer" class="f-contact-item">
+            <span>📲 (11) 91234-9106</span>
+          </a>
+          <a href="https://wa.me/5511961566639" target="_blank" rel="noopener noreferrer" class="f-contact-item">
+            <span>📲 (11) 96156-6639</span>
+          </a>
+          <a href="https://wa.me/5511975156404" target="_blank" rel="noopener noreferrer" class="f-contact-item">
+            <span>📲 (11) 97515-6404</span>
+          </a>
+        </div>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <div class="container footer-bottom-container">
+      <div class="container footer-bottom-flex">
         <p>&copy; 2026 AC Transporte LTDA. Todos os direitos reservados.</p>
-        <div class="footer-bottom-links">
-          <button class="btn-text-link" id="openPrivacyModalBtn">Política de Privacidade (LGPD)</button>
-        </div>
+        <button class="btn-text-link" id="openPrivacyModalBtn">Política de Privacidade (LGPD)</button>
       </div>
     </div>
   </footer>
 
-  <!-- BOTÃO FLUTUANTE DO WHATSAPP (FAB) -->
+  <!-- WHATSAPP FAB FLUTUANTE -->
   <a href="https://wa.me/5511912349106?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AC%20Transporte%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener noreferrer" class="whatsapp-fab" aria-label="Falar com a AC Transporte no WhatsApp">
     <div class="fab-pulse"></div>
     <svg width="32" height="32" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
     <span class="fab-tooltip">Chama a AC Transporte!</span>
   </a>
 
-  <!-- MODAL POLÍTICA DE PRIVACIDADE (LGPD) -->
-  <div class="modal-overlay" id="privacyModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+  <!-- MODAL LGPD -->
+  <div class="modal-overlay" id="privacyModal" aria-hidden="true" role="dialog">
     <div class="modal-card">
       <div class="modal-header">
-        <h3 id="modalTitle">Política de Privacidade (LGPD)</h3>
-        <button class="modal-close-btn" id="closePrivacyModalBtn" aria-label="Fechar Modal">&times;</button>
+        <h3>Política de Privacidade (LGPD)</h3>
+        <button class="modal-close-btn" id="closePrivacyModalBtn">&times;</button>
       </div>
       <div class="modal-body">
-        <p>A <strong>AC Transporte LTDA</strong> tem o compromisso de proteger a privacidade dos dados informados pelos clientes e usuários deste site, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 - LGPD).</p>
-        
-        <h4>1. Coleta de Dados no Formulário de Cotação</h4>
-        <p>Solicitamos apenas os dados estritamente necessários para a elaboração do orçamento de transporte rodoviário, fretes e mudanças:</p>
-        <ul>
-          <li>Cidades de origem e destino da carga;</li>
-          <li>Especificações físicas da mercadoria (peso, tipo de veículo preferencial e observações);</li>
-          <li>Nome e WhatsApp de contato do solicitante.</li>
-        </ul>
-
-        <h4>2. Finalidade do Uso das Informações</h4>
-        <p>Os dados fornecidos são utilizados <strong>exclusivamente</strong> para calcular o valor do frete, entrar em contato via WhatsApp/Telefone para responder à cotação e organizar o atendimento logístico nas nossas bases (Mauá, Arujá, Cajamar ou SP).</p>
+        <p>A <strong>AC Transporte LTDA</strong> assegura o tratamento transparente e seguro das informações coletadas para fins exclusivos de orçamento de fretes e mudanças.</p>
+        <p>Coletamos apenas dados essenciais (cidades de origem/destino, características da carga, nome e WhatsApp) para responder ao pedido de cotação.</p>
       </div>
       <div class="modal-footer">
         <button class="btn btn-primary" id="confirmPrivacyBtn">Entendido</button>
