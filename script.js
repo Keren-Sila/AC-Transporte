@@ -1,10 +1,11 @@
 /* ==========================================================================
-   AC TRANSPORTE - SCRIPT PRINCIPAL E TRACKER DE SCROLL VERTICAL
+   AC TRANSPORTE - SCRIPT DE ANIMAÇÃO DA FROTA & INTERAÇÕES DE SCROLL
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initScrollAnimations();
+  initHeroTruckPhysics();
   initRoadTimeline();
   initPrivacyModal();
   initCalculatorForm();
@@ -57,7 +58,40 @@ function initScrollAnimations() {
   });
 }
 
-/* 3. A ROTA DA CARGA - TIMELINE VERTICAL E CAMINHÃO (VISTA TOP-DOWN) */
+/* 3. ANIMAÇÃO DE FÍSICA E MOVIMENTO DO CAMINHÃO NO HERO (HERO TRUCK PHYSICS) */
+function initHeroTruckPhysics() {
+  const truckHero = document.getElementById('heroInteractiveTruck');
+  if (!truckHero) return;
+
+  let currentY = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let targetX = 0;
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    if (scrollY < 800) {
+      targetY = (scrollY * 0.18);
+      targetX = Math.sin(scrollY * 0.01) * 8;
+    }
+  });
+
+  // Loop de Animação Suave 60 FPS
+  function animateTruck() {
+    currentY += (targetY - currentY) * 0.08;
+    currentX += (targetX - currentX) * 0.08;
+
+    if (truckHero) {
+      truckHero.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+    }
+
+    requestAnimationFrame(animateTruck);
+  }
+
+  animateTruck();
+}
+
+/* 4. A ROTA DA CARGA - TIMELINE VERTICAL E CAMINHÃO GUIADO PELO SCROLL */
 function initRoadTimeline() {
   const roadSection = document.getElementById('jornada');
   const roadLine = document.getElementById('roadProgressLine');
@@ -92,7 +126,7 @@ function initRoadTimeline() {
   });
 }
 
-/* 4. MODAL DA POLÍTICA DE PRIVACIDADE (LGPD) */
+/* 5. MODAL DA POLÍTICA DE PRIVACIDADE (LGPD) */
 function initPrivacyModal() {
   const modal = document.getElementById('privacyModal');
   const openBtn = document.getElementById('openPrivacyModalBtn');
@@ -126,7 +160,7 @@ function initPrivacyModal() {
   });
 }
 
-/* 5. SELEÇÃO DIRETA DE SERVIÇOS NOS CARDS */
+/* 6. SELEÇÃO DIRETA DE SERVIÇOS NOS CARDS */
 window.selectServiceInForm = function(serviceName) {
   const selectElem = document.getElementById('tipoServicoSelect');
   if (selectElem) {
@@ -138,7 +172,7 @@ window.selectServiceInForm = function(serviceName) {
   }
 };
 
-/* 6. FORMULÁRIO CALCULADORA DE FRETE CORPORATIVA */
+/* 7. FORMULÁRIO CALCULADORA DE FRETE CORPORATIVA */
 function initCalculatorForm() {
   const quoteForm = document.getElementById('quoteForm');
   if (!quoteForm) return;

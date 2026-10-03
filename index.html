@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AC Transporte | Fretes e Mudanças Rodoviárias em SP</title>
+  <title>AC Transporte | Transporte Rodoviário de Cargas, Fretes e Mudanças em SP</title>
   <meta name="description" content="AC Transporte LTDA - Transporte rodoviário de cargas, fretes dedicados e mudanças em São Paulo e Região. Bases em Mauá, Arujá e Cajamar. Frota 3/4, VUC, HR e Vans.">
   <meta name="theme-color" content="#0F172A">
   
@@ -20,7 +20,7 @@
   <!-- Barra de Acessibilidade -->
   <a href="#cotacao" class="skip-link">Ir direto para a Cotação</a>
 
-  <!-- BARRA SUPERIOR INSTITUCIONAL -->
+  <!-- TOPBAR -->
   <div class="topbar">
     <div class="container topbar-container">
       <div class="topbar-info">
@@ -43,7 +43,7 @@
     </div>
   </div>
 
-  <!-- NAVBAR PRINCIPAL -->
+  <!-- NAVBAR -->
   <header class="navbar" id="top">
     <div class="container navbar-container">
       <a href="#top" class="logo-link" aria-label="Página Inicial AC Transporte">
@@ -73,7 +73,7 @@
       <nav class="nav-menu" id="navMenu">
         <ul class="nav-list">
           <li><a href="#inicio" class="nav-link active">Início</a></li>
-          <li><a href="#jornada" class="nav-link">A Rota</a></li>
+          <li><a href="#jornada" class="nav-link">A Rota Animada</a></li>
           <li><a href="#servicos" class="nav-link">Serviços</a></li>
           <li><a href="#frota" class="nav-link">Frota</a></li>
           <li><a href="#unidades" class="nav-link">Bases</a></li>
@@ -93,9 +93,9 @@
     </div>
   </header>
 
-  <!-- HERO BANNER (FUNDO ESCURO NAVY COM ILUSTRAÇÃO TOP-DOWN) -->
+  <!-- HERO BANNER COM ANIMAÇÃO CONTINUA DE ESTRADA & CAMINHÃO AC -->
   <section class="hero-section" id="inicio">
-    <div class="hero-container container">
+    <div class="container hero-container">
       <div class="hero-content">
         <div class="hero-badge">
           <span class="badge-dot"></span>
@@ -140,90 +140,98 @@
         </div>
       </div>
 
-      <!-- VISTA DE CIMA DO CAMINHÃO BAÚ (TOP-DOWN TRUCK GRAPHIC) -->
-      <div class="hero-topdown-display">
-        <div class="topdown-truck-card">
-          <div class="card-header-tag">VISTA DE CIMA • TRANSPORTE URBANO</div>
-          <div class="topdown-svg-container">
-            <svg class="topdown-truck-svg" viewBox="0 0 200 360" width="160" height="280">
-              <defs>
-                <linearGradient id="roofOrange" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#FF6600" opacity="0.9" />
-                  <stop offset="100%" stop-color="#D94600" opacity="1" />
-                </linearGradient>
-              </defs>
+      <!-- ANIMAÇÃO DO CAMINHÃO BAÚ RODANDO NA ESTRADA (HERO ANIMATION STAGE) -->
+      <div class="hero-animation-stage">
+        <div class="road-highway-card">
+          <div class="highway-badge">EM MOVIMENTO • ANIMAÇÃO INTERATIVA</div>
+          <div class="highway-track">
+            <!-- Asfalto com Faixa Central Animada -->
+            <div class="asphalt-lane">
+              <div class="lane-stripes"></div>
+            </div>
 
-              <!-- Sombra do Caminhão na Estrada -->
-              <rect x="35" y="25" width="130" height="315" rx="14" fill="#000000" opacity="0.45" filter="blur(6px)" />
+            <!-- Caminhão Baú AC Navegando na Estrada com Faróis e Velocidade -->
+            <div class="animated-truck-vehicle" id="heroInteractiveTruck">
+              <!-- Luz dos Faróis Projetada no Asfalto -->
+              <div class="headlights-beam"></div>
 
-              <!-- Rodas Traseiras Esquerda / Direita -->
-              <rect x="24" y="200" width="14" height="34" rx="3" fill="#1E293B" />
-              <rect x="24" y="240" width="14" height="34" rx="3" fill="#1E293B" />
-              <rect x="162" y="200" width="14" height="34" rx="3" fill="#1E293B" />
-              <rect x="162" y="240" width="14" height="34" rx="3" fill="#1E293B" />
+              <svg class="truck-animated-svg" viewBox="0 0 160 320" width="140" height="260">
+                <defs>
+                  <linearGradient id="roofOrangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FF6600" />
+                    <stop offset="100%" stop-color="#D94600" />
+                  </linearGradient>
+                </defs>
 
-              <!-- Rodas Dianteiras Esquerda / Direita -->
-              <rect x="24" y="60" width="14" height="32" rx="3" fill="#1E293B" />
-              <rect x="162" y="60" width="14" height="32" rx="3" fill="#1E293B" />
+                <!-- Sombra do Veículo -->
+                <rect x="25" y="20" width="110" height="280" rx="12" fill="#000000" opacity="0.5" filter="blur(5px)" />
 
-              <!-- Teto do Baú Branco com Frisos Vetoriais e Marca AC -->
-              <rect x="38" y="110" width="124" height="225" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
-              <line x1="38" y1="150" x2="162" y2="150" stroke="#F1F5F9" stroke-width="2" />
-              <line x1="38" y1="190" x2="162" y2="190" stroke="#F1F5F9" stroke-width="2" />
-              <line x1="38" y1="230" x2="162" y2="230" stroke="#F1F5F9" stroke-width="2" />
-              <line x1="38" y1="270" x2="162" y2="270" stroke="#F1F5F9" stroke-width="2" />
+                <!-- Rodas e Pneus -->
+                <rect x="14" y="170" width="14" height="32" rx="3" fill="#0F172A" />
+                <rect x="14" y="210" width="14" height="32" rx="3" fill="#0F172A" />
+                <rect x="132" y="170" width="14" height="32" rx="3" fill="#0F172A" />
+                <rect x="132" y="210" width="14" height="32" rx="3" fill="#0F172A" />
 
-              <!-- Faixas Diagonais Laranja da Marca AC no Teto do Baú -->
-              <path d="M 38 180 L 162 130 L 162 165 L 38 215 Z" fill="url(#roofOrange)" opacity="0.9" />
-              <text x="100" y="255" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="20" fill="#0F172A">AC</text>
-              <text x="100" y="275" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="11" fill="#FF6600" letter-spacing="2">TRANSPORTE</text>
+                <rect x="14" y="55" width="14" height="30" rx="3" fill="#0F172A" />
+                <rect x="132" y="55" width="14" height="30" rx="3" fill="#0F172A" />
 
-              <!-- Cabine Vista do Alto em Laranja -->
-              <path d="M 46 110 L 46 50 C 46 36 60 22 100 22 C 140 22 154 36 154 50 L 154 110 Z" fill="url(#roofOrange)" />
-              
-              <!-- Para-brisa Dianteiro Escuro -->
-              <path d="M 56 62 C 56 48 70 38 100 38 C 130 38 144 48 144 62 L 144 75 L 56 75 Z" fill="#0F172A" />
+                <!-- Teto do Baú Branco com Frisos Vetoriais e Marca AC TRANSPORTE -->
+                <rect x="26" y="95" width="108" height="200" rx="6" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+                <line x1="26" y1="135" x2="134" y2="135" stroke="#F1F5F9" stroke-width="2" />
+                <line x1="26" y1="175" x2="134" y2="175" stroke="#F1F5F9" stroke-width="2" />
+                <line x1="26" y1="215" x2="134" y2="215" stroke="#F1F5F9" stroke-width="2" />
+                <line x1="26" y1="255" x2="134" y2="255" stroke="#F1F5F9" stroke-width="2" />
 
-              <!-- Retrovisores Laterais -->
-              <rect x="18" y="65" width="12" height="18" rx="3" fill="#334155" />
-              <rect x="170" y="65" width="12" height="18" rx="3" fill="#334155" />
+                <!-- Faixa Diagonal Laranja AC Transporte no Teto do Baú -->
+                <path d="M 26 155 L 134 110 L 134 140 L 26 185 Z" fill="url(#roofOrangeGrad)" />
+                <text x="80" y="225" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#0F172A">AC</text>
+                <text x="80" y="243" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="10" fill="#FF6600" letter-spacing="2">TRANSPORTE</text>
 
-              <!-- Faróis Laranja / Amarelados na Frente -->
-              <rect x="52" y="22" width="18" height="6" rx="2" fill="#FFB703" />
-              <rect x="130" y="22" width="18" height="6" rx="2" fill="#FFB703" />
-            </svg>
+                <!-- Cabine Vista do Alto em Laranja -->
+                <path d="M 34 95 L 34 45 C 34 32 46 18 80 18 C 114 18 126 32 126 45 L 126 95 Z" fill="url(#roofOrangeGrad)" />
+                <path d="M 42 55 C 42 42 54 32 80 32 C 106 32 118 42 118 55 L 118 68 L 42 68 Z" fill="#0F172A" />
+
+                <!-- Retrovisores Laterais -->
+                <rect x="8" y="58" width="10" height="16" rx="2" fill="#334155" />
+                <rect x="142" y="58" width="10" height="16" rx="2" fill="#334155" />
+
+                <!-- Faróis na Dianteira -->
+                <rect x="38" y="18" width="16" height="5" rx="2" fill="#FFB703" />
+                <rect x="106" y="18" width="16" height="5" rx="2" fill="#FFB703" />
+              </svg>
+            </div>
           </div>
-          <div class="topdown-card-info">
-            <strong>Caminhão Baú VUC / HR</strong>
-            <small>Orientado no sentido do scroll mobile</small>
+          <div class="highway-card-footer">
+            <strong>Caminhão Baú AC em Trânsito</strong>
+            <small>Acompanha o movimento da sua navegação</small>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SEÇÃO A ROTA DA CARGA (ESTRADA VERTICAL COM SCROLL TRACKER E PONTOS) -->
+  <!-- SEÇÃO A ROTA DA CARGA COM CAMINHÃO GUIADO PELO SCROLL DO USUÁRIO -->
   <section class="road-section" id="jornada">
     <div class="container">
       <div class="section-header text-center">
         <span class="section-tag">JORNADA DA CARGA</span>
         <h2 class="section-title">
           SAÍDA, ROTA E CHEGADA<br>
-          <span class="text-muted-line">ACOMPANHAMENTO EM TEMPO REAL</span>
+          <span class="text-muted-line">ACOMPANHAMENTO EM TEMPO REAL NO SCROLL</span>
         </h2>
         <p class="section-description">
-          Acompanhe como cuidamos do seu frete desde a coleta nas nossas bases até o descarregamento no destino.
+          Deslize a tela para ver o caminhão da AC Transporte avançando pelos pontos de coleta, trânsito e entrega.
         </p>
       </div>
 
       <div class="road-vertical-wrapper">
-        <!-- Trilha da Pista de Rodovia -->
+        <!-- Pista de Rodovia Vertical Central -->
         <div class="road-vertical-track">
           <div class="road-vertical-progress" id="roadProgressLine"></div>
           
-          <!-- Ícone do Caminhão Baú Vistos de Cima no Scroll -->
-          <div class="scroll-truck-vertical" id="scrollTruckMarker" title="Caminhão em trânsito no scroll">
-            <svg viewBox="0 0 60 100" width="36" height="60">
+          <!-- Caminhão Interativo Guiado no Scroll -->
+          <div class="scroll-truck-vertical" id="scrollTruckMarker" title="Caminhão AC avançando pela rota">
+            <svg viewBox="0 0 60 100" width="40" height="66">
               <rect x="10" y="30" width="40" height="65" rx="3" fill="#FFFFFF" stroke="#FF6600" stroke-width="2" />
               <path d="M 12 15 C 12 8 20 5 30 5 C 40 5 48 8 48 15 L 48 30 L 12 30 Z" fill="#FF6600" />
               <path d="M 16 18 C 16 12 22 8 30 8 C 38 8 44 12 44 18 L 44 24 L 16 24 Z" fill="#0F172A" />
@@ -233,14 +241,13 @@
           </div>
         </div>
 
-        <!-- 3 Pontos de Verificação -->
         <div class="checkpoints-vertical-grid">
           
           <div class="checkpoint-item" id="cp1">
             <div class="cp-node-number">01</div>
             <div class="cp-card">
               <h3>1. Coleta e Organização (Saída)</h3>
-              <p>Coleta agendada com pontualidade na sua empresa ou residência em SP, Mauá, Arujá, Cajamar ou região. Conferência e acondicionamento seguro no caminhão baú.</p>
+              <p>Coleta agendada com pontualidade na sua empresa ou residência em SP, Mauá, Arujá, Cajamar ou região. Conferência e acomodação segura no caminhão baú.</p>
             </div>
           </div>
 
@@ -265,7 +272,7 @@
     </div>
   </section>
 
-  <!-- SEÇÃO SERVIÇOS (FUNDO CLARO DE ALTO CONTRASTE - ALTERNÂNCIA DE TEMA DA REFERÊNCIA) -->
+  <!-- SEÇÃO SERVIÇOS (FUNDO CLARO) -->
   <section class="services-section theme-light-section" id="servicos">
     <div class="container">
       <div class="section-header text-center">
@@ -337,7 +344,7 @@
     </div>
   </section>
 
-  <!-- SEÇÃO FROTA OPERACIONAL (FUNDO ESCURO NAVY) -->
+  <!-- SEÇÃO FROTA OPERACIONAL -->
   <section class="fleet-section" id="frota">
     <div class="container">
       <div class="section-header text-center">
@@ -421,7 +428,7 @@
     </div>
   </section>
 
-  <!-- SEÇÃO UNIDADES E BASES (FUNDO SUAVE OFF-WHITE DE ALTO CONTRASTE) -->
+  <!-- SEÇÃO UNIDADES E BASES -->
   <section class="bases-section theme-light-section" id="unidades">
     <div class="container">
       <div class="bases-wrapper">
