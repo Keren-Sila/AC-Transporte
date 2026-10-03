@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AC Transporte | Cargas em movimento. Destinos conectados.</title>
+  <meta name="description" content="AC Transporte LTDA - Transporte rodoviário de cargas em São Paulo, região metropolitana, intermunicipal e interestadual. Agilidade, segurança e atendimento direto.">
+  <meta name="theme-color" content="#FF6600">
+  
+  <!-- Favicon / Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Barra de Acessibilidade / Skip Link -->
+  <a href="#cotacao" class="skip-link">Ir direto para a Cotação</a>
+
+  <!-- HEADER / NAVEGAÇÃO -->
+  <header class="navbar" id="top">
+    <div class="container navbar-container">
+      <a href="#top" class="logo-link" aria-label="Página Inicial AC Transporte">
+        <svg class="logo-svg" viewBox="0 0 340 70" width="220" height="45" aria-hidden="true">
+          <defs>
+            <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FF7700" />
+              <stop offset="100%" stop-color="#E65100" />
+            </linearGradient>
+            <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="3" result="blur" />
+              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+            </filter>
+          </defs>
+          <!-- Ícone do Caminhão Vetorial no Logo -->
+          <g transform="translate(5, 8)">
+            <!-- Linhas de Velocidade -->
+            <path d="M 0 15 L 12 15 M -4 25 L 16 25 M 2 35 L 14 35" stroke="url(#orangeGrad)" stroke-width="3.5" stroke-linecap="round" />
+            <!-- Corpo do Caminhão Baú -->
+            <rect x="18" y="10" width="32" height="28" rx="4" fill="url(#orangeGrad)" />
+            <path d="M 50 20 L 62 20 L 67 28 L 67 38 L 50 38 Z" fill="#FFFFFF" />
+            <path d="M 53 23 L 60 23 L 63 28 L 53 28 Z" fill="#0A0A0C" />
+            <!-- Rodas -->
+            <circle cx="28" cy="40" r="5" fill="#0A0A0C" stroke="url(#orangeGrad)" stroke-width="2" />
+            <circle cx="58" cy="40" r="5" fill="#0A0A0C" stroke="#FFFFFF" stroke-width="2" />
+          </g>
+          <!-- Texto "AC TRANSPORTE" -->
+          <text x="85" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="28" fill="#FFFFFF" letter-spacing="1">AC</text>
+          <text x="135" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="28" fill="url(#orangeGrad)" letter-spacing="2">TRANSPORTE</text>
+          <text x="86" y="54" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="9" fill="#A1A1AA" letter-spacing="3">RODOVIÁRIO DE CARGAS</text>
+        </svg>
+      </a>
+
+      <!-- Menu Desktop -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link active">Início</a></li>
+          <li><a href="#jornada" class="nav-link">A Rota</a></li>
+          <li><a href="#servicos" class="nav-link">Serviços</a></li>
+          <li><a href="#sobre" class="nav-link">A Empresa</a></li>
+          <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+          <li><a href="#atuacao" class="nav-link">Área de Atuação</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#cotacao" class="btn btn-primary btn-nav">
+          <span>Pedir Cotação</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir Menu de Navegação" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="inicio">
+    <div class="hero-bg-glow"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          <span>Transporte Rodoviário de Cargas • São Paulo & Região</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Cargas em movimento.<br>
+          <span class="text-gradient">Destinos conectados.</span>
+        </h1>
+        
+        <p class="hero-subtitle">
+          Logística rodoviária ágil, segura e sem burocracia para a sua empresa. Atendimento direto com quem entende do transporte e cuida da sua carga do início ao fim.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#cotacao" class="btn btn-primary btn-lg">
+            <span>Solicitar Cotação Grátis</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://wa.me/?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o%20de%20frete%20com%20a%20AC%20Transporte." target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-whatsapp">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Falar no WhatsApp</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Regulamentada (ANTT/CNPJ)</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">Agilidade</span>
+            <span class="stat-label">Atendimento Direto</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">4 Passos</span>
+            <span class="stat-label">Cotação Rápida</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ilustração Interativa do Caminhão no Hero -->
+      <div class="hero-visual">
+        <div class="truck-stage">
+          <div class="truck-glow-bg"></div>
+          <div class="truck-wrapper" id="heroTruck">
+            <svg class="truck-graphic" viewBox="0 0 500 240" width="100%" height="auto">
+              <defs>
+                <linearGradient id="truckBodyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#18181B" />
+                  <stop offset="60%" stop-color="#27272A" />
+                  <stop offset="100%" stop-color="#3F3F46" />
+                </linearGradient>
+                <linearGradient id="truckOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FF7700" />
+                  <stop offset="100%" stop-color="#D94600" />
+                </linearGradient>
+                <filter id="headlightBeam">
+                  <feGaussianBlur stdDeviation="8" />
+                </filter>
+              </defs>
+
+              <!-- Luz dos Faróis -->
+              <polygon points="410,150 495,130 495,190 410,165" fill="#FFB703" opacity="0.35" filter="url(#headlightBeam)" />
+              <polygon points="410,150 490,140 490,180 410,165" fill="#FFFFFF" opacity="0.5" filter="url(#headlightBeam)" />
+
+              <!-- Sombra e Pista Inferior -->
+              <ellipse cx="250" cy="205" rx="210" ry="14" fill="#000000" opacity="0.6" />
+              
+              <!-- Chassi -->
+              <rect x="50" y="160" width="350" height="16" rx="4" fill="#111113" />
+
+              <!-- Baú de Carga -->
+              <rect x="50" y="50" width="280" height="115" rx="8" fill="url(#truckBodyGrad)" stroke="#3F3F46" stroke-width="2" />
+              
+              <!-- Detalhes do Baú / Frisos Vetoriais -->
+              <line x1="70" y1="50" x2="70" y2="165" stroke="#27272A" stroke-width="2" />
+              <line x1="130" y1="50" x2="130" y2="165" stroke="#27272A" stroke-width="2" />
+              <line x1="190" y1="50" x2="190" y2="165" stroke="#27272A" stroke-width="2" />
+              <line x1="250" y1="50" x2="250" y2="165" stroke="#27272A" stroke-width="2" />
+              <line x1="310" y1="50" x2="310" y2="165" stroke="#27272A" stroke-width="2" />
+
+              <!-- Faixa Diagonal Laranja no Baú (Brand Stripe) -->
+              <path d="M 60 165 L 140 50 L 175 50 L 95 165 Z" fill="url(#truckOrange)" opacity="0.9" />
+              <path d="M 180 165 L 260 50 L 285 50 L 205 165 Z" fill="url(#truckOrange)" opacity="0.25" />
+
+              <!-- Marca AC Transporte no Baú -->
+              <text x="180" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="28" fill="#FFFFFF" letter-spacing="2">AC</text>
+              <text x="228" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="28" fill="url(#truckOrange)" letter-spacing="2">TRANSPORTE</text>
+              <text x="181" y="132" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="9" fill="#A1A1AA" letter-spacing="3">CARGAS E LOGÍSTICA</text>
+
+              <!-- Cabine do Caminhão -->
+              <path d="M 330 85 L 390 85 L 420 120 L 420 165 L 330 165 Z" fill="url(#truckOrange)" />
+              <path d="M 360 92 L 390 92 L 410 120 L 360 120 Z" fill="#0A0A0C" stroke="#FF7700" stroke-width="1.5" />
+              
+              <!-- Farol Dianteiro -->
+              <rect x="415" y="145" width="8" height="15" rx="2" fill="#FFFFFF" />
+
+              <!-- Para-choque Dianteiro -->
+              <rect x="410" y="160" width="16" height="12" rx="3" fill="#27272A" />
+
+              <!-- Rodas Triplas com Aro Liga Leve -->
+              <g class="truck-wheel-group">
+                <!-- Roda Traseira 1 -->
+                <circle cx="100" cy="175" r="22" fill="#09090B" stroke="#3F3F46" stroke-width="3" />
+                <circle cx="100" cy="175" r="10" fill="#27272A" />
+                <circle cx="100" cy="175" r="4" fill="url(#truckOrange)" />
+                
+                <!-- Roda Traseira 2 -->
+                <circle cx="155" cy="175" r="22" fill="#09090B" stroke="#3F3F46" stroke-width="3" />
+                <circle cx="155" cy="175" r="10" fill="#27272A" />
+                <circle cx="155" cy="175" r="4" fill="url(#truckOrange)" />
+
+                <!-- Roda Dianteira -->
+                <circle cx="375" cy="175" r="22" fill="#09090B" stroke="#FF7700" stroke-width="3" />
+                <circle cx="375" cy="175" r="10" fill="#27272A" />
+                <circle cx="375" cy="175" r="4" fill="#FFFFFF" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO A ROTA DA CARGA (LINHA DO TEMPO ANIMADA LIGADA AO SCROLL) -->
+  <section class="road-section" id="jornada">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">A Rota do Transporte</span>
+        <h2 class="section-title">Saída, Rota e Chegada</h2>
+        <p class="section-description">
+          Acompanhe como estruturamos a jornada do seu frete com controle, segurança e comunicação em tempo real.
+        </p>
+      </div>
+
+      <div class="road-interactive-container">
+        <!-- Linha da Estrada / Trilha de Conexão -->
+        <div class="road-track">
+          <div class="road-progress-line" id="roadProgressLine"></div>
+          
+          <!-- Caminhão Marcador de Scroll -->
+          <div class="scroll-truck-marker" id="scrollTruckMarker" title="Caminhão em trânsito">
+            <svg viewBox="0 0 60 35" width="40" height="24">
+              <path d="M 0 5 L 35 5 L 35 30 L 0 30 Z" fill="#FF7700" />
+              <path d="M 35 12 L 48 12 L 55 22 L 55 30 L 35 30 Z" fill="#FFFFFF" />
+              <circle cx="12" cy="30" r="4" fill="#000" />
+              <circle cx="45" cy="30" r="4" fill="#000" />
+            </svg>
+          </div>
+        </div>
+
+        <!-- 3 Pontos de Verificação (Checkpoints) -->
+        <div class="checkpoints-grid">
+          
+          <!-- Ponto 1: Saída -->
+          <div class="checkpoint-card" id="cp1">
+            <div class="checkpoint-badge">
+              <span class="cp-number">01</span>
+              <div class="cp-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M5 12l6-6M5 12l6 6"/></svg>
+              </div>
+            </div>
+            <div class="cp-node-dot"></div>
+            <div class="cp-content">
+              <h3>1. Saída (Origem)</h3>
+              <p>Conferência detalhada do volume, acomodação adequada no caminhão baú e emissão de documentação de transporte.</p>
+              <ul class="cp-list">
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF7700" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Coleta agendada com pontualidade</li>
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF7700" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Conferência de lacres e embalagens</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Ponto 2: Em Trânsito -->
+          <div class="checkpoint-card" id="cp2">
+            <div class="checkpoint-badge">
+              <span class="cp-number">02</span>
+              <div class="cp-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+            </div>
+            <div class="cp-node-dot"></div>
+            <div class="cp-content">
+              <h3>2. Em Trânsito (Rota)</h3>
+              <p>Deslocamento por rodovias planejadas, monitoramento direto e aviso constante do status para o cliente.</p>
+              <ul class="cp-list">
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF7700" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Atualização ágil no WhatsApp</li>
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF7700" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Rotas otimizadas contra imprevistos</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Ponto 3: Chegada -->
+          <div class="checkpoint-card" id="cp3">
+            <div class="checkpoint-badge">
+              <span class="cp-number">03</span>
+              <div class="cp-icon-wrap">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+            </div>
+            <div class="cp-node-dot"></div>
+            <div class="cp-content">
+              <h3>3. Chegada (Entrega)</h3>
+              <p>Descarregamento no destino final, verificação de integridade da carga e confirmação de recebimento.</p>
+              <ul class="cp-list">
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF7700" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Entrega no endereço indicado</li>
+                <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FF7700" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Comprovante de entrega assinado</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO SERVIÇOS -->
+  <section class="services-section" id="servicos">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Nossa Especialidade</span>
+        <h2 class="section-title">Serviços de Transporte Rodoviário</h2>
+        <p class="section-description">
+          Atendemos demandas de transporte com flexibilidade, segurança e compromisso com o tipo de carga do seu negócio.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        
+        <!-- Card 1 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3>Carga Municipal</h3>
+          <p class="service-subtitle">São Paulo e Região Metropolitana</p>
+          <p>Coletas e entregas dentro da capital paulista e municípios vizinhos com agilidade no trânsito urbano.</p>
+          <a href="#cotacao" class="service-link" onclick="selectServiceInForm('Carga Municipal')">
+            <span>Pedir Cotação</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Carga Intermunicipal</h3>
+          <p class="service-subtitle">Interior e Litoral de São Paulo</p>
+          <p>Ligação eficiente entre cidades do estado de SP, atendendo comércios, indústrias e distribuição local.</p>
+          <a href="#cotacao" class="service-link" onclick="selectServiceInForm('Carga Intermunicipal')">
+            <span>Pedir Cotação</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Carga Interestadual</h3>
+          <p class="service-subtitle">Conexão entre Estados</p>
+          <p>Transporte rodoviário de média e longa distância com rotas planejadas para garantir prazos e proteção.</p>
+          <a href="#cotacao" class="service-link" onclick="selectServiceInForm('Carga Interestadual')">
+            <span>Pedir Cotação</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Entrega Rápida & Expressa</h3>
+          <p class="service-subtitle">Urgências e Malotes</p>
+          <p>Fretes dedicados de alta prioridade para cargas que necessitam de transporte urgente e exclusivo.</p>
+          <a href="#cotacao" class="service-link" onclick="selectServiceInForm('Entrega Rápida & Expressa')">
+            <span>Pedir Cotação</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO A EMPRESA (TRANSPARÊNCIA E REALIDADE) -->
+  <section class="about-section" id="sobre">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <span class="section-tag">Institucional</span>
+          <h2 class="section-title">A AC Transporte</h2>
+          <p class="lead-text">
+            Somos uma empresa de transporte rodoviário de cargas sediada em São Paulo, nascida com o propósito de oferecer um serviço honesto, pontual e transparente.
+          </p>
+          <p>
+            Entendemos que por trás de cada volume existe um compromisso comercial ou uma necessidade urgente. Por isso, não utilizamos intermediários confusos nem robôs de atendimento: você fala diretamente com quem planeja e executa o transporte.
+          </p>
+          <div class="about-highlights">
+            <div class="about-item">
+              <div class="about-item-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF7700" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <strong>Regularidade Fiscal e Operacional</strong>
+                <p>Empresa devidamente inscrita sob Razão Social <strong>AC Transporte LTDA</strong> (Simples Nacional).</p>
+              </div>
+            </div>
+            <div class="about-item">
+              <div class="about-item-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF7700" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div>
+                <strong>Caminhões Baú Próprio/Adequados</strong>
+                <p>Veículos adequados para proteção total da carga contra intempéries e poeira.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-card-box">
+          <div class="glass-card">
+            <h3>Compromisso AC Transporte</h3>
+            <p class="quote-text">"Nosso objetivo não é ser a maior transportadora, mas sim a mais confiável para o seu frete."</p>
+            <div class="divider"></div>
+            <div class="company-specs">
+              <div class="spec-row">
+                <span class="spec-label">Sede:</span>
+                <span class="spec-val">São Paulo - SP</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Atuação:</span>
+                <span class="spec-val">Municipal, Estadual e Interestadual</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Segmento:</span>
+                <span class="spec-val">Cargas Gerais e Fretes Dedicados</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DIFERENCIAIS -->
+  <section class="features-section" id="diferenciais">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Nossos Valores</span>
+        <h2 class="section-title">Por que escolher a AC Transporte?</h2>
+        <p class="section-description">
+          Diferenciais construídos na prática diária do transporte rodoviário.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Atendimento Direto</h3>
+          <p>Você conversa diretamente com quem gerencia o frete. Respostas rápidas e sem passar por call centers burocráticos.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>Comunicação pelo WhatsApp</h3>
+          <p>Avisos claros de quando a carga foi coletada, onde o veículo está e a previsão exata de chegada.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Cuidado com a Carga</h3>
+          <p>Acondicionamento seguro no caminhão baú para evitar avarias durante o deslocamento rodoviário.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Prazo Combinado</h3>
+          <p>Planejamento realista de rotas. O horário pactuado é respeitado para você não perder compromissos.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO ÁREA DE ATUAÇÃO / MAPA -->
+  <section class="coverage-section" id="atuacao">
+    <div class="container">
+      <div class="coverage-wrapper">
+        <div class="coverage-info">
+          <span class="section-tag">Regiões Atendidas</span>
+          <h2 class="section-title">Área de Atuação Logística</h2>
+          <p>
+            Com base estratégica em São Paulo, atendemos diversas rotas do estado e conexões interestaduais. Confira os polos principais:
+          </p>
+
+          <div class="coverage-tabs">
+            <button class="cov-tab active" data-target="sp-capital">São Paulo (Capital)</button>
+            <button class="cov-tab" data-target="grande-sp">Grande SP / ABC</button>
+            <button class="cov-tab" data-target="interior">Interior & Litoral</button>
+            <button class="cov-tab" data-target="interestadual">Interestadual</button>
+          </div>
+
+          <div class="cov-tab-content active" id="sp-capital">
+            <h4>Capital de São Paulo</h4>
+            <p>Atendimento em todas as zonas (Centro, Zona Norte, Zona Sul, Zona Leste e Zona Oeste). Entregas rápidas e urgentes.</p>
+          </div>
+          <div class="cov-tab-content" id="grande-sp">
+            <h4>Região Metropolitana & ABC Paulista</h4>
+            <p>Guarulhos, Osasco, Barueri, Alphaville, Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema e Cotia.</p>
+          </div>
+          <div class="cov-tab-content" id="interior">
+            <h4>Interior e Litoral Paulista</h4>
+            <p>Rotas frequentes para Campinas, Jundiaí, Sorocaba, São José dos Campos, Baixada Santista e cidades sob consulta.</p>
+          </div>
+          <div class="cov-tab-content" id="interestadual">
+            <h4>Cargas Interestaduais</h4>
+            <p>Fretes dedicados para estados vizinhos (MG, RJ, PR, SC) mediante consulta de viabilidade de frota e prazo.</p>
+          </div>
+        </div>
+
+        <div class="coverage-map-visual">
+          <div class="map-graphic-box">
+            <svg viewBox="0 0 400 300" width="100%" height="100%">
+              <!-- Desenho Vetorial de Malha Rodoviária / Nós de Conexão -->
+              <g opacity="0.3">
+                <line x1="50" y1="150" x2="180" y2="120" stroke="#FF7700" stroke-width="2" stroke-dasharray="4,4" />
+                <line x1="180" y1="120" x2="320" y2="80" stroke="#FF7700" stroke-width="2" stroke-dasharray="4,4" />
+                <line x1="180" y1="120" x2="250" y2="220" stroke="#FF7700" stroke-width="2" stroke-dasharray="4,4" />
+                <line x1="180" y1="120" x2="100" y2="240" stroke="#FF7700" stroke-width="2" stroke-dasharray="4,4" />
+              </g>
+              
+              <!-- Nó Central São Paulo -->
+              <g transform="translate(180, 120)">
+                <circle cx="0" cy="0" r="28" fill="rgba(255, 119, 0, 0.15)" />
+                <circle cx="0" cy="0" r="16" fill="rgba(255, 119, 0, 0.3)" />
+                <circle cx="0" cy="0" r="8" fill="#FF7700" />
+                <text x="0" y="32" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" fill="#FFFFFF">SÃO PAULO (HQ)</text>
+              </g>
+
+              <!-- Nó 1: Campinas / Interior -->
+              <g transform="translate(100, 70)">
+                <circle cx="0" cy="0" r="6" fill="#FF7700" />
+                <text x="0" y="-12" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="10" fill="#A1A1AA">Interior (Campinas/Jundiaí)</text>
+              </g>
+
+              <!-- Nó 2: Vale do Paraíba / RJ -->
+              <g transform="translate(310, 80)">
+                <circle cx="0" cy="0" r="6" fill="#FF7700" />
+                <text x="0" y="-12" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="10" fill="#A1A1AA">Vale do Paraíba / RJ</text>
+              </g>
+
+              <!-- Nó 3: Litoral / Santos -->
+              <g transform="translate(250, 220)">
+                <circle cx="0" cy="0" r="6" fill="#FF7700" />
+                <text x="0" y="20" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="10" fill="#A1A1AA">Litoral / Baixada</text>
+              </g>
+
+              <!-- Nó 4: Sul / PR -->
+              <g transform="translate(80, 230)">
+                <circle cx="0" cy="0" r="6" fill="#FF7700" />
+                <text x="0" y="20" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="10" fill="#A1A1AA">Região Sul / PR</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO COTAÇÃO EM 4 PASSOS -->
+  <section class="quote-section" id="cotacao">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-tag">Calculadora de Frete</span>
+        <h2 class="section-title">Simule sua Cotação em 4 Passos</h2>
+        <p class="section-description">
+          Preencha os dados abaixo para receber uma proposta rápida sem compromisso.
+        </p>
+      </div>
+
+      <div class="quote-wizard-card">
+        
+        <!-- Indicador de Progresso das Etapas -->
+        <div class="wizard-steps-header">
+          <div class="step-indicator active" id="stepIndicator1">
+            <span class="step-num">1</span>
+            <span class="step-name">Origem</span>
+          </div>
+          <div class="step-line" id="stepLine1"></div>
+          
+          <div class="step-indicator" id="stepIndicator2">
+            <span class="step-num">2</span>
+            <span class="step-name">Destino</span>
+          </div>
+          <div class="step-line" id="stepLine2"></div>
+
+          <div class="step-indicator" id="stepIndicator3">
+            <span class="step-num">3</span>
+            <span class="step-name">Carga</span>
+          </div>
+          <div class="step-line" id="stepLine3"></div>
+
+          <div class="step-indicator" id="stepIndicator4">
+            <span class="step-num">4</span>
+            <span class="step-name">Contato</span>
+          </div>
+        </div>
+
+        <!-- Formulário Wizard -->
+        <form id="quoteForm" class="wizard-form" novalidate>
+          
+          <!-- ETAPA 1: ORIGEM -->
+          <div class="wizard-step-pane active" id="paneStep1">
+            <h3 class="pane-title">Passo 1: Onde vamos coletar a carga?</h3>
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label for="origemCidade">Cidade e Estado de Origem *</label>
+                <input type="text" id="origemCidade" class="form-control" placeholder="Ex: São Paulo - SP, Guarulhos - SP..." required>
+                <span class="error-msg" id="errOrigemCidade">Por favor, informe a cidade de origem.</span>
+              </div>
+              <div class="form-group">
+                <label for="origemBairro">Bairro / CEP (Opcional)</label>
+                <input type="text" id="origemBairro" class="form-control" placeholder="Ex: Vila Silva Teles, Mooca, CEP...">
+              </div>
+              <div class="form-group">
+                <label for="origemTipo">Tipo de Local</label>
+                <select id="origemTipo" class="form-control">
+                  <option value="Empresa / Indústria">Empresa / Indústria</option>
+                  <option value="Comércio / Loja">Comércio / Loja</option>
+                  <option value="Galpão / Depósito">Galpão / Depósito</option>
+                  <option value="Residencial">Residencial</option>
+                </select>
+              </div>
+            </div>
+            <div class="pane-actions align-right">
+              <button type="button" class="btn btn-primary" onclick="nextWizardStep(1)">
+                <span>Próximo Passo: Destino</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- ETAPA 2: DESTINO -->
+          <div class="wizard-step-pane" id="paneStep2">
+            <h3 class="pane-title">Passo 2: Qual o destino da entrega?</h3>
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label for="destinoCidade">Cidade e Estado de Destino *</label>
+                <input type="text" id="destinoCidade" class="form-control" placeholder="Ex: Campinas - SP, Santos - SP, Curitiba - PR..." required>
+                <span class="error-msg" id="errDestinoCidade">Por favor, informe a cidade de destino.</span>
+              </div>
+              <div class="form-group">
+                <label for="destinoBairro">Bairro / CEP (Opcional)</label>
+                <input type="text" id="destinoBairro" class="form-control" placeholder="Ex: Centro, Distrito Industrial...">
+              </div>
+              <div class="form-group">
+                <label for="dataPreferencial">Data Preferencial de Coleta</label>
+                <input type="date" id="dataPreferencial" class="form-control">
+              </div>
+            </div>
+            <div class="pane-actions">
+              <button type="button" class="btn btn-secondary" onclick="prevWizardStep(2)">Voltar</button>
+              <button type="button" class="btn btn-primary" onclick="nextWizardStep(2)">
+                <span>Próximo Passo: Dados da Carga</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- ETAPA 3: DADOS DA CARGA -->
+          <div class="wizard-step-pane" id="paneStep3">
+            <h3 class="pane-title">Passo 3: Descreva o que será transportado</h3>
+            <div class="form-grid">
+              <div class="form-group full-width">
+                <label for="tipoServicoSelect">Tipo de Serviço / Mercadoria *</label>
+                <select id="tipoServicoSelect" class="form-control" required>
+                  <option value="">Selecione o serviço...</option>
+                  <option value="Carga Municipal">Carga Municipal (São Paulo)</option>
+                  <option value="Carga Intermunicipal">Carga Intermunicipal (Interior/Litoral SP)</option>
+                  <option value="Carga Interestadual">Carga Interestadual</option>
+                  <option value="Entrega Rápida & Expressa">Entrega Rápida / Malote</option>
+                  <option value="Outro / Cargas Gerais">Outro / Cargas Gerais</option>
+                </select>
+                <span class="error-msg" id="errTipoServico">Selecione uma modalidade de serviço.</span>
+              </div>
+              <div class="form-group">
+                <label for="pesoEstimado">Peso Estimado (kg) (Opcional)</label>
+                <input type="text" id="pesoEstimado" class="form-control" placeholder="Ex: 500 kg, 2 toneladas...">
+              </div>
+              <div class="form-group">
+                <label for="volumeDimen">Volume / Quantidade de Caixas/Paletes (Opcional)</label>
+                <input type="text" id="volumeDimen" class="form-control" placeholder="Ex: 4 paletes, 20 caixas...">
+              </div>
+              <div class="form-group full-width">
+                <label for="observacoesCarga">Observações Adicionais (Opcional)</label>
+                <textarea id="observacoesCarga" class="form-control" rows="3" placeholder="Informações de acesso, urgência ou especificidades do material..."></textarea>
+              </div>
+            </div>
+            <div class="pane-actions">
+              <button type="button" class="btn btn-secondary" onclick="prevWizardStep(3)">Voltar</button>
+              <button type="button" class="btn btn-primary" onclick="nextWizardStep(3)">
+                <span>Próximo Passo: Seus Contatos</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- ETAPA 4: CONTATO -->
+          <div class="wizard-step-pane" id="paneStep4">
+            <h3 class="pane-title">Passo 4: Como deseja receber sua cotação?</h3>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="clienteNome">Seu Nome / Empresa *</label>
+                <input type="text" id="clienteNome" class="form-control" placeholder="Ex: Roberto Silva" required>
+                <span class="error-msg" id="errClienteNome">Informe seu nome ou razão social.</span>
+              </div>
+              <div class="form-group">
+                <label for="clienteTelefone">WhatsApp / Telefone com DDD *</label>
+                <input type="tel" id="clienteTelefone" class="form-control" placeholder="Ex: (11) 99999-8888" required>
+                <span class="error-msg" id="errClienteTelefone">Informe seu telefone/WhatsApp de contato.</span>
+              </div>
+              <div class="form-group full-width">
+                <label for="clienteEmail">E-mail (Opcional)</label>
+                <input type="email" id="clienteEmail" class="form-control" placeholder="Ex: contato@empresa.com.br">
+              </div>
+            </div>
+
+            <!-- Resumo da Cotação Pré-envio -->
+            <div class="quote-summary-box">
+              <h4>Resumo da sua Solicitação:</h4>
+              <div class="summary-details" id="summaryDetailsText">
+                <p><em>Preencha as etapas anteriores para ver o resumo completo.</em></p>
+              </div>
+            </div>
+
+            <div class="pane-actions">
+              <button type="button" class="btn btn-secondary" onclick="prevWizardStep(4)">Voltar</button>
+              <button type="submit" class="btn btn-primary btn-submit-quote">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                <span>Enviar Cotação via WhatsApp</span>
+              </button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ INSTITUCIONAL -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <a href="#top" class="logo-link">
+          <svg class="logo-svg" viewBox="0 0 340 70" width="180" height="38" aria-hidden="true">
+            <g transform="translate(5, 8)">
+              <rect x="18" y="10" width="32" height="28" rx="4" fill="#FF7700" />
+              <path d="M 50 20 L 62 20 L 67 28 L 67 38 L 50 38 Z" fill="#FFFFFF" />
+              <circle cx="28" cy="40" r="5" fill="#0A0A0C" stroke="#FF7700" stroke-width="2" />
+              <circle cx="58" cy="40" r="5" fill="#0A0A0C" stroke="#FFFFFF" stroke-width="2" />
+            </g>
+            <text x="85" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="28" fill="#FFFFFF">AC</text>
+            <text x="135" y="38" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="28" fill="#FF7700">TRANSPORTE</text>
+          </svg>
+        </a>
+        <p class="footer-tagline">Transporte rodoviário de cargas com responsabilidade, agilidade e segurança.</p>
+        <div class="footer-legal-badge">
+          <span>Razão Social: AC Transporte LTDA</span><br>
+          <small>Sede: São Paulo - SP (Vila Silva Teles)</small>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Navegação</h4>
+        <ul class="footer-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#jornada">A Rota do Frete</a></li>
+          <li><a href="#servicos">Nossos Serviços</a></li>
+          <li><a href="#sobre">Sobre a Empresa</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#cotacao">Calculadora de Cotação</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Serviços</h4>
+        <ul class="footer-links">
+          <li><a href="#cotacao" onclick="selectServiceInForm('Carga Municipal')">Carga Municipal SP</a></li>
+          <li><a href="#cotacao" onclick="selectServiceInForm('Carga Intermunicipal')">Intermunicipal (Interior/Litoral)</a></li>
+          <li><a href="#cotacao" onclick="selectServiceInForm('Carga Interestadual')">Interestadual</a></li>
+          <li><a href="#cotacao" onclick="selectServiceInForm('Entrega Rápida & Expressa')">Entregas Rápidas</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Atendimento</h4>
+        <p class="contact-line">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF7700" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>Atendimento Direto via WhatsApp</span>
+        </p>
+        <p class="contact-line">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF7700" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>contato@actransporte.com.br</span>
+        </p>
+        <p class="contact-line">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF7700" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>São Paulo - SP</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p>&copy; 2026 AC Transporte LTDA. Todos os direitos reservados.</p>
+        <div class="footer-bottom-links">
+          <button class="btn-text-link" id="openPrivacyModalBtn">Política de Privacidade (LGPD)</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO FLUTUANTE DO WHATSAPP (FAB) -->
+  <a href="https://wa.me/?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20AC%20Transporte%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20frete." target="_blank" rel="noopener noreferrer" class="whatsapp-fab" aria-label="Falar com a AC Transporte no WhatsApp">
+    <div class="fab-pulse"></div>
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    <span class="fab-tooltip">Falar com a AC Transporte</span>
+  </a>
+
+  <!-- MODAL POLÍTICA DE PRIVACIDADE (LGPD) -->
+  <div class="modal-overlay" id="privacyModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalTitle">Política de Privacidade & Proteção de Dados (LGPD)</h3>
+        <button class="modal-close-btn" id="closePrivacyModalBtn" aria-label="Fechar Modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>A <strong>AC Transporte LTDA</strong> tem o compromisso de proteger a privacidade dos dados informados pelos clientes e usuários deste site, em conformidade com a Lei Geral de Proteção de Dados (Lei nº 13.709/2018 - LGPD).</p>
+        
+        <h4>1. Coleta de Dados no Formulário de Cotação</h4>
+        <p>Solicitamos apenas os dados estritamente necessários para a elaboração do orçamento de transporte rodoviário:</p>
+        <ul>
+          <li>Cidades e detalhes de origem e destino da carga;</li>
+          <li>Especificações físicas da mercadoria (peso, volume e observações);</li>
+          <li>Nome, telefone/WhatsApp e e-mail de contato do solicitante.</li>
+        </ul>
+
+        <h4>2. Finalidade do Uso das Informações</h4>
+        <p>Os dados fornecidos são utilizados <strong>exclusivamente</strong> para calcular o valor do frete, entrar em contato para responder à solicitação de cotação e alinhar a logística do transporte. Não vendemos nem compartilhamos dados com terceiros para fins de marketing.</p>
+
+        <h4>3. Armazenamento e Segurança</h4>
+        <p>Adotamos boas práticas de segurança da informação. As mensagens enviadas por este canal comercial transitam via conexão criptografada (HTTPS/SSL).</p>
+
+        <h4>4. Seus Direitos</h4>
+        <p>Você pode solicitar a confirmação, correção ou exclusão dos seus dados de nosso cadastro de cotações a qualquer momento, entrando em contato diretamente pelo nosso atendimento.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="confirmPrivacyBtn">Entendido</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT PRINCIPAL -->
+  <script src="script.js"></script>
+</body>
+</html>
