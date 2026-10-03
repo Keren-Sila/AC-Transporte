@@ -93,7 +93,7 @@ function initHeroTruckPhysics() {
   animateTruck();
 }
 
-/* 4. A ROTA DA CARGA - TIMELINE VERTICAL E CAMINHÃO GUIADO PELO SCROLL */
+/* 4. A ROTA DA CARGA - TIMELINE VERTICAL E CAMINHÃO GUIADO PELO SCROLL (60 FPS LERP) */
 function initRoadTimeline() {
   const roadSection = document.getElementById('jornada');
   const roadLine = document.getElementById('roadProgressLine');
@@ -104,28 +104,42 @@ function initRoadTimeline() {
 
   if (!roadSection || !roadLine || !truckMarker) return;
 
-  window.addEventListener('scroll', () => {
+  let currentProgress = 0;
+  let targetProgress = 0;
+
+  function updateTargetProgress() {
     const rect = roadSection.getBoundingClientRect();
     const sectionHeight = roadSection.offsetHeight;
     const windowHeight = window.innerHeight;
 
     if (rect.top <= windowHeight && rect.bottom >= 0) {
       let progress = ((windowHeight - rect.top) / (sectionHeight + windowHeight)) * 100;
-      progress = Math.min(Math.max(progress, 0), 100);
-
-      roadLine.style.height = `${progress}%`;
-      truckMarker.style.top = `${progress}%`;
-
-      if (progress >= 20 && cp1) cp1.classList.add('active');
-      else if (cp1) cp1.classList.remove('active');
-
-      if (progress >= 55 && cp2) cp2.classList.add('active');
-      else if (cp2) cp2.classList.remove('active');
-
-      if (progress >= 85 && cp3) cp3.classList.add('active');
-      else if (cp3) cp3.classList.remove('active');
+      targetProgress = Math.min(Math.max(progress, 0), 100);
     }
-  });
+  }
+
+  window.addEventListener('scroll', updateTargetProgress, { passive: true });
+  window.addEventListener('resize', updateTargetProgress, { passive: true });
+
+  function renderRoadProgress() {
+    currentProgress += (targetProgress - currentProgress) * 0.1;
+
+    roadLine.style.height = `${currentProgress}%`;
+    truckMarker.style.top = `${currentProgress}%`;
+
+    if (currentProgress >= 20 && cp1) cp1.classList.add('active');
+    else if (cp1) cp1.classList.remove('active');
+
+    if (currentProgress >= 55 && cp2) cp2.classList.add('active');
+    else if (cp2) cp2.classList.remove('active');
+
+    if (currentProgress >= 85 && cp3) cp3.classList.add('active');
+    else if (cp3) cp3.classList.remove('active');
+
+    requestAnimationFrame(renderRoadProgress);
+  }
+
+  renderRoadProgress();
 }
 
 /* 5. MODAL DA POLÍTICA DE PRIVACIDADE (LGPD) */
