@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initScrollAnimations();
   initRoadTimeline();
-  initCoverageTabs();
   initPrivacyModal();
   initWizardForm();
 });
@@ -23,7 +22,6 @@ function initMobileMenu() {
       hamburgerBtn.setAttribute('aria-expanded', isOpen);
     });
 
-    // Fechar ao clicar em um link
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
@@ -39,7 +37,6 @@ function initScrollAnimations() {
   const sections = document.querySelectorAll('section[id]');
   const heroTruck = document.getElementById('heroTruck');
 
-  // Parallax suave do caminhão no Hero ao rolar
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     
@@ -47,7 +44,6 @@ function initScrollAnimations() {
       heroTruck.style.transform = `translateX(${scrollY * 0.12}px)`;
     }
 
-    // Active state na navbar conforme seção visível
     let currentSec = '';
     sections.forEach(section => {
       const sectionTop = section.offsetTop - 120;
@@ -82,7 +78,6 @@ function initRoadTimeline() {
     const sectionHeight = roadSection.offsetHeight;
     const windowHeight = window.innerHeight;
 
-    // Calcular porcentagem de rolagem dentro da seção de estrada
     if (rect.top <= windowHeight && rect.bottom >= 0) {
       let progress = ((windowHeight - rect.top) / (sectionHeight + windowHeight)) * 100;
       progress = Math.min(Math.max(progress, 0), 100);
@@ -90,7 +85,6 @@ function initRoadTimeline() {
       roadLine.style.height = `${progress}%`;
       truckMarker.style.top = `${progress}%`;
 
-      // Ativar Checkpoints conforme o caminhão passa por eles
       if (progress >= 20 && cp1) cp1.classList.add('active');
       else if (cp1) cp1.classList.remove('active');
 
@@ -103,27 +97,7 @@ function initRoadTimeline() {
   });
 }
 
-/* 4. TABS DA ÁREA DE ATUAÇÃO */
-function initCoverageTabs() {
-  const tabs = document.querySelectorAll('.cov-tab');
-  const contents = document.querySelectorAll('.cov-tab-content');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      contents.forEach(c => c.classList.remove('active'));
-
-      tab.classList.add('active');
-      const targetId = tab.getAttribute('data-target');
-      const targetContent = document.getElementById(targetId);
-      if (targetContent) {
-        targetContent.classList.add('active');
-      }
-    });
-  });
-}
-
-/* 5. MODAL DA POLÍTICA DE PRIVACIDADE (LGPD) */
+/* 4. MODAL DA POLÍTICA DE PRIVACIDADE (LGPD) */
 function initPrivacyModal() {
   const modal = document.getElementById('privacyModal');
   const openBtn = document.getElementById('openPrivacyModalBtn');
@@ -157,7 +131,7 @@ function initPrivacyModal() {
   });
 }
 
-/* 6. CALCULADORA E WIZARD DE COTAÇÃO EM 4 PASSOS */
+/* 5. CALCULADORA E WIZARD DE COTAÇÃO EM 4 PASSOS */
 let currentWizardStep = 1;
 
 function initWizardForm() {
@@ -167,13 +141,11 @@ function initWizardForm() {
   }
 }
 
-// Função invocada ao clicar em "Pedir Cotação" nos cards de serviço
 window.selectServiceInForm = function(serviceName) {
   const selectElem = document.getElementById('tipoServicoSelect');
   if (selectElem) {
     selectElem.value = serviceName;
   }
-  // Ir para o formulário
   const cotacaoSec = document.getElementById('cotacao');
   if (cotacaoSec) {
     cotacaoSec.scrollIntoView({ behavior: 'smooth' });
@@ -252,14 +224,12 @@ function showInputError(inputElem, isError) {
 }
 
 function switchWizardStep(targetStep) {
-  // Ocultar panes atuais e exibir target
   const currentPane = document.getElementById(`paneStep${currentWizardStep}`);
   const targetPane = document.getElementById(`paneStep${targetStep}`);
   
   if (currentPane) currentPane.classList.remove('active');
   if (targetPane) targetPane.classList.add('active');
 
-  // Atualizar cabeçalho dos indicadores
   for (let i = 1; i <= 4; i++) {
     const ind = document.getElementById(`stepIndicator${i}`);
     const line = document.getElementById(`stepLine${i}`);
@@ -278,7 +248,6 @@ function switchWizardStep(targetStep) {
 
   currentWizardStep = targetStep;
 
-  // Atualizar resumo no Passo 4
   if (targetStep === 4) {
     updateSummaryDetails();
   }
@@ -293,14 +262,14 @@ function updateSummaryDetails() {
   const destino = document.getElementById('destinoCidade').value.trim() || 'Não informado';
   const destinoBairro = document.getElementById('destinoBairro').value.trim();
   const tipoServico = document.getElementById('tipoServicoSelect').value || 'Não informado';
+  const veiculo = document.getElementById('tipoVeiculoSelect').value || 'Aconselhado pela AC';
   const peso = document.getElementById('pesoEstimado').value.trim() || 'A combinar';
-  const volume = document.getElementById('volumeDimen').value.trim() || 'A combinar';
 
   summaryBox.innerHTML = `
-    <p><strong>• Origem:</strong> ${origem} ${origemBairro ? `(${origemBairro})` : ''}</p>
-    <p><strong>• Destino:</strong> ${destino} ${destinoBairro ? `(${destinoBairro})` : ''}</p>
-    <p><strong>• Serviço:</strong> ${tipoServico}</p>
-    <p><strong>• Detalhes da Carga:</strong> Peso: ${peso} | Volume: ${volume}</p>
+    <p><strong>• Coleta (Origem):</strong> ${origem} ${origemBairro ? `(${origemBairro})` : ''}</p>
+    <p><strong>• Entrega (Destino):</strong> ${destino} ${destinoBairro ? `(${destinoBairro})` : ''}</p>
+    <p><strong>• Serviço:</strong> ${tipoServico} | <strong>Veículo:</strong> ${veiculo}</p>
+    <p><strong>• Carga:</strong> ${peso}</p>
   `;
 }
 
@@ -318,42 +287,39 @@ function handleFormSubmit(e) {
   const dataPref = document.getElementById('dataPreferencial').value;
   
   const tipoServico = document.getElementById('tipoServicoSelect').value;
+  const veiculo = document.getElementById('tipoVeiculoSelect').value;
   const peso = document.getElementById('pesoEstimado').value.trim();
-  const volume = document.getElementById('volumeDimen').value.trim();
   const obs = document.getElementById('observacoesCarga').value.trim();
 
   const nome = document.getElementById('clienteNome').value.trim();
   const tel = document.getElementById('clienteTelefone').value.trim();
-  const email = document.getElementById('clienteEmail').value.trim();
 
-  // Montar mensagem bem estruturada para o WhatsApp
-  let msg = `*SOLICITAÇÃO DE COTAÇÃO - AC TRANSPORTE*\n\n`;
+  let msg = `🚚 *SOLICITAÇÃO DE COTAÇÃO - AC TRANSPORTE*\n`;
+  msg += `_FRETES E MUDANÇAS INFORMAÇÕES_\n\n`;
   msg += `*Cliente:* ${nome}\n`;
-  msg += `*Telefone:* ${tel}\n`;
-  if (email) msg += `*E-mail:* ${email}\n`;
-  msg += `\n------------------------------\n`;
-  msg += `*COLETA (ORIGEM):* ${origem}`;
+  msg += `*WhatsApp:* ${tel}\n`;
+  msg += `------------------------------------\n`;
+  msg += `*📍 COLETA (ORIGEM):* ${origem}`;
   if (origemBairro) msg += ` - ${origemBairro}`;
   msg += ` (${origemTipo})\n`;
   
-  msg += `*ENTREGA (DESTINO):* ${destino}`;
+  msg += `*🏁 ENTREGA (DESTINO):* ${destino}`;
   if (destinoBairro) msg += ` - ${destinoBairro}`;
   if (dataPref) msg += `\n*Data Preferencial:* ${dataPref}`;
   
-  msg += `\n------------------------------\n`;
+  msg += `\n------------------------------------\n`;
   msg += `*Modalidade:* ${tipoServico}\n`;
-  if (peso) msg += `*Peso Estimado:* ${peso}\n`;
-  if (volume) msg += `*Volume:* ${volume}\n`;
-  if (obs) msg += `*Obs:* ${obs}\n`;
+  msg += `*Veículo Preferencial:* ${veiculo}\n`;
+  if (peso) msg += `*Peso / Volume:* ${peso}\n`;
+  if (obs) msg += `*Observações:* ${obs}\n`;
 
   const encodedMsg = encodeURIComponent(msg);
-  const whatsappUrl = `https://wa.me/?text=${encodedMsg}`;
+  // Número oficial de WhatsApp principal da AC Transporte
+  const whatsappUrl = `https://wa.me/5511912349106?text=${encodedMsg}`;
 
-  // Verificar se o navegador está offline
   if (!navigator.onLine) {
-    alert('Aparentemente você está offline no momento. O link do WhatsApp foi preparado e será aberto assim que a conexão retornar.');
+    alert('Aparentemente você está offline. O link do WhatsApp foi gerado e será aberto.');
   }
 
-  // Abrir WhatsApp com os dados pré-preenchidos
   window.open(whatsappUrl, '_blank');
 }
