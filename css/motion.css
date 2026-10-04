@@ -408,3 +408,96 @@ html { scroll-padding-top: 92px; }
   .reveal-on-scroll, .reveal-on-scroll[data-reveal="left"], .reveal-on-scroll[data-reveal="right"], .reveal-on-scroll[data-reveal="scale"] { opacity: 1; transform: none; transition: none; }
   .ac-actions .btn:hover, .calculator-card:hover, .ac-three > div:hover { transform: none; }
 }
+
+
+/* Camada extra de animação — mantém a identidade original e adiciona ritmo visual. */
+.ac-hero-bg::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 0 36%, rgba(255,255,255,.08) 49%, transparent 62%);
+  content: '';
+  opacity: .18;
+  transform: translateX(-110%);
+  animation: acHeroLightSweep 9s var(--motion-soft) 1.4s infinite;
+  pointer-events: none;
+}
+
+.ac-hero::before { animation: acGridDrift 18s linear infinite; }
+.ac-hero-truck-wrap::after {
+  position: absolute;
+  right: 9%;
+  bottom: 7%;
+  left: 5%;
+  height: 3px;
+  border-radius: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,138,50,.5), transparent);
+  content: '';
+  filter: blur(5px);
+  opacity: .75;
+  transform: scaleX(.55);
+  animation: acRoadPulse 2.6s ease-in-out 1.8s infinite;
+}
+
+.ac-hero .ac-hero-inner > p,
+.ac-hero .ac-actions,
+.ac-hero .ac-hero-scroll-cue { animation: acCopyRise .8s var(--motion-ease) .24s both; }
+.ac-hero .ac-actions { animation-delay: .36s; }
+.ac-hero .ac-hero-scroll-cue { animation-delay: .52s; }
+
+.ac-h2, .ac-h3 { position: relative; }
+.ac-h2::after, .ac-h3::after {
+  display: block;
+  width: clamp(46px, 8vw, 94px);
+  height: 2px;
+  margin-top: 16px;
+  background: linear-gradient(90deg, var(--laranja), transparent);
+  content: '';
+  opacity: .8;
+  transform: scaleX(var(--section-progress, 0));
+  transform-origin: left center;
+  transition: transform .8s var(--motion-ease);
+}
+
+.ac-steps li, .ac-rules li, .ac-three > div, .calculator-card {
+  will-change: transform;
+}
+.ac-steps li:hover { box-shadow: 0 14px 30px rgba(0,0,0,.11); }
+.ac-three > div { transform-origin: center bottom; }
+.ac-three > div:hover { box-shadow: 0 16px 28px rgba(0,0,0,.09); }
+
+.quote-intro h2 { text-wrap: balance; animation: acQuoteGlow 5s ease-in-out 1.2s infinite; }
+.quote-stepper-track span { transition: width .55s var(--motion-ease); }
+
+@keyframes acHeroLightSweep {
+  0%, 20% { transform: translateX(-110%); }
+  48%, 100% { transform: translateX(110%); }
+}
+@keyframes acGridDrift {
+  from { background-position: 0 0, 0 0, 0 0; }
+  to { background-position: 88px 88px, -88px 44px, 0 0; }
+}
+@keyframes acRoadPulse {
+  0%, 100% { opacity: .2; transform: scaleX(.42); }
+  50% { opacity: .9; transform: scaleX(1); }
+}
+@keyframes acCopyRise {
+  from { opacity: 0; transform: translate3d(0, 16px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes acQuoteGlow {
+  0%, 100% { text-shadow: 0 0 0 rgba(232,97,10,0); }
+  50% { text-shadow: 0 8px 24px rgba(232,97,10,.16); }
+}
+
+@media (max-width: 700px) {
+  .ac-hero::before { animation-duration: 24s; }
+  .ac-hero-truck-wrap::after { right: 2%; left: 3%; }
+  .ac-h2::after, .ac-h3::after { margin-top: 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ac-hero-bg::after, .ac-hero::before, .ac-hero-truck-wrap::after,
+  .ac-hero .ac-hero-inner > p, .ac-hero .ac-actions, .ac-hero .ac-hero-scroll-cue,
+  .quote-intro h2 { animation: none !important; }
+  .ac-h2::after, .ac-h3::after { transform: scaleX(1); }
+}

@@ -14,7 +14,9 @@ export function initObserver() {
     '.inner-page .contact-channel', '.inner-page .tracking-how-layout > *', '.inner-page .tracking-how-list li',
     '.inner-page .inner-cta > *', '.inner-page .fleet-quote-layout > *',
     '.inner-page .contact-bottom-inner > *', '.inner-page .tracking-help-inner > *',
-    '.ac-facts > div', '.ac-steps li', '.ac-three > *', '.quote-intro', '.calculator-card'
+    '.ac-facts > div', '.ac-steps li', '.ac-three > *', '.quote-intro', '.calculator-card',
+    '.ac-sec .ac-h2', '.ac-sec .ac-h3', '.ac-sec .ac-lead', '.ac-sec .ac-link',
+    '.quote-stepper-shell', '.quote-step-status'
   ].join(', '));
 
   if (isReducedMotion || !('IntersectionObserver' in window)) {
