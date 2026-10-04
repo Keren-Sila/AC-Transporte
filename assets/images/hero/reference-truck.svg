@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">Caminhão amarelo de carga</title>
+  <desc id="desc">Caminhão semirreboque amarelo visto em três quartos.</desc>
+  <defs>
+    <linearGradient id="box" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffd15a"/><stop offset=".55" stop-color="#f2b53a"/><stop offset="1" stop-color="#ce8b1e"/></linearGradient>
+    <linearGradient id="cab" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffd365"/><stop offset="1" stop-color="#d88e22"/></linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e5eef0"/><stop offset="1" stop-color="#57727d"/></linearGradient>
+  </defs>
+  <ellipse cx="618" cy="444" rx="470" ry="35" fill="#02080b" opacity=".68"/>
+  <path d="M100 403h930" stroke="#f5bf48" stroke-width="5" stroke-dasharray="45 28" opacity=".62"/>
+  <g stroke-linejoin="round">
+    <path d="M148 108h633q20 0 20 20v256H140V129q0-21 8-21Z" fill="url(#box)" stroke="#9b6518" stroke-width="4"/>
+    <path d="M173 132h602v226H173z" fill="none" stroke="#fff0b8" stroke-opacity=".45" stroke-width="2"/>
+    <path d="M151 326h650v34H151z" fill="#d28c20"/>
+    <path d="M185 150h567" stroke="#fff7d5" stroke-opacity=".5" stroke-width="4"/>
+    <path d="M203 184h306" stroke="#62420f" stroke-opacity=".23" stroke-width="2" stroke-dasharray="8 11"/>
+    <path d="M224 218h260" stroke="#62420f" stroke-opacity=".18" stroke-width="2" stroke-dasharray="8 11"/>
+    <text x="220" y="208" fill="#543708" font-family="Arial,sans-serif" font-size="36" font-weight="800">Logistic</text>
+    <text x="575" y="208" fill="#543708" font-family="Arial,sans-serif" font-size="15" font-weight="700" text-anchor="end">Safe &amp; Reliable</text>
+    <text x="575" y="229" fill="#543708" font-family="Arial,sans-serif" font-size="13" text-anchor="end">Cargo Solutions</text>
+    <path d="M795 190h123l68 73v121H785v-123l10-71Z" fill="url(#cab)" stroke="#9a641a" stroke-width="4"/>
+    <path d="M816 212h89l52 58H801l10-46q1-12 5-12Z" fill="url(#glass)" stroke="#f7edc6" stroke-opacity=".7" stroke-width="4"/>
+    <path d="M908 213v56" stroke="#d9e3e3" stroke-width="3" opacity=".65"/>
+    <path d="M794 289h167" stroke="#fff0ac" stroke-opacity=".65" stroke-width="4"/>
+    <path d="M779 388h216v18H779z" fill="#202b2e"/>
+    <path d="M112 384h910" stroke="#20282b" stroke-width="15"/>
+    <path d="M173 389h52m10 0h52m255 0h55m10 0h55m228 0h55" stroke="#aeb8b6" stroke-width="6"/>
+    <g fill="#101719" stroke="#657376" stroke-width="9"><circle cx="280" cy="408" r="43"/><circle cx="490" cy="408" r="43"/><circle cx="705" cy="408" r="43"/><circle cx="848" cy="408" r="43"/><circle cx="955" cy="408" r="43"/></g>
+    <g fill="#c7d0cc" stroke="#333d40" stroke-width="5"><circle cx="280" cy="408" r="17"/><circle cx="490" cy="408" r="17"/><circle cx="705" cy="408" r="17"/><circle cx="848" cy="408" r="17"/><circle cx="955" cy="408" r="17"/></g>
+    <circle cx="999" cy="348" r="8" fill="#ffdf7b"/>
+  </g>
+</svg>
