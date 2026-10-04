@@ -1,6 +1,6 @@
 /**
  * AC TRANSPORTE - Operation Timeline Progress Engine
- * Animates steps (01 -> 02 -> 03 -> 04 -> 05) sequentially with orange connecting line on scroll.
+ * Animates steps (1 -> 2 -> 3 -> 4 -> 5) sequentially as user scrolls down the operation section.
  */
 
 export function initTimelineAnimation() {
@@ -10,17 +10,6 @@ export function initTimelineAnimation() {
   const stepItems = operacaoSection.querySelectorAll('.ac-steps li, .process-steps li');
   if (!stepItems.length) return;
 
-  // Insert progress bar connector if missing
-  let progressLine = operacaoSection.querySelector('.timeline-progress-bar');
-  if (!progressLine) {
-    const parentContainer = stepItems[0].parentElement;
-    if (parentContainer) {
-      progressLine = document.createElement('div');
-      progressLine.className = 'timeline-progress-bar';
-      parentContainer.prepend(progressLine);
-    }
-  }
-
   if (!('IntersectionObserver' in window)) {
     stepItems.forEach((step) => step.classList.add('active-step'));
     return;
@@ -29,23 +18,15 @@ export function initTimelineAnimation() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        stepItems.forEach((step, idx) => {
+        stepItems.forEach((step) => {
           const rect = step.getBoundingClientRect();
-          if (rect.top <= window.innerHeight * 0.75) {
+          if (rect.top <= window.innerHeight * 0.82) {
             step.classList.add('active-step');
           }
         });
-        
-        // Calculate progress percentage
-        const activeStepsCount = operacaoSection.querySelectorAll('.active-step').length;
-        const progressPercentage = ((activeStepsCount - 1) / (stepItems.length - 1)) * 100;
-        
-        if (progressLine) {
-          progressLine.style.width = `${Math.max(0, Math.min(progressPercentage, 100))}%`;
-        }
       }
     });
-  }, { threshold: 0.25 });
+  }, { threshold: 0.2 });
 
   stepItems.forEach((step) => observer.observe(step));
 }
