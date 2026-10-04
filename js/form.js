@@ -28,7 +28,9 @@ export function initQuoteForm() {
         method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: form.querySelector('#clienteNome').value,
+          company: form.querySelector('#clienteEmpresa').value,
           phone: form.querySelector('#clienteTelefone').value,
+          email: form.querySelector('#clienteEmail').value,
           origin: form.querySelector('#origemCidade').value,
           destination: form.querySelector('#destinoCidade').value,
           service: form.querySelector('#tipoServicoSelect').value,
@@ -91,7 +93,7 @@ export function initAdminPanel() {
       row.className = 'admin-record';
       const details = document.createElement('div');
       const title = document.createElement('h3'); text(title, `${quote.reference} · ${quote.name}`);
-      const info = document.createElement('p'); text(info, `${quote.origin} → ${quote.destination} · ${quote.service} · ${quote.phone}`);
+      const info = document.createElement('p'); text(info, `${quote.company || quote.email || quote.phone} · ${quote.origin} → ${quote.destination} · ${quote.service}`);
       const status = document.createElement('p'); text(status, `Status: ${quote.status}`);
       details.append(title, info, status);
       const select = document.createElement('select');

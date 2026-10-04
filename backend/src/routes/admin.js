@@ -46,7 +46,7 @@ router.post('/logout', requireSameOrigin, requireAdmin, requireCsrf, (req, res, 
 router.get('/quotes', requireAdmin, asyncRoute(async (req, res) => {
   const limit = Math.min(Math.max(Number(req.query.limit) || 50, 1), 100);
   const result = await pool.query(
-    `SELECT id, public_id AS reference, name, phone, origin, destination, service, cargo, notes, status, created_at
+    `SELECT id, public_id AS reference, name, company, phone, email, origin, destination, service, cargo, notes, status, created_at
        FROM quote_requests ORDER BY created_at DESC LIMIT $1`, [limit],
   );
   res.set('Cache-Control', 'no-store');
