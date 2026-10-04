@@ -10,21 +10,21 @@ html { scroll-behavior: smooth; }
 body { color: #111a1e; background: #fff; font-family: 'Plus Jakarta Sans', Arial, sans-serif; }
 .container { width: min(100% - 48px, 1280px); padding: 0; }
 .topbar-corporate { display: none; }
-.header-site { position: absolute; inset: 0 0 auto; z-index: 50; padding: 16px 0; background: linear-gradient(180deg, rgba(8,12,22,0.94) 0%, rgba(8,12,22,0.4) 75%, transparent 100%); border-bottom: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(8px); }
-.header-container { min-height: 60px; gap: 28px; }
-.brand-logo img, .logo-svg { width: auto; max-width: 210px; height: 52px; object-fit: contain; object-position: left center; }
+.header-site { position: sticky; top: 0; z-index: 100; padding: 10px 0; background: #ffffff !important; border-bottom: 1px solid #e2e8f0; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+.header-container { min-height: 66px; gap: 26px; }
+.brand-logo img, .logo-svg { width: auto; max-width: 210px; height: 60px; max-height: 64px; object-fit: contain; object-position: left center; }
 .nav-menu { background: transparent; }
-.nav-list { gap: clamp(18px, 2.8vw, 42px); }
-.nav-link { color: rgba(255,255,255,0.88) !important; font-size: 0.88rem; font-weight: 600; text-decoration: none; }
-.nav-link:hover, .nav-link.active { color: #FF6600 !important; }
+.nav-list { gap: clamp(18px, 2.5vw, 36px); }
+.nav-link { color: #1e293b !important; font-size: .9rem; font-weight: 700; text-decoration: none; }
+.nav-link:hover, .nav-link.active { color: #f25c05 !important; }
 .nav-link.active::after { display: none; }
-.btn-nav-cta { min-height: 42px; padding: 11px 24px; border-radius: 999px; background: #FF6600; border: 0; color: #ffffff !important; font-size: 0.82rem; font-weight: 700; box-shadow: 0 4px 14px rgba(255,102,0,0.35); }
-.btn-nav-cta:hover { color: #ffffff !important; background: #ff781e; transform: translateY(-1px); }
-.hamburger-btn { border-color: rgba(255,255,255,0.3); }
-.hamburger-btn .bar { background: #ffffff; }
+.btn-nav-cta { min-height: 40px; padding: 10px 22px; border-radius: 4px; background: #f25c05; border: 0; color: #ffffff !important; font-size: .85rem; font-weight: 700; box-shadow: 0 2px 6px rgba(242,92,5,0.25); }
+.btn-nav-cta:hover { color: #ffffff !important; background: #d95300; }
+.hamburger-btn { border-color: #cbd5e1; }
+.hamburger-btn .bar { background: #1e293b; }
 
-.hero-section { position: relative; min-height: min(720px, 86vh); padding: 112px 0 0; overflow: hidden; color: #fff; background: #0A0F1D; }
-.hero-backdrop { position: absolute; inset: 0; background-image: linear-gradient(90deg, rgba(7,11,20,0.96) 0%, rgba(10,15,29,0.78) 35%, rgba(10,15,29,0.25) 70%, rgba(10,15,29,0.1) 100%), linear-gradient(0deg, rgba(7,11,20,0.7), transparent 50%), url('../assets/images/hero/hero-truck.svg'); background-size: cover; background-position: center 57%; }
+.hero-section { position: relative; min-height: min(640px, 78vh); padding: 24px 0 0; overflow: hidden; color: #fff; background: #121819; }
+.hero-backdrop { position: absolute; inset: 0; background-image: linear-gradient(90deg, rgba(5,10,11,.96) 0%, rgba(7,12,13,.78) 27%, rgba(9,13,13,.2) 66%, rgba(14,13,11,.08) 100%), linear-gradient(0deg, rgba(4,8,9,.64), transparent 45%), url('https://images.unsplash.com/photo-1616432043562-3671ea2e5242?auto=format&fit=crop&fm=jpg&q=88&w=2200'); background-size: cover; background-position: center 57%; }
 .hero-grid { position: relative; z-index: 1; display: flex; min-height: 582px; align-items: center; padding-top: 48px; padding-bottom: 56px; }
 .hero-text-col { max-width: 520px; padding: 0; }
 .hero-kicker { gap: 8px; margin-bottom: 17px; color: var(--brand-orange); font-size: .7rem; letter-spacing: .1em; }
@@ -247,3 +247,177 @@ body[data-root="../"] .page-hero { padding-top: 64px; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-brand-col { grid-column: auto; }
 }
+
+/* ==========================================================================
+   V3 "A JORNADA DA CARGA" SCROLL & PHYSICS ENGINE STYLES
+   ========================================================================== */
+
+/* 1. SVG Cargo Route Connector Track & Truck Marker */
+.ac-cargo-route-container {
+  position: fixed;
+  right: 18px;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.ac-route-svg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.ac-route-bg-line {
+  stroke: rgba(255, 102, 0, 0.18);
+  stroke-width: 4;
+}
+
+.ac-route-active-line {
+  stroke: #FF6600;
+  stroke-width: 4;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 6px rgba(255, 102, 0, 0.8));
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.ac-route-truck-marker {
+  position: fixed;
+  right: 8px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #0A0F1D;
+  border: 1 border-color: #FF6600;
+  border: 1.5px solid #FF6600;
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4), 0 0 10px rgba(255, 102, 0, 0.5);
+  will-change: transform;
+}
+
+.ac-route-truck-marker .truck-emoji {
+  font-size: 1.15rem;
+  transform: scaleX(-1);
+}
+
+.route-pulse-glow {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid #FF6600;
+  opacity: 0.6;
+  animation: pulseRouteMarker 2s infinite;
+}
+
+@keyframes pulseRouteMarker {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* 2. Scroll Reveal & Stagger Cascade */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* 3. Quem Somos Photo Slow Zoom (100% -> 103%) */
+.about-photo img, .ac-sec#sobre img {
+  transition: transform 3.5s ease-out;
+}
+
+.about-photo img.zoom-active, .ac-sec#sobre img.zoom-active {
+  transform: scale(1.035);
+}
+
+/* 4. Service Cards Interativo Hover */
+.service-photo-card, .ac-rules li {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.service-photo-card.is-hovered, .service-photo-card:hover {
+  transform: translate3d(0, -7px, 0);
+  border-color: #FF6600 !important;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15), 0 0 14px rgba(255, 102, 0, 0.25);
+}
+
+.service-photo-card.is-hovered img, .service-photo-card:hover img {
+  transform: scale(1.05);
+}
+
+.service-photo-card a span, .ac-rules li strong::after {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.service-photo-card.is-hovered a span, .service-photo-card:hover a span {
+  transform: translate3d(4px, -3px, 0);
+}
+
+/* 5. Operation Steps Timeline Progress */
+.ac-steps, .process-steps {
+  position: relative;
+}
+
+.timeline-progress-bar {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF6600, #FFA000);
+  box-shadow: 0 0 8px rgba(255, 102, 0, 0.8);
+  width: 0%;
+  transition: width 0.4s ease;
+  z-index: 1;
+}
+
+.ac-steps li.active-step b, .process-steps li.active-step .process-symbol {
+  background: #FF6600 !important;
+  color: #FFFFFF !important;
+  border-color: #FF6600 !important;
+  box-shadow: 0 0 14px rgba(255, 102, 0, 0.6);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* 6. Map Pulsing Pins & Routes */
+.map-route {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  transition: stroke-dashoffset 1.2s ease-in-out;
+}
+
+.map-route.drawn {
+  stroke-dashoffset: 0;
+}
+
+.map-pin.pulsing::before {
+  animation: pulsePinNode 1.8s infinite;
+}
+
+@keyframes pulsePinNode {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.4; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .ac-cargo-route-container {
+    display: none;
+  }
+}
+

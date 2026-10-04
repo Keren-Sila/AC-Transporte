@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sky-grad-v3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0A0F1D"/>
+      <stop offset="60%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="orange-glow-v3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF6600"/>
+      <stop offset="100%" stop-color="#FF8800"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="url(#sky-grad-v3)"/>
+
+  <!-- Highway Horizon -->
+  <polygon points="0,600 350,340 450,340 800,600" fill="#0F172A"/>
+  <polygon points="390,340 410,340 430,600 370,600" fill="#1E293B"/>
+  
+  <!-- Highway Center Line -->
+  <line x1="400" y1="340" x2="400" y2="600" stroke="#FF6600" stroke-width="6" stroke-dasharray="20 15"/>
+
+  <!-- Semi Truck SVG -->
+  <g transform="translate(180, 260) scale(0.75)">
+    <!-- Trailer -->
+    <rect x="0" y="40" width="360" height="130" rx="8" fill="#FFFFFF" stroke="#94A3B8" stroke-width="2"/>
+    <rect x="0" y="90" width="360" height="25" fill="url(#orange-glow-v3)"/>
+    <text x="180" y="108" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="14" letter-spacing="2" text-anchor="middle">AC TRANSPORTE</text>
+    
+    <!-- Cabin -->
+    <path d="M 360 70 L 430 70 L 460 100 L 460 170 L 360 170 Z" fill="#FF6600"/>
+    <polygon points="400,80 430,80 450,105 400,105" fill="#0A0F1D"/>
+
+    <!-- Wheels -->
+    <circle cx="80" cy="170" r="24" fill="#0F172A" stroke="#475569" stroke-width="5"/>
+    <circle cx="160" cy="170" r="24" fill="#0F172A" stroke="#475569" stroke-width="5"/>
+    <circle cx="310" cy="170" r="24" fill="#0F172A" stroke="#475569" stroke-width="5"/>
+    <circle cx="420" cy="170" r="24" fill="#0F172A" stroke="#475569" stroke-width="5"/>
+  </g>
+
+  <!-- Speed Motion Lines -->
+  <line x1="50" y1="420" x2="250" y2="420" stroke="#FF6600" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <line x1="20" y1="460" x2="180" y2="460" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Badge Tag -->
+  <rect x="40" y="40" width="230" height="44" rx="22" fill="#0A0F1D" opacity="0.9" stroke="#FF6600" stroke-width="2"/>
+  <text x="155" y="67" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="14" text-anchor="middle">TRANSPORTE RODOVIÁRIO</text>
+</svg>

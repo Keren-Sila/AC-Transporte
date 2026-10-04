@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad-empresa" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0F1D"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="orange-grad-empresa" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF6600"/>
+      <stop offset="100%" stop-color="#FFA000"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1400" height="800" fill="url(#bg-grad-empresa)"/>
+
+  <!-- Building Silhouette -->
+  <path d="M 100 800 L 100 320 L 550 240 L 950 350 L 950 800 Z" fill="#151D2A" opacity="0.9"/>
+  
+  <!-- Ground -->
+  <rect x="0" y="680" width="1400" height="120" fill="#0D1322"/>
+  <line x1="0" y1="695" x2="1400" y2="695" stroke="#FF6600" stroke-width="4"/>
+
+  <!-- Truck -->
+  <g transform="translate(150, 480)">
+    <rect x="0" y="50" width="480" height="160" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="3"/>
+    <rect x="0" y="110" width="480" height="30" fill="url(#orange-grad-empresa)"/>
+    <text x="240" y="132" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="18" letter-spacing="3" text-anchor="middle">AC TRANSPORTE LTDA</text>
+    
+    <path d="M 480 90 L 570 90 L 610 130 L 610 210 L 480 210 Z" fill="#FF6600"/>
+    <polygon points="530,105 570,105 595,138 530,138" fill="#0A0F1D" opacity="0.8"/>
+  </g>
+
+  <g transform="translate(70, 70)">
+    <rect x="0" y="0" width="360" height="60" rx="30" fill="#0A0F1D" opacity="0.85" stroke="#FF6600" stroke-width="2"/>
+    <text x="180" y="36" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="15" text-anchor="middle">AC TRANSPORTE • SÃO PAULO</text>
+  </g>
+</svg>
