@@ -5,6 +5,7 @@
 
 export function initObserver() {
   const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isLiteMotion = document.documentElement.dataset.motion === 'lite';
   const revealElements = document.querySelectorAll([
     '.reveal-on-scroll', '.ac-rules li', '.feature-item', '.service-photo-card', '.value-item', '.contact-proof-card',
     '.inner-page .inner-hero-copy > *', '.inner-page .hero-aside',
@@ -26,7 +27,7 @@ export function initObserver() {
 
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -60px 0px',
+    rootMargin: isLiteMotion ? '0px 0px -20px 0px' : '0px 0px -60px 0px',
     threshold: 0.15
   };
 
@@ -58,7 +59,7 @@ export function initObserver() {
       parent.classList.contains('ac-facts') || parent.classList.contains('ac-three')
     )) {
       const childIndex = Array.from(parent.children).indexOf(el);
-      el.dataset.staggerDelay = Math.min(childIndex, 4) * 95;
+      el.dataset.staggerDelay = Math.min(childIndex, 4) * (isLiteMotion ? 45 : 95);
     }
 
     if (el.matches('.hero-aside, .service-detail-card, .fleet-card, .contact-prep-card, .ac-steps li')) el.dataset.reveal = 'scale';

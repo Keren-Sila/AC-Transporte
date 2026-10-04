@@ -22,3 +22,7 @@
 - `index.html`: adiciona o convite de rolagem no hero e carrega a camada visual final.
 - Demais páginas HTML: carregam o mesmo CSS para manter a linguagem de movimento consistente.
 - `manus-routes.json`: declara as rotas estáticas da experiência.
+
+## Atualização de execução
+
+A navegação interna agora usa uma camada de transição curta com a marca AC, sem interceptar links externos, âncoras ou novas abas. O scroll foi consolidado em um único ciclo `requestAnimationFrame`, enquanto o perfil automático escolhe `full`, `lite` ou `reduced` usando `saveData`, memória, núcleos e `prefers-reduced-motion`. No modo lite, filtros, órbitas, spotlights e pulsos são reduzidos, mas as entradas, a linha de rota e a direção visual continuam presentes.

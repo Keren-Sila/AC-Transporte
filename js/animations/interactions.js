@@ -5,22 +5,23 @@
 
 export function initMotionInteractions() {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  initHeroTruck(reduceMotion);
+  const motionLite = document.documentElement.dataset.motion === 'lite';
+  initHeroTruck(reduceMotion, motionLite);
   if (reduceMotion) return;
 
-  initScrollProgress();
+  if (!motionLite) initScrollProgress();
 
-  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if (motionLite || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
   initPointerSpotlights();
   initHeroParallax();
 }
 
-function initHeroTruck(reduceMotion) {
+function initHeroTruck(reduceMotion, motionLite) {
   const hero = document.querySelector('.ac-hero');
   if (!hero || hero.querySelector('.ac-hero-truck-wrap')) return;
 
   const wrap = document.createElement('div');
-  wrap.className = `ac-hero-truck-wrap${reduceMotion ? '' : ' is-arriving'}`;
+  wrap.className = `ac-hero-truck-wrap${reduceMotion || motionLite ? '' : ' is-arriving'}${motionLite ? ' is-lite' : ''}`;
   wrap.setAttribute('aria-hidden', 'true');
   const truck = document.createElement('img');
   truck.className = 'ac-hero-truck';
