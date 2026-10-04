@@ -26,7 +26,7 @@ a{color:inherit}
 .tb-sep{opacity:.4}
 .header-site{position:sticky;top:0;z-index:50;background:#fff!important;border-bottom:1px solid var(--regua);box-shadow:none!important;backdrop-filter:none!important}
 .header-container{min-height:76px}
-.logo-svg{display:block;width:140px;height:56px;object-fit:cover;object-position:center 51%}
+.logo-svg{display:block;width:auto;max-width:180px;height:60px;object-fit:contain;object-position:left center}
 .nav-link{color:var(--tinta)!important;font-weight:600;font-size:.98rem;border-radius:0;background:none!important;padding:.4rem .1rem;border-bottom:2px solid transparent}
 .nav-link:hover,.nav-link[aria-current="page"]{color:var(--laranja-esc)!important;border-bottom-color:var(--laranja)}
 .btn-nav-cta{padding:.7rem 1.2rem}
@@ -35,7 +35,7 @@ a{color:inherit}
 @media(max-width:860px){
   .nav-menu{background:#fff!important;border-top:1px solid var(--regua);box-shadow:none!important}
   .nav-menu .nav-link{display:block;padding:.9rem 0;border-bottom:1px solid var(--regua)}
-  .logo-svg{width:115px;height:46px}
+  .logo-svg{width:auto;max-width:140px;height:48px;object-fit:contain}
 }
 
 /* abertura */

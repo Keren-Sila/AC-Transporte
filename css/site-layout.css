@@ -12,7 +12,7 @@ body { color: #111a1e; background: #fff; font-family: 'Plus Jakarta Sans', Arial
 .topbar-corporate { display: none; }
 .header-site { position: absolute; inset: 0 0 auto; z-index: 20; padding: 10px 0; background: linear-gradient(180deg, rgba(7,12,13,.74), rgba(7,12,13,.08)); border-bottom: 1px solid rgba(255,255,255,.18); }
 .header-container { min-height: 54px; gap: 26px; }
-.brand-logo img { width: 205px; height: auto; }
+.brand-logo img { width: auto; max-width: 205px; max-height: 64px; object-fit: contain; }
 .nav-menu { background: transparent; }
 .nav-list { gap: clamp(18px, 3vw, 42px); }
 .nav-link { color: #f7f7f7; font-size: .82rem; font-weight: 600; }
