@@ -3,51 +3,61 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#10243A">
-<meta name="description" content="Consulte eventos registrados para o código de rastreamento AC Transporte.">
+<meta name="theme-color" content="#14181d">
+<meta name="description" content="Consulte as atualizações registradas para o seu embarque na AC Transporte.">
 <meta name="robots" content="noindex,follow">
 <link rel="icon" href="../assets/images/logo/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/main.css">
 <link rel="stylesheet" href="../css/header.css">
 <link rel="stylesheet" href="../css/hero.css">
 <link rel="stylesheet" href="../css/sections.css">
 <link rel="stylesheet" href="../css/forms.css">
 <link rel="stylesheet" href="../css/footer.css">
-<link rel="stylesheet" href="../css/responsive.css"><link rel="stylesheet" href="../css/site-layout.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/site-layout.css">
+<link rel="stylesheet" href="../css/profissional.css">
+<link rel="stylesheet" href="../css/inner-pages.css">
 <title>Rastrear carga | AC Transporte</title>
-  <link rel="stylesheet" href="../css/profissional.css">
 </head>
 <body data-root="../">
 <a href="#conteudo" class="skip-link">Ir para o conteúdo</a>
-<div data-include="components/header.html">
-</div>
-<main id="conteudo" class="inner-page">
-<section class="page-hero">
-<div class="container">
-<span class="section-tag">ACOMPANHAMENTO</span>
-<h1>Consulte o status da sua carga.</h1>
-<p>Digite o código de rastreamento recebido da equipe AC Transporte.</p>
-</div>
-</section>
-<section class="page-content container">
-<form id="trackingForm" class="tracking-form">
-<label for="trackingCode">Código de rastreamento</label>
-<input id="trackingCode" name="code" class="form-input" placeholder="AC- + 32 caracteres hexadecimais" pattern="AC-[A-Fa-f0-9]{32}" required>
-<button class="btn btn-primary" type="submit">Consultar</button>
-</form>
-<div id="trackingResult" class="tracking-result" aria-live="polite">
-</div>
-<p class="page-note">A linha do tempo apresenta apenas atualizações registradas pela equipe. Ela não representa localização GPS ao vivo.</p>
-</section>
+<div data-include="components/header.html"></div>
+<main id="conteudo" class="inner-page tracking-page">
+  <section class="inner-hero tracking-hero">
+    <div class="container inner-hero-grid tracking-hero-grid">
+      <div class="inner-hero-copy">
+        <nav class="breadcrumbs" aria-label="Você está em"><a href="../index.html">Início</a><span aria-hidden="true">/</span><span>Rastrear carga</span></nav>
+        <span class="inner-kicker">ACOMPANHAMENTO DE EMBARQUE</span>
+        <h1>Consulte as atualizações da sua carga.</h1>
+        <p>Use o código AC recebido da equipe para ver o status e os eventos registrados para o embarque.</p>
+        <div class="tracking-privacy-note"><span aria-hidden="true">i</span><p>A consulta mostra apenas os registros da operação. Não é um mapa GPS em tempo real.</p></div>
+      </div>
+      <div class="tracking-widget">
+        <div class="tracking-widget-head"><span class="tracking-widget-icon" aria-hidden="true">⌕</span><div><span class="aside-index">CONSULTA DE EMBARQUE</span><h2>Onde está seu pedido?</h2></div></div>
+        <form id="trackingForm" class="tracking-form">
+          <label for="trackingCode">Código de rastreamento</label>
+          <input id="trackingCode" name="code" class="form-input" placeholder="AC- seguido do código recebido" pattern="AC-[A-Fa-f0-9]{32}" autocomplete="off" autocapitalize="characters" spellcheck="false" required aria-describedby="trackingCodeHint">
+          <small id="trackingCodeHint">O código começa com AC- e foi enviado pela equipe.</small>
+          <button class="btn btn-primary" type="submit">Consultar embarque <span aria-hidden="true">→</span></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="tracking-result-section" aria-label="Resultado do rastreamento">
+    <div class="container"><div id="trackingResult" class="tracking-result" aria-live="polite" aria-atomic="true"></div></div>
+  </section>
+
+  <section class="tracking-how-section">
+    <div class="container tracking-how-layout"><div><span class="section-eyebrow">COMO FUNCIONA</span><h2>Atualizações claras, sem complicação.</h2><p>Os eventos são adicionados pela equipe responsável pelo embarque.</p></div><ol class="tracking-how-list"><li><b>01</b><span><strong>Localize seu código</strong><small>Confira a mensagem recebida da AC Transporte.</small></span></li><li><b>02</b><span><strong>Faça a consulta</strong><small>Digite ou cole o código completo no campo acima.</small></span></li><li><b>03</b><span><strong>Veja os registros</strong><small>Confira o status e o histórico informado pela equipe.</small></span></li></ol></div>
+  </section>
+  <section class="tracking-help"><div class="container tracking-help-inner"><p>Não recebeu um código ou precisa de ajuda?</p><a class="inline-arrow-link" href="../pages/contato.html">Fale com a equipe <span aria-hidden="true">↗</span></a></div></section>
 </main>
-<div data-include="components/footer.html">
-</div>
-<div data-include="components/modal.html">
-</div>
-<script type="module" src="../js/main.js">
-</script>
+<div data-include="components/footer.html"></div>
+<div data-include="components/modal.html"></div>
+<script type="module" src="../js/main.js"></script>
 </body>
 </html>

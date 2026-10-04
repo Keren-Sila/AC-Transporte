@@ -166,17 +166,29 @@ export function initTrackingLookup() {
   const output = document.getElementById('trackingResult');
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    output.replaceChildren();
+    const submit = form.querySelector('[type="submit"]');
     const code = form.querySelector('[name="code"]').value.trim();
+    const loading = document.createElement('p');
+    loading.className = 'tracking-feedback';
+    loading.textContent = 'Consultando as atualizações…';
+    output.replaceChildren(loading);
+    output.setAttribute('aria-busy', 'true');
+    output.dataset.status = '';
+    if (submit) submit.disabled = true;
     try {
       const response = await fetch(`${root()}api/tracking/${encodeURIComponent(code)}`, { credentials: 'same-origin' });
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || 'Não foi possível consultar a carga.');
+      output.replaceChildren();
+      output.dataset.status = data.status || '';
       const heading = document.createElement('h2'); heading.textContent = `Embarque ${data.tracking_code}`;
       const statusLabels = { created: 'Cadastrado', collected: 'Coletado', in_transit: 'Em trânsito', out_for_delivery: 'Saiu para entrega', delivered: 'Entregue', delayed: 'Atrasado', cancelled: 'Cancelado' };
-      const status = document.createElement('p'); status.textContent = `Status: ${statusLabels[data.status] || 'Em atualização'} · ${data.origin} → ${data.destination}`;
+      const summary = document.createElement('div'); summary.className = 'tracking-summary';
+      const status = document.createElement('p'); status.className = 'tracking-status'; status.textContent = statusLabels[data.status] || 'Em atualização';
+      const route = document.createElement('p'); route.className = 'tracking-route'; route.textContent = `${data.origin} → ${data.destination}`;
+      summary.append(status, route);
       const list = document.createElement('ol'); list.className = 'tracking-events';
-      for (const event of data.events) {
+      for (const event of [...data.events].reverse()) {
         const item = document.createElement('li');
         const labels = { created: 'Embarque cadastrado', collected: 'Carga coletada', in_transit: 'Em trânsito', out_for_delivery: 'Saiu para entrega', delivered: 'Entregue', delayed: 'Atraso informado', cancelled: 'Cancelado' };
         const title = document.createElement('strong'); title.textContent = labels[event.status] || 'Atualização';
@@ -184,9 +196,12 @@ export function initTrackingLookup() {
         const date = document.createElement('time'); date.dateTime = event.at; date.textContent = new Date(event.at).toLocaleString('pt-BR');
         item.append(title, detail, date); list.append(item);
       }
-      output.append(heading, status, list);
+      output.append(heading, summary, list);
     } catch (error) {
-      const paragraph = document.createElement('p'); paragraph.className = 'form-feedback is-error'; paragraph.textContent = error.message; output.append(paragraph);
+      const paragraph = document.createElement('p'); paragraph.className = 'tracking-feedback is-error'; paragraph.textContent = error.message; output.replaceChildren(paragraph);
+    } finally {
+      output.setAttribute('aria-busy', 'false');
+      if (submit) submit.disabled = false;
     }
   });
 }
