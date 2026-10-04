@@ -5,22 +5,22 @@
 
 import { initObserver } from './observer.js';
 import { initHeroAnimations } from './hero.js';
-import { initCargoRouteAnimation } from './route.js';
 import { initTimelineAnimation } from './timeline.js';
 import { initCardAnimations } from './cards.js';
 import { initCountersAnimation } from './counters.js';
 import { initMagneticButtons } from './magnetic.js';
 import { initMapAnimations } from './map.js';
+import { initMotionInteractions } from './interactions.js';
 
 export function initScrollAnimations() {
   initObserver();
   initHeroAnimations();
-  initCargoRouteAnimation();
   initTimelineAnimation();
   initCardAnimations();
   initCountersAnimation();
   initMagneticButtons();
   initMapAnimations();
+  initMotionInteractions();
 }
 
 export function initPrivacyModal() {

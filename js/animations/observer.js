@@ -13,7 +13,8 @@ export function initObserver() {
     '.inner-page .fleet-card', '.inner-page .contact-channel-column', '.inner-page .contact-prep-card',
     '.inner-page .contact-channel', '.inner-page .tracking-how-layout > *', '.inner-page .tracking-how-list li',
     '.inner-page .inner-cta > *', '.inner-page .fleet-quote-layout > *',
-    '.inner-page .contact-bottom-inner > *', '.inner-page .tracking-help-inner > *'
+    '.inner-page .contact-bottom-inner > *', '.inner-page .tracking-help-inner > *',
+    '.ac-facts > div', '.ac-steps li', '.ac-three > *', '.quote-intro', '.calculator-card'
   ].join(', '));
 
   if (isReducedMotion || !('IntersectionObserver' in window)) {
@@ -51,13 +52,14 @@ export function initObserver() {
       parent.classList.contains('principle-grid') || parent.classList.contains('service-detail-grid') ||
       parent.classList.contains('service-process-list') || parent.classList.contains('fleet-card-grid') ||
       parent.classList.contains('contact-channel-list') || parent.classList.contains('tracking-how-list') ||
-      parent.classList.contains('inner-hero-copy')
+      parent.classList.contains('inner-hero-copy') || parent.classList.contains('ac-steps') ||
+      parent.classList.contains('ac-facts') || parent.classList.contains('ac-three')
     )) {
       const childIndex = Array.from(parent.children).indexOf(el);
       el.dataset.staggerDelay = Math.min(childIndex, 4) * 95;
     }
 
-    if (el.matches('.hero-aside, .service-detail-card, .fleet-card, .contact-prep-card')) el.dataset.reveal = 'scale';
+    if (el.matches('.hero-aside, .service-detail-card, .fleet-card, .contact-prep-card, .ac-steps li')) el.dataset.reveal = 'scale';
     else if (el.matches('.story-grid > :first-child, .contact-main-grid > :first-child, .service-process-layout > :first-child, .tracking-how-layout > :first-child')) el.dataset.reveal = 'left';
     else if (el.matches('.story-grid > :last-child, .contact-main-grid > :last-child, .service-process-layout > :last-child, .tracking-how-layout > :last-child')) el.dataset.reveal = 'right';
     observer.observe(el);

@@ -181,3 +181,9 @@ h1, h2, h3, h4, h5, h6 {
   padding: 16px 30px;
   font-size: 1.02rem;
 }
+/* Leitura e interação: animações discretas e controladas pelo JavaScript. */
+.scroll-progress { position: fixed; z-index: 9999; top: 0; right: 0; left: 0; height: 3px; pointer-events: none; background: linear-gradient(90deg,#f58a31,#e85b0a); box-shadow: 0 0 12px rgba(232,91,10,.28); transform: scaleX(0); transform-origin: left center; }
+.has-pointer-spotlight { position: relative; isolation: isolate; }
+.has-pointer-spotlight::before { position: absolute; z-index: 0; inset: 0; border-radius: inherit; background: radial-gradient(260px circle at var(--spot-x,50%) var(--spot-y,50%),rgba(232,97,10,.13),transparent 78%); content: ''; opacity: 0; pointer-events: none; transition: opacity .3s ease; }
+.has-pointer-spotlight.is-spotlit::before { opacity: 1; }
+.has-pointer-spotlight > * { position: relative; z-index: 1; }

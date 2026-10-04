@@ -5,6 +5,7 @@
 export function initHeroAnimations() {
   const heroSection = document.querySelector('.hero-section, .ac-hero');
   if (!heroSection) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   // 1. Cinematic Entrance Sequence (~1 second total)
   const header = document.querySelector('.header-site');

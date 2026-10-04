@@ -1,6 +1,7 @@
 import { initMobileMenu } from './menu.js';
 import { initScrollAnimations, initPrivacyModal } from './animations.js';
 import { initQuoteForm, initAdminPanel, initTrackingLookup } from './form.js';
+import { initQuoteStepper } from './animations/quote-stepper.js';
 import { initWhatsApp } from './whatsapp.js';
 
 async function loadComponents() {
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     initMobileMenu();
     initScrollAnimations();
     initPrivacyModal();
+    initQuoteStepper();
     initQuoteForm();
     initAdminPanel();
     initTrackingLookup();

@@ -4,7 +4,7 @@
  */
 
 export function initMagneticButtons() {
-  if (window.matchMedia('(max-width: 768px)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
 
   const magneticBtns = document.querySelectorAll('.btn-primary, .btn-nav-cta, .btn-calc-submit');
 
