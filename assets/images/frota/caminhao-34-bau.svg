@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-truck-34" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="60%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="orange-stripe-34" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF6600"/>
+      <stop offset="100%" stop-color="#FFA000"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg-truck-34)"/>
+
+  <!-- Road & Speed Lines -->
+  <rect x="0" y="400" width="800" height="100" fill="#0A0F1D"/>
+  <line x1="0" y1="400" x2="800" y2="400" stroke="#FF6600" stroke-width="4"/>
+  <line x1="0" y1="450" x2="800" y2="450" stroke="#475569" stroke-width="3" stroke-dasharray="30 20"/>
+
+  <!-- Full Size 3/4 Box Truck (Caminhão 3/4 Baú) -->
+  <g transform="translate(60, 110)">
+    <!-- Cargo Box (Baú) -->
+    <rect x="0" y="40" width="450" height="230" rx="10" fill="#FFFFFF" stroke="#94A3B8" stroke-width="3"/>
+    <rect x="0" y="140" width="450" height="40" fill="url(#orange-stripe-34)"/>
+    <text x="225" y="167" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="20" letter-spacing="3" text-anchor="middle">AC TRANSPORTE LTDA</text>
+    
+    <!-- Metallic Box Ribs -->
+    <line x1="100" y1="40" x2="100" y2="270" stroke="#E2E8F0" stroke-width="2"/>
+    <line x1="200" y1="40" x2="200" y2="270" stroke="#E2E8F0" stroke-width="2"/>
+    <line x1="300" y1="40" x2="300" y2="270" stroke="#E2E8F0" stroke-width="2"/>
+    <line x1="400" y1="40" x2="400" y2="270" stroke="#E2E8F0" stroke-width="2"/>
+
+    <!-- Cab (Cabine 3/4) -->
+    <path d="M 450 110 L 550 110 L 600 160 L 600 270 L 450 270 Z" fill="#FF6600"/>
+    <polygon points="500,125 550,125 585,165 500,165" fill="#0A0F1D" opacity="0.85"/>
+    <rect x="585" y="210" width="15" height="15" fill="#FFEA00" rx="2"/>
+
+    <!-- Rear & Front Axle Heavy Wheels -->
+    <circle cx="90" cy="270" r="36" fill="#0F172A" stroke="#475569" stroke-width="8"/>
+    <circle cx="90" cy="270" r="14" fill="#94A3B8"/>
+
+    <circle cx="180" cy="270" r="36" fill="#0F172A" stroke="#475569" stroke-width="8"/>
+    <circle cx="180" cy="270" r="14" fill="#94A3B8"/>
+
+    <circle cx="530" cy="270" r="36" fill="#0F172A" stroke="#475569" stroke-width="8"/>
+    <circle cx="530" cy="270" r="14" fill="#94A3B8"/>
+  </g>
+
+  <!-- Spec Tag Badge -->
+  <rect x="30" y="30" width="220" height="40" rx="20" fill="#0A0F1D" opacity="0.9" stroke="#FF6600" stroke-width="2"/>
+  <text x="140" y="55" fill="#FFFFFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="14" text-anchor="middle">CAMINHÃO 3/4 BAÚ</text>
+</svg>
