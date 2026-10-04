@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 72" role="img" aria-labelledby="title">
+  <title id="title">AC Transporte</title>
+  <g fill="none" stroke="#F49B6B" stroke-linecap="round" stroke-width="4"><path d="M5 20h16M1 32h20M5 44h16"/></g>
+  <path fill="#fff" d="M27 16h39v30H27z"/><path fill="#E76522" d="M66 25h17l9 11v10H66z"/><path fill="#12263D" d="M70 29h10l5 6H70z"/><circle cx="39" cy="48" r="5" fill="#12263D" stroke="#fff" stroke-width="2"/><circle cx="81" cy="48" r="5" fill="#12263D" stroke="#fff" stroke-width="2"/>
+  <text x="101" y="39" fill="#fff" font-family="Arial,sans-serif" font-size="28" font-weight="800">AC</text><text x="145" y="39" fill="#F49B6B" font-family="Arial,sans-serif" font-size="28" font-weight="800">TRANSPORTE</text><text x="103" y="58" fill="#BAC5D1" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="2">FRETES E MUDANÇAS</text>
+</svg>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#10243A">
+<link rel="icon" href="../assets/images/logo/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/hero.css">
+<link rel="stylesheet" href="../css/sections.css">
+<link rel="stylesheet" href="../css/forms.css">
+<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Painel da equipe | AC Transporte</title>
+</head>
+<body data-root="../">
+<a href="#conteudo" class="skip-link">Ir para o conteúdo</a>
+<div data-include="components/header.html">
+</div>
+<main id="conteudo" class="inner-page">
+<section class="page-hero">
+<div class="container">
+<span class="section-tag">ÁREA RESTRITA</span>
+<h1>Painel da equipe</h1>
+<p>Acesso reservado a contas administrativas autorizadas.</p>
+</div>
+</section>
+<section id="adminPanel" class="page-content container admin-panel">
+<p data-admin-message class="form-feedback" role="status" hidden>
+</p>
+<form id="adminLogin" class="admin-login">
+<h2>Entrar</h2>
+<label for="adminEmail">E-mail</label>
+<input id="adminEmail" name="email" class="form-input" type="email" autocomplete="username" required>
+<label for="adminPassword">Senha</label>
+<input id="adminPassword" name="password" class="form-input" type="password" autocomplete="current-password" minlength="12" required>
+<button type="submit" class="btn btn-primary">Acessar painel</button>
+</form>
+<div id="adminDashboard" hidden>
+<div class="admin-heading">
+<h2>Cotações</h2>
+<button id="adminLogout" class="btn btn-secondary" type="button">Sair</button>
+</div>
+<div id="adminQuotes" class="admin-list">
+</div>
+<h2>Embarques</h2>
+<div id="adminShipments" class="admin-list">
+</div>
+<h2>Criar embarque</h2>
+<form id="shipmentForm" class="admin-form">
+<label>Referência interna<input name="reference" class="form-input" required maxlength="100">
+</label>
+<label>Origem<input name="origin" class="form-input" required maxlength="80">
+</label>
+<label>Destino<input name="destination" class="form-input" required maxlength="80">
+</label>
+<button class="btn btn-primary" type="submit">Criar código de rastreio</button>
+</form>
+<h2>Registrar atualização</h2>
+<form id="trackingEventForm" class="admin-form">
+<label>Código de rastreamento<input name="code" class="form-input" placeholder="AC- + 32 caracteres hexadecimais" required pattern="AC-[A-Fa-f0-9]{32}">
+</label>
+<label>Status<select class="form-input" name="status" required>
+<option value="collected">Coletada</option>
+<option value="in_transit">Em trânsito</option>
+<option value="out_for_delivery">Saiu para entrega</option>
+<option value="delivered">Entregue</option>
+<option value="delayed">Atrasada</option>
+<option value="cancelled">Cancelada</option>
+</select>
+</label>
+<label>Local (opcional)<input name="location" class="form-input" maxlength="80">
+</label>
+<label>Descrição<input name="description" class="form-input" required minlength="3" maxlength="300">
+</label>
+<button class="btn btn-primary" type="submit">Registrar evento</button>
+</form>
+</div>
+</section>
+</main>
+<div data-include="components/footer.html">
+</div>
+<div data-include="components/modal.html">
+</div>
+<script type="module" src="../js/main.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10243A">
+<meta name="description" content="Consulte eventos registrados para o código de rastreamento AC Transporte.">
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="../assets/images/logo/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/hero.css">
+<link rel="stylesheet" href="../css/sections.css">
+<link rel="stylesheet" href="../css/forms.css">
+<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="../css/responsive.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Rastrear carga | AC Transporte</title>
+</head>
+<body data-root="../">
+<a href="#conteudo" class="skip-link">Ir para o conteúdo</a>
+<div data-include="components/header.html">
+</div>
+<main id="conteudo" class="inner-page">
+<section class="page-hero">
+<div class="container">
+<span class="section-tag">ACOMPANHAMENTO</span>
+<h1>Consulte o status da sua carga.</h1>
+<p>Digite o código de rastreamento recebido da equipe AC Transporte.</p>
+</div>
+</section>
+<section class="page-content container">
+<form id="trackingForm" class="tracking-form">
+<label for="trackingCode">Código de rastreamento</label>
+<input id="trackingCode" name="code" class="form-input" placeholder="AC- + 32 caracteres hexadecimais" pattern="AC-[A-Fa-f0-9]{32}" required>
+<button class="btn btn-primary" type="submit">Consultar</button>
+</form>
+<div id="trackingResult" class="tracking-result" aria-live="polite">
+</div>
+<p class="page-note">A linha do tempo apresenta apenas atualizações registradas pela equipe. Ela não representa localização GPS ao vivo.</p>
+</section>
+</main>
+<div data-include="components/footer.html">
+</div>
+<div data-include="components/modal.html">
+</div>
+<script type="module" src="../js/main.js">
+</script>
+</body>
+</html>

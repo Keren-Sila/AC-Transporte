@@ -1,0 +1,55 @@
+.quote-section { padding: 92px 0; background: #FFFFFF; }
+.calculator-card { overflow: hidden; background: #FFFFFF; border: 1px solid #DCE3EA; border-radius: 7px; box-shadow: 0 14px 42px rgba(17,36,58,.08); }
+.calc-header-bar { background: #12263D; border: 0; }
+.calc-form { padding: clamp(24px, 5vw, 52px); }
+.calc-form .section-title { color: #14263B; }
+.calc-form .section-description { color: #66768A; }
+label { color: #293E54; }
+.form-input { color: #14263B; background: #F8FAFC; border: 1px solid #D6DEE7; border-radius: 4px; }
+.form-input:focus { border-color: var(--primary-orange); box-shadow: 0 0 0 3px rgba(231,101,34,.12); }
+.form-input::placeholder { color: #8592A1; }
+
+/* ESTRUTURA DE FORMULÁRIOS, CONTATO E RODAPÉ */
+.section-header { margin-bottom: 40px; }
+.services-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.differentials-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.coverage-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.coverage-list { display: flex; flex-direction: column; gap: 12px; }
+.coverage-bases-box h3 { font-size: 1.2rem; margin-bottom: 16px; }
+.base-pill-item { display: flex; align-items: center; gap: 13px; }
+.base-pill-item > div { display: flex; flex-direction: column; gap: 3px; }
+.pin-icon { flex: 0 0 auto; }
+.agregamento-card { max-width: 1120px; margin: 0 auto; padding: clamp(24px, 4vw, 42px); }
+.ag-title { font-size: clamp(1.8rem, 3vw, 2.5rem); margin: 12px 0; }
+.ag-subtitle { max-width: 670px; line-height: 1.6; }
+.ag-info-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 28px 0; }
+.ag-info-item { display: flex; flex-direction: column; gap: 6px; padding: 15px 17px; }
+.ag-info-item span { font-size: .76rem; }
+.ag-info-item strong { font-size: .92rem; }
+.ag-action { display: flex; flex-wrap: wrap; gap: 12px; }
+.calc-header-bar { padding: 14px 24px; }
+.calc-title-badge { display: flex; align-items: center; gap: 8px; font-size: .78rem; font-weight: 800; color: #F0A57D; letter-spacing: .6px; }
+.calc-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-bottom: 24px; }
+.calc-group { display: flex; flex-direction: column; gap: 7px; }
+.calc-group.full-width { grid-column: 1 / -1; }
+label { color: #293E54; font-size: .84rem; font-weight: 700; }
+.form-input { width: 100%; min-height: 46px; padding: 12px 14px; font-family: var(--font-sans); font-size: .9rem; }
+textarea.form-input { min-height: 100px; resize: vertical; }
+.error-msg { display: none; color: #B42318; font-size: .77rem; }
+.form-input.is-invalid { border-color: #B42318; }
+.form-input.is-invalid + .error-msg { display: block; }
+.calc-footer-actions { display: flex; justify-content: flex-end; }
+.btn-calc-submit { width: 100%; min-height: 54px; }
+.consent-field { display: flex; align-items: flex-start; gap: 10px; margin: 0 0 20px; color: #526479; font-size: .82rem; line-height: 1.5; }
+.consent-field input { margin-top: 4px; accent-color: var(--primary-orange); }
+.consent-field a { color: #C6541D; }
+.honeypot-field { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.form-feedback { margin-top: 16px; color: #17643A; font-size: .9rem; font-weight: 700; }
+.form-feedback.is-error { color: #B42318; }
+.social-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.insta-box, .contacts-box { display: flex; flex-direction: column; justify-content: space-between; }
+.insta-box h3, .contacts-box h3 { margin: 0 0 12px; font-size: 1.15rem; }
+.insta-box p { margin-bottom: 22px; color: #627286; font-size: .9rem; line-height: 1.6; }
+.contact-numbers-list { display: flex; flex-direction: column; gap: 9px; margin-top: 12px; }
+.c-link { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; border-radius: 4px; color: #263B51; font-size: .84rem; text-decoration: none; }
+.c-link strong { color: #C6541D; font-size: .88rem; }

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /pages/painel.html
+Disallow: /pages/rastrear.html
+Disallow: /api/
+
+# Configure an absolute Sitemap URL after choosing the public domain.

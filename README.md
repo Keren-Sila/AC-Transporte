@@ -1,93 +1,53 @@
-# 🚛 AC Transporte — Site Institucional & Plataforma de Cotação de Frete
+# AC Transporte
 
-> **Cargas em movimento. Destinos conectados.**
+Site institucional e API para atendimento de transporte rodoviário em São Paulo. A interface usa azul-marinho e laranja, chamadas claras para cotação e componentes comuns entre as páginas.
 
-Plataforma web institucional e sistema de cotação interativa de frete rodoviário para a **AC Transporte LTDA**, empresa de transporte de cargas com sede em São Paulo (SP).
-
----
-
-## 📌 Visão Geral do Projeto
-
-Este projeto consiste em um site institucional de alta performance, seguro, totalmente responsivo e pensado primeiramente para dispositivos móveis (*Mobile First*). O design adota o tema **Dark Mode** com a identidade visual da empresa (Laranja `#FF7700`, Preto `#0A0A0D` e Branco `#FFFFFF`), contando com animações interativas conectadas à rolagem da página.
-
-### 🎯 Principais Funcionalidades Implementadas
-
-1. **Visual & Identidade da Marca:**
-   - Logo vetorial em SVG recriado em versão clara/escura com linhas de velocidade e ícone de caminhão baú.
-   - Design System moderno com Glassmorphism, CSS Variables e tipografia *Plus Jakarta Sans*.
-
-2. **Animação Interativa de Estrada ("A Rota da Carga"):**
-   - Linha de progresso lateral em laranja que se preenche conforme o scroll do usuário.
-   - Caminhão marcador que avança pela estrada e ativa os 3 pontos de verificação (**01. Saída**, **02. Em Trânsito**, **03. Chegada**).
-
-3. **Calculadora / Formulário de Cotação em 4 Passos:**
-   - **Passo 1 (Origem):** Cidade/UF, Bairro/CEP e Tipo de Local.
-   - **Passo 2 (Destino):** Cidade/UF, Bairro/CEP e Data Preferencial.
-   - **Passo 3 (Carga):** Modalidade do serviço (Municipal, Intermunicipal, Interestadual, Expressa), Peso estimado, Volume e Observações.
-   - **Passo 4 (Contato):** Nome, WhatsApp (obrigatório) e E-mail, acompanhado de um card de resumo pré-envio.
-   - Envio automático com formatação de mensagem direta para o WhatsApp da transportadora.
-
-4. **Nossa Especialidade & Serviços:**
-   - Grid de cards de serviços com atalho direto que pré-seleciona a modalidade na cotação.
-
-5. **A AC Transporte & Diferenciais:**
-   - Apresentação objetiva e sem promessas fictícias (empresa cadastrada no Simples Nacional, sede em São Paulo).
-   - Destaque para os 4 diferenciais: *Atendimento Direto*, *Comunicação via WhatsApp*, *Cuidado com a Carga* e *Prazo Combinado*.
-
-6. **Área de Atuação & Cobertura:**
-   - Seletor interativo por abas (Capital SP, Grande SP/ABC, Interior/Litoral, Interestadual) com ilustração vetorial de malha rodoviária.
-
-7. **Acessibilidade & Segurança (LGPD):**
-   - Modal completo de **Política de Privacidade (LGPD)** no rodapé.
-   - Foco visível (`:focus-visible`) para navegação por teclado (WCAG 2.1 AA).
-   - Suporte a `prefers-reduced-motion` para usuários sensíveis a animações.
-   - Botão flutuante (FAB) do WhatsApp com tooltip e animação de pulso.
-
----
-
-## 🛠️ Arquitetura e Estrutura de Arquivos
+## Estrutura
 
 ```text
 AC-Transporte/
-├── index.html       # Estrutura HTML5 semântica e acessível
-├── styles.css       # Design System CSS3, variáveis, animações e responsividade
-├── script.js       # Lógica JS: scroll observers, wizard 4 passos, WhatsApp generator & LGPD modal
-├── .gitignore       # Regras de exclusão para Git
-└── README.md        # Documentação completa do projeto
+├── index.html
+├── README.md
+├── .gitignore
+├── robots.txt
+├── sitemap.xml
+├── pages/                 # Empresa, serviços, frota, contato, privacidade, painel e rastreio
+├── assets/                # Logos, ícones, imagens e fontes
+├── css/                   # Estilos organizados por área
+├── js/                    # Navegação, animações, formulários e contato
+├── components/            # Cabeçalho, rodapé e modal compartilhados
+└── backend/               # API Express, PostgreSQL, autenticação, migrations
 ```
 
----
+## Funcionalidades
 
-## 🔒 Segurança e Recomendação de Produção
+- Formulário de cotação envia dados validados à API; o painel lista e atualiza o status.
+- Painel interno com login por e-mail e senha, sessões no PostgreSQL e proteção CSRF.
+- Gestão de embarques e eventos; consulta pública usa código AC e exibe apenas status, rota e eventos informados pela equipe. Não há GPS em tempo real.
+- Páginas de empresa, serviços, veículos considerados, contato e privacidade.
 
-Para garantir alta disponibilidade (não sair do ar) e segurança máxima:
-1. **Hospedagem Estática (Jamstack):** Deploy via Cloudflare Pages ou Vercel (sem servidor dinâmico para cair).
-2. **Proteção de Borda:** Cloudflare DNS + HTTPS Gratuito + Cloudflare Turnstile contra bots e requisições maliciosas no formulário.
-3. **Privacidade de Dados:** Nenhuma chave secreta fica exposta no front-end. As mensagens transitam de forma segura.
+## Executar localmente
 
----
+Requer Node.js 20+ e PostgreSQL. O site usa `fetch()` para carregar os componentes e precisa ser aberto pelo servidor Node, não diretamente via `file://` nem apenas Live Server.
 
-## 🚀 Como Executar Localmente
-
-Como o projeto é construído em HTML/CSS/JS nativos e otimizados:
-1. Abra a pasta do projeto no seu editor de código (VS Code, Antigravity IDE, etc.).
-2. Abra o arquivo `index.html` em qualquer navegador moderno ou utilize uma extensão de servidor local (ex: *Live Server*).
-
----
-
-## 📦 Repositório Git Privado & Como Enviar para o GitHub
-
-O repositório Git local já foi inicializado nesta pasta. Para publicar o projeto no seu **GitHub Privado**:
-
-1. Crie um novo repositório **Privado** no seu GitHub chamado `AC-Transporte` (sem inicializar com README).
-2. No seu terminal, execute os seguintes comandos substituindo pelo seu link do GitHub:
-
-```bash
-git remote add origin https://github.com/Keren-Nunes/AC-Transporte.git
-git branch -M main
-git push -u origin main
+```powershell
+Copy-Item backend/.env.example backend/.env
+# Edite backend/.env; use uma senha forte para o banco e um segredo aleatório com 32+ caracteres.
+Set-Location backend
+npm install
+npm run db:migrate
+npm run admin:create
+npm run dev
 ```
 
----
+Abra `http://localhost:3000`. O script `admin:create` cadastra ou redefine a senha da conta informada; não existe usuário padrão. O PostgreSQL deve estar iniciado e acessível pela `DATABASE_URL`.
 
-*Desenvolvido com excelência para AC Transporte LTDA.*
+## Backend e segurança
+
+Veja [backend/README.md](backend/README.md). O código aplica Helmet/CSP, cookies `HttpOnly`/`SameSite`, hash Argon2id, limite de requisições, validação de esquema, limite de corpo, verificação de origem/CSRF e consultas parametrizadas. O painel não usa credenciais padrão.
+
+Essa base técnica não é certificação de segurança nem substitui revisão operacional. Antes de produção: definir o domínio, configurar HTTPS e segredo de sessão no ambiente, escolher `DATA_RETENTION_DAYS`, backups cifrados, monitoramento, proteção distribuída contra abuso e revisar a política de privacidade. O servidor recusa iniciar em modo de produção enquanto o prazo de retenção não estiver configurado.
+
+## SEO e publicação
+
+`robots.txt` está pronto para o domínio raiz; `sitemap.xml` fica sem endereços até a AC Transporte escolher o domínio público. Informe o domínio para publicar URLs canônicas, sitemap completo e configuração de produção. A fotografia da capa atual é ilustrativa e externa; substitua por imagem autorizada da operação antes do lançamento.

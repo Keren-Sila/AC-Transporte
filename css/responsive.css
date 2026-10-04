@@ -1,0 +1,116 @@
+@media (max-width: 1100px) {
+  .hero-grid { gap: 38px; }
+  .hero-photo-card { min-height: 420px; }
+  .steps-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .step-card, .step-card:nth-child(odd), .step-card:nth-child(even) { min-height: 210px; }
+  .client-proof-inner { flex-wrap: wrap; justify-content: center; gap: 16px 28px; }
+}
+@media (max-width: 900px) {
+  .hamburger-btn { display: flex; }
+  .hero-grid { grid-template-columns: 1fr 1fr; }
+  .hero-headline { font-size: clamp(2.65rem, 6vw, 4rem); }
+  .about-intro { gap: 30px; }
+  .steps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 768px) {
+  .container { padding-left: 22px; padding-right: 22px; }
+  .hero-section { padding: 55px 0 45px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 34px; }
+  .hero-headline { max-width: 600px; font-size: clamp(2.7rem, 10vw, 4.1rem); letter-spacing: -1.8px; }
+  .hero-subline { font-size: 1rem; }
+  .hero-photo-card { min-height: 410px; aspect-ratio: 1.06 / 1; }
+  .hero-route-card { right: 0; top: auto; bottom: 22px; transform: none; }
+  .hero-photo-caption { left: 20px; bottom: 24px; max-width: 65%; }
+  .hero-photo-caption strong { font-size: 1.6rem; }
+  .hero-photo-caption small { font-size: .6rem; }
+  .hero-route-card { top: auto; bottom: 20px; right: 14px; padding: 11px 12px; }
+  .hero-photo-caption { bottom: 105px; }
+  .client-proof { padding: 23px 0; }
+  .client-proof-inner { display: grid; grid-template-columns: 1fr 1fr; justify-content: stretch; gap: 15px 12px; }
+  .client-proof-inner > p { grid-column: 1 / -1; }
+  .proof-divider { display: none; }
+  .proof-brand-madero { font-size: 1.1rem; }
+  .proof-brand-ml { font-size: 1rem; }
+  .proof-note { grid-column: 1 / -1; }
+  .about-section, .operacao-section, .services-section, .coverage-section, .quote-section { padding: 64px 0; }
+  .about-intro { grid-template-columns: 1fr; gap: 18px; margin-bottom: 26px; }
+  .about-intro .section-title { font-size: clamp(2rem, 8vw, 2.7rem); }
+  .about-feature-grid { grid-template-columns: 1fr; gap: 14px; }
+  .about-story-card, .about-bases-card { min-height: 0; padding: 26px 23px; }
+  .about-card-index { margin-bottom: 18px; }
+  .base-list { gap: 7px; }
+  .base-list li { padding: 10px 8px; font-size: .75rem; }
+  .steps-grid { grid-template-columns: 1fr; gap: 10px; }
+  .step-card, .step-card:nth-child(odd), .step-card:nth-child(even) { min-height: 0; padding: 20px; }
+  .step-header-row { margin-bottom: 16px; }
+  .service-card { min-height: 0; }
+  .service-card p { min-height: 0; }
+  .differentials-section { padding: 64px 0; }
+  .diff-card { min-height: 0; }
+  .coverage-grid { gap: 24px; }
+  .agregamento-section { padding: 52px 0; }
+  .ag-info-row { grid-template-columns: 1fr; }
+  .calc-form-grid { grid-template-columns: 1fr; }
+  .calc-group.full-width { grid-column: auto; }
+  .social-contact-section { padding: 54px 0; }
+  .social-grid { grid-template-columns: 1fr; }
+  .c-link { align-items: flex-start; flex-direction: column; }
+  .footer { padding-top: 48px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px 18px; }
+  .footer-brand-col { grid-column: 1 / -1; }
+}
+@media (max-width: 480px) {
+  .hidden-mobile { display: none; }
+  .topbar-corporate { font-size: .7rem; }
+  .topbar-left { gap: 0; }
+  .hero-actions-row { align-items: flex-start; flex-direction: column; gap: 16px; }
+  .hero-photo-card { min-height: 360px; }
+  .hero-route-card { max-width: 58%; }
+  .route-pin { width: 28px; height: 28px; }
+  .hero-route-card strong { font-size: .72rem; }
+  .base-list { grid-template-columns: 1fr; }
+  .base-list li { display: grid; grid-template-columns: 26px 1fr; align-items: center; column-gap: 4px; }
+  .base-list li span { grid-row: 1 / span 2; margin: 0; }
+  .base-list li small { grid-column: 2; margin-top: -1px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-brand-col { grid-column: auto; }
+}
+/* MENU MOBILE, BOTÃO DE CONTATO E PRIVACIDADE */
+@media (max-width: 1100px) {
+  .services-grid, .differentials-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .nav-menu { position: absolute; top: 100%; left: 0; right: 0; display: none; padding: 18px 22px; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .nav-menu.active { display: block; }
+  .nav-list { flex-direction: column; align-items: stretch; gap: 9px; }
+  .nav-link { display: block; width: 100%; padding: 9px 4px; }
+  .coverage-grid { grid-template-columns: 1fr; gap: 26px; }
+  .footer-grid { gap: 24px; }
+}
+@media (max-width: 768px) {
+  .hamburger-btn { display: flex; }
+  .btn-nav-cta { padding: 8px 12px; font-size: .78rem; }
+  .social-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .services-grid, .differentials-grid, .calc-form-grid, .ag-info-row { grid-template-columns: 1fr; }
+  .calc-group.full-width { grid-column: auto; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-brand-col { grid-column: auto; }
+}
+@media (max-width: 700px) {
+  .page-service-grid, .contact-cards { grid-template-columns: 1fr; }
+  .tracking-form, .admin-form { grid-template-columns: 1fr; }
+  .page-callout { align-items: flex-start; flex-direction: column; }
+  .admin-record { align-items: flex-start; flex-direction: column; }
+}
+.error-msg { line-height: 1.4; }
+.whatsapp-fab { position: fixed; right: 20px; bottom: 20px; z-index: 999; display: flex; width: 54px; height: 54px; align-items: center; justify-content: center; border-radius: 50%; background: #16A34A; box-shadow: 0 8px 20px rgba(22,163,74,.24); text-decoration: none; transition: transform var(--transition); }
+.whatsapp-fab:hover { transform: scale(1.04); }
+.fab-tooltip { position: absolute; right: 62px; padding: 6px 10px; border: 1px solid rgba(255,255,255,.12); border-radius: 4px; background: #12263D; color: #FFFFFF; font-size: .78rem; font-weight: 700; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity var(--transition); }
+.whatsapp-fab:hover .fab-tooltip, .whatsapp-fab:focus-visible .fab-tooltip { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}

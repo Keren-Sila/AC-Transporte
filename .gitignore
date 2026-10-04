@@ -1,5 +1,6 @@
 # Dependências e Builds futuros
 node_modules/
+backend/node_modules/
 dist/
 build/
 .next/
@@ -7,6 +8,7 @@ out/
 
 # Arquivos de Ambiente e Chaves de Segurança
 .env
+backend/.env
 .env.local
 .env.development.local
 .env.test.local
@@ -21,3 +23,7 @@ Desktop.ini
 .vscode/
 .idea/
 *.swp
+
+# Dados privados locais
+backend/storage/*
+!backend/storage/.gitkeep

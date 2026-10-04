@@ -1,0 +1,35 @@
+.social-contact-section { padding: 76px 0; background: #F1F4F7; border: 0; }
+.social-grid { gap: 18px; }
+.insta-box, .contacts-box { padding: 28px; border-radius: 6px; }
+.contacts-box .c-link { margin-bottom: 2px; }
+.c-link { gap: 14px; flex-wrap: wrap; background: #F7F9FB; }
+.c-link span { color: #627286; }
+
+.footer { background: #0C1A2B; border-top: 0; }
+.footer-cnpj-badge { border-color: rgba(255,255,255,.12); border-radius: 4px; }
+.footer-links a, .footer-legal-note, .btn-text-link { color: #B4C1CF; }
+.footer-bottom { border-top-color: rgba(255,255,255,.14); }
+.whatsapp-fab { box-shadow: 0 8px 20px rgba(22,163,74,.24); }
+.modal-card { border-radius: 7px; }
+
+.footer { padding: 56px 0 24px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; margin-bottom: 38px; }
+.footer-desc { margin: 14px 0; color: #AEBBC9; font-size: .86rem; line-height: 1.6; }
+.footer-cnpj-badge { padding: 9px 12px; font-size: .75rem; color: #AEBBC9; }
+.footer-heading { margin-bottom: 14px; color: #FFFFFF; font-size: .92rem; }
+.footer-links { display: flex; flex-direction: column; gap: 8px; padding: 0; list-style: none; }
+.footer-links a, .footer-legal-note, .btn-text-link { color: #B4C1CF; font-size: .83rem; }
+.footer-links a { text-decoration: none; transition: color var(--transition); }
+.footer-links a:hover, .btn-text-link:hover { color: #F0A57D; }
+.btn-text-link { padding: 0; background: none; border: 0; cursor: pointer; font-family: var(--font-sans); text-align: left; text-decoration: underline; }
+.footer-bottom { padding-top: 18px; border-top: 1px solid rgba(255,255,255,.14); }
+.footer-bottom-flex { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; color: #9EACBC; font-size: .77rem; }
+
+.modal-overlay { position: fixed; inset: 0; z-index: 10000; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(5,15,27,.72); opacity: 0; pointer-events: none; transition: opacity var(--transition); }
+.modal-overlay.active { opacity: 1; pointer-events: auto; }
+.modal-card { width: 100%; max-width: 540px; border: 1px solid #DCE3EA; border-radius: 7px; background: #FFFFFF; box-shadow: 0 24px 70px rgba(5,15,27,.25); }
+.modal-header { display: flex; align-items: center; justify-content: space-between; padding: 17px 20px; border-bottom: 1px solid #E5EAF0; }
+.modal-header h3 { color: #14263B; font-size: 1.05rem; }
+.modal-close-btn { border: 0; background: none; color: #66768A; font-size: 1.5rem; cursor: pointer; }
+.modal-body { padding: 20px; color: #526479; font-size: .9rem; line-height: 1.65; }
+.modal-footer { display: flex; justify-content: flex-end; padding: 14px 20px; border-top: 1px solid #E5EAF0; }

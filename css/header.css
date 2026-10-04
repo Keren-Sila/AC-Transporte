@@ -1,0 +1,116 @@
+/* TOPBAR CORPORATIVA */
+.topbar-corporate {
+  background: #060910;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 8px 0;
+  font-size: 0.82rem;
+  color: var(--slate-muted);
+}
+
+.topbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar-left, .topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.tb-cnpj { color: var(--slate-light); font-weight: 600; }
+.tb-location { color: var(--slate-muted); }
+.tb-sep { color: rgba(255, 255, 255, 0.15); }
+.tb-whatsapp { display: inline-flex; align-items: center; gap: 6px; color: var(--primary-orange); text-decoration: none; font-weight: 700; }
+.tb-whatsapp:hover { text-decoration: underline; }
+
+/* HEADER INSTITUCIONAL FIXO NO TOPO */
+.header-site {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #0B0F19;
+  border-bottom: 1px solid var(--border-color);
+  padding: 14px 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.nav-menu { display: block; }
+.hidden-mobile { display: inline; }
+
+.logo-svg {
+  display: block;
+  height: 40px;
+  width: auto;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-link {
+  color: var(--slate-light);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 6px 2px;
+  transition: color var(--transition);
+  position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--text-white);
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary-orange);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.btn-nav-cta {
+  padding: 9px 18px;
+  font-size: 0.88rem;
+}
+
+.hamburger-btn {
+  display: none;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hamburger-btn .bar {
+  width: 22px;
+  height: 2px;
+  background-color: var(--text-white);
+  border-radius: 2px;
+}
