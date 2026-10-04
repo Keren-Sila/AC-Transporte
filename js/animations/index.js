@@ -11,6 +11,7 @@ import { initCountersAnimation } from './counters.js';
 import { initMagneticButtons } from './magnetic.js';
 import { initMapAnimations } from './map.js';
 import { initMotionInteractions } from './interactions.js';
+import { initStoryMotion } from './story.js';
 
 export function initScrollAnimations() {
   initObserver();
@@ -21,6 +22,7 @@ export function initScrollAnimations() {
   initMagneticButtons();
   initMapAnimations();
   initMotionInteractions();
+  initStoryMotion();
 }
 
 export function initPrivacyModal() {
