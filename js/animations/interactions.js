@@ -6,7 +6,6 @@
 export function initMotionInteractions() {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const motionLite = document.documentElement.dataset.motion === 'lite';
-  initHeroTruck(reduceMotion, motionLite);
   if (reduceMotion) return;
 
   if (!motionLite) initScrollProgress();
@@ -14,24 +13,6 @@ export function initMotionInteractions() {
   if (motionLite || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
   initPointerSpotlights();
   initHeroParallax();
-}
-
-function initHeroTruck(reduceMotion, motionLite) {
-  const hero = document.querySelector('.ac-hero');
-  if (!hero || hero.querySelector('.ac-hero-truck-wrap')) return;
-
-  const wrap = document.createElement('div');
-  wrap.className = `ac-hero-truck-wrap${reduceMotion || motionLite ? '' : ' is-arriving'}${motionLite ? ' is-lite' : ''}`;
-  wrap.setAttribute('aria-hidden', 'true');
-  const truck = document.createElement('img');
-  truck.className = 'ac-hero-truck';
-  truck.alt = '';
-  truck.decoding = 'async';
-  truck.src = `${document.body.dataset.root || ''}assets/images/hero/truck-motion.svg`;
-  wrap.append(truck);
-
-  const background = hero.querySelector('.ac-hero-bg');
-  background ? background.after(wrap) : hero.prepend(wrap);
 }
 
 function initScrollProgress() {
