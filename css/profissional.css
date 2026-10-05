@@ -306,6 +306,32 @@ textarea.form-input{min-height:96px}
   box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
 }
 
+.ac-hero-facts-band {
+  background: #10151B;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 0 24px;
+}
+
+.ac-hero-facts-band .ac-facts {
+  border-top: 0;
+  margin: 0;
+}
+
+.ac-hero-facts-band .ac-facts dt {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #94A3B8;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ac-hero-facts-band .ac-facts dd {
+  color: #FFFFFF;
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
 @media (max-width: 768px) {
   .ac-hero-stage {
     min-height: 320px;
