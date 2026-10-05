@@ -173,6 +173,18 @@ html { scroll-padding-top: 92px; }
   will-change: transform, opacity;
 }
 
+/* Scroll movement for the truck in the Instagram-style homepage hero. */
+.ac-hero-instagram .ac-hero-truck-wrap {
+  top: auto;
+  right: auto;
+  display: flex;
+  width: min(84vw, 920px);
+  transform: translate3d(var(--truck-x, 0px), var(--truck-y, 0px), 0) rotate(var(--truck-rotate, 0deg));
+}
+.ac-hero-instagram .ac-hero-truck-img { width: 100%; max-width: 820px; }
+.ac-hero-instagram .ac-hero-telemetry span { font-variant-numeric: tabular-nums; }
+.ac-hero-instagram .road-dashed-line { background-position: var(--road-offset-x, 0px) 0; }
+
 .ac-hero-truck-wrap.is-arriving {
   transform: translate3d(calc(27vw + var(--truck-x, 0px)), calc(-26px + var(--truck-y, 0px)), 0) rotate(var(--truck-rotate, 0deg));
 }
@@ -391,6 +403,7 @@ html { scroll-padding-top: 92px; }
     width: 88vw;
     --truck-opacity: .34;
   }
+  .ac-hero-instagram .ac-hero-truck-wrap { top: auto; right: auto; display: flex; width: min(92vw, 700px); }
   .ac-hero::before { opacity: .1; background-size: 62px 62px, 62px 62px, 100% 100%; }
   .ac-hero h1, .ac-hero p, .ac-actions, .ac-hero-scroll-cue { position: relative; z-index: 2; }
   .ac-hero h1 { max-width: 10ch; font-size: clamp(2.6rem, 13vw, 4.4rem); }
