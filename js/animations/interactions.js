@@ -38,7 +38,9 @@ function initHeroTruck(reduceMotion, motionLite) {
   truck.className = 'ac-hero-truck';
   truck.alt = '';
   truck.decoding = 'async';
-  truck.src = `${document.body.dataset.root || ''}assets/images/hero/truck-motion.svg`;
+  truck.loading = 'eager';
+  truck.fetchPriority = 'high';
+  truck.src = `${document.body.dataset.root || ''}assets/images/hero/truck-realistic.png`;
   wrap.append(truck);
 
   const background = hero.querySelector('.ac-hero-bg');
