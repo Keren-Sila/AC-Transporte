@@ -714,3 +714,94 @@ html[data-motion="lite"] .page-transition-grid { transform: none; opacity: .12; 
   .ac-sec::after, .ac-steps::before { animation: none; transform: none; }
   .inner-page .service-detail-card:hover, .inner-page .fleet-card:hover, .inner-page .principle-card:hover { transform: none; box-shadow: none; }
 }
+
+/* Controles rápidos de animação: ajuste estes valores para mudar o ritmo do hero. */
+:root {
+  --hero-particle-duration: 8s;
+  --hero-particle-opacity: .62;
+  --hero-particle-fade: .28;
+  --hero-particle-soft: .45;
+  --hero-particle-mobile: .44;
+  --hero-atmosphere-duration: 10s;
+  --hero-sweep-duration: 9s;
+  --hero-grid-duration: 18s;
+  --hero-road-duration: 2.6s;
+  --hero-cruise-duration: 5.6s;
+  --hero-scroll-duration: 1.6s;
+  --inner-hero-duration: 20s;
+  --inner-orbit-duration: 28s;
+}
+
+.ac-hero-bg::before { animation-duration: var(--hero-atmosphere-duration); }
+.ac-hero-bg::after { animation-duration: var(--hero-sweep-duration); }
+.ac-hero::before { animation-duration: var(--hero-grid-duration); }
+.ac-hero-truck-wrap::after { animation-duration: var(--hero-road-duration); }
+.ac-hero-truck { animation-duration: var(--hero-cruise-duration); }
+.ac-hero-scroll-cue span::after { animation-duration: var(--hero-scroll-duration); }
+.inner-hero::before { animation-duration: var(--inner-hero-duration); }
+.inner-hero::after { animation-duration: var(--inner-orbit-duration); }
+
+.hero-particle-field {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-particle {
+  position: absolute;
+  top: var(--particle-y);
+  left: var(--particle-x);
+  display: block;
+  width: var(--particle-size);
+  height: var(--particle-size);
+  border-radius: 999px;
+  background: #ff9a52;
+  box-shadow: 0 0 14px rgba(255,138,50,.58);
+  opacity: var(--hero-particle-opacity);
+  transform: translate3d(0, 0, 0);
+  animation: heroParticleFloat var(--hero-particle-duration) ease-in-out var(--particle-delay) infinite alternate;
+  will-change: transform, opacity;
+}
+
+.hero-particle--orb {
+  border: 1px solid rgba(255,183,133,.7);
+  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.85), rgba(255,138,50,.42) 40%, transparent 72%);
+  box-shadow: 0 0 22px rgba(232,97,10,.36), inset 0 0 8px rgba(255,255,255,.28);
+}
+
+.hero-particle:nth-child(3n) { animation-delay: calc(var(--particle-delay) - 1.25s); }
+.hero-particle:nth-child(4n) { opacity: var(--hero-particle-soft); }
+
+@keyframes heroParticleFloat {
+  0% { opacity: var(--hero-particle-fade); transform: translate3d(calc(var(--particle-drift) * -.5), 12px, 0) scale(.82); }
+  50% { opacity: var(--hero-particle-opacity); }
+  100% { opacity: var(--hero-particle-soft); transform: translate3d(var(--particle-drift), -18px, 0) scale(1.12); }
+}
+
+html[data-motion="lite"] {
+  --hero-particle-duration: 12s;
+  --hero-particle-opacity: .36;
+  --hero-particle-fade: .16;
+  --hero-particle-soft: .28;
+  --hero-particle-mobile: .25;
+  --hero-atmosphere-duration: 18s;
+  --hero-sweep-duration: 14s;
+  --hero-grid-duration: 26s;
+  --hero-road-duration: 4s;
+  --hero-cruise-duration: 8s;
+}
+
+html[data-motion="lite"] .hero-particle:nth-child(n + 8) { display: none; }
+html[data-motion="lite"] .hero-particle { box-shadow: none; will-change: auto; }
+html[data-motion="lite"] .hero-particle--orb { box-shadow: none; }
+
+@media (max-width: 900px) {
+  .hero-particle:nth-child(2n) { opacity: var(--hero-particle-mobile); }
+  .hero-particle-field { inset: 0 -8% 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-particle-field { display: none; }
+}
