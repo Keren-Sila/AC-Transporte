@@ -194,6 +194,29 @@ html { scroll-padding-top: 92px; }
   50% { transform: translate3d(-4px, -6px, 0) rotate(-.35deg); }
 }
 
+.truck-drive-readout {
+  position: absolute;
+  right: 14%;
+  bottom: 5%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 4px;
+  background: rgba(10,15,19,.78);
+  color: #fff;
+  font-size: .58rem;
+  letter-spacing: .07em;
+  white-space: nowrap;
+}
+.truck-drive-label { color: rgba(255,255,255,.75); font-weight: 800; }
+.truck-drive-speed { display: inline-flex; align-items: baseline; gap: 4px; color: #ff9852; font-variant-numeric: tabular-nums; }
+.truck-drive-speed b { min-width: 1.2em; font-size: .88rem; text-align: right; }
+.truck-drive-speed small { color: rgba(255,255,255,.78); font-size: .56rem; letter-spacing: 0; }
+.truck-drive-route { width: 44px; height: 2px; overflow: hidden; background: rgba(255,255,255,.22); }
+.truck-drive-route i { display: block; width: 100%; height: 100%; background: #ff8a32; transform: scaleX(0); transform-origin: left; }
+
 .ac-hero .container:has(.ac-facts) {
   z-index: 1;
 }
@@ -391,6 +414,8 @@ html { scroll-padding-top: 92px; }
     width: 88vw;
     --truck-opacity: .34;
   }
+  .truck-drive-readout { right: 5%; bottom: 3%; gap: 7px; padding: 6px 8px; font-size: .52rem; }
+  .truck-drive-route { width: 30px; }
   .ac-hero::before { opacity: .1; background-size: 62px 62px, 62px 62px, 100% 100%; }
   .ac-hero h1, .ac-hero p, .ac-actions, .ac-hero-scroll-cue { position: relative; z-index: 2; }
   .ac-hero h1 { max-width: 10ch; font-size: clamp(2.6rem, 13vw, 4.4rem); }
