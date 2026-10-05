@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="100%" height="100%">
+  <defs>
+    <!-- Soft asphalt drop shadow under wheels -->
+    <radialGradient id="shadow-gradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#000000" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    
+    <!-- Metallic gradients -->
+    <linearGradient id="body-shine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="70%" stop-color="#F4F5F7"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+
+    <linearGradient id="cab-shine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+
+    <linearGradient id="speed-stripe-orange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF6600"/>
+      <stop offset="100%" stop-color="#FF8533"/>
+    </linearGradient>
+
+    <linearGradient id="speed-stripe-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C84E00"/>
+      <stop offset="100%" stop-color="#E65C00"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ground Drop Shadow -->
+  <ellipse cx="500" cy="415" rx="440" ry="25" fill="url(#shadow-gradient)"/>
+
+  <!-- TRUCK GROUP -->
+  <g id="truck-body" transform="translate(40, 40)">
+    
+    <!-- Undercarriage / Chassis Rails -->
+    <rect x="120" y="320" width="600" height="24" rx="4" fill="#1E293B"/>
+    <rect x="250" y="315" width="220" height="28" rx="3" fill="#334155"/> <!-- Fuel Tank -->
+    <rect x="260" y="320" width="200" height="18" fill="#475569"/>
+
+    <!-- ================= TRAILER / BAÚ (WHITE BOX) ================= -->
+    <g id="trailer">
+      <!-- Main Cargo Box -->
+      <rect x="40" y="40" width="580" height="280" rx="8" fill="url(#body-shine)" stroke="#CBD5E1" stroke-width="4"/>
+      
+      <!-- Top & Corner Trim Reinforcements -->
+      <rect x="36" y="36" width="588" height="12" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.5"/>
+      <rect x="36" y="312" width="588" height="12" fill="#E2E8F0" stroke="#94A3B8" stroke-width="1.5"/>
+      <line x1="40" y1="40" x2="40" y2="320" stroke="#94A3B8" stroke-width="3"/>
+      <line x1="620" y1="40" x2="620" y2="320" stroke="#94A3B8" stroke-width="3"/>
+
+      <!-- Vertical Panel Joints -->
+      <g stroke="#E2E8F0" stroke-width="1.5" opacity="0.7">
+        <line x1="150" y1="48" x2="150" y2="312"/>
+        <line x1="260" y1="48" x2="260" y2="312"/>
+        <line x1="370" y1="48" x2="370" y2="312"/>
+        <line x1="480" y1="48" x2="480" y2="312"/>
+      </g>
+
+      <!-- Side Door & Hinge Detail -->
+      <rect x="70" y="60" width="100" height="240" fill="none" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="8 4"/>
+      <rect x="165" y="160" width="8" height="24" rx="2" fill="#475569"/> <!-- Door Latch -->
+
+      <!-- ================= AC TRANSPORTE BRANDING ON BAÚ ================= -->
+      <g id="baú-logo" transform="translate(200, 115)">
+        <!-- 3 Speed Stripes / Arrows -->
+        <polygon points="0,22 65,22 80,34 65,46 0,46 15,34" fill="url(#speed-stripe-orange)"/>
+        <polygon points="10,54 75,54 90,64 75,74 10,74 25,64" fill="url(#speed-stripe-dark)"/>
+        <polygon points="0,82 65,82 80,92 65,102 0,102 15,92" fill="#14181D"/>
+
+        <!-- AC Letters (Bold Italic Black) -->
+        <text x="105" y="78" fill="#14181D" font-family="'Plus Jakarta Sans', 'Arial Black', sans-serif" font-weight="900" font-style="italic" font-size="78" letter-spacing="-3">AC</text>
+
+        <!-- TRANSPORTE Text -->
+        <text x="235" y="62" fill="#14181D" font-family="'Plus Jakarta Sans', 'Arial', sans-serif" font-weight="900" font-style="italic" font-size="30" letter-spacing="1">TRANSPORTE</text>
+        
+        <!-- Slogan Divider Line & Subtitle -->
+        <line x1="235" y1="74" x2="400" y2="74" stroke="#FF6600" stroke-width="3"/>
+        <text x="235" y="94" fill="#334155" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="13" letter-spacing="2">FRETES E MUDANÇAS</text>
+      </g>
+
+      <!-- Bottom Safety Reflective Tape -->
+      <g opacity="0.9">
+        <rect x="40" y="306" width="30" height="6" fill="#FF6600"/>
+        <rect x="70" y="306" width="30" height="6" fill="#FFFFFF"/>
+        <rect x="100" y="306" width="30" height="6" fill="#FF6600"/>
+        <rect x="130" y="306" width="30" height="6" fill="#FFFFFF"/>
+        <rect x="160" y="306" width="30" height="6" fill="#FF6600"/>
+        <rect x="190" y="306" width="30" height="6" fill="#FFFFFF"/>
+        <rect x="220" y="306" width="30" height="6" fill="#FF6600"/>
+        <rect x="250" y="306" width="30" height="6" fill="#FFFFFF"/>
+        <rect x="280" y="306" width="30" height="6" fill="#FF6600"/>
+        <rect x="310" y="306" width="30" height="6" fill="#FFFFFF"/>
+        <rect x="340" y="306" width="30" height="6" fill="#FF6600"/>
+        <rect x="370" y="306" width="30" height="6" fill="#FFFFFF"/>
+        <rect x="400" y="306" width="30" height="6" fill="#FF6600"/>
+        <rect x="430" y="306" width="30" height="6" fill="#FFFFFF"/>
+        <rect x="460" y="306" width="30" height="6" fill="#FF6600"/>
+        <rect x="490" y="306" width="30" height="6" fill="#FFFFFF"/>
+        <rect x="520" y="306" width="30" height="6" fill="#FF6600"/>
+        <rect x="550" y="306" width="30" height="6" fill="#FFFFFF"/>
+        <rect x="580" y="306" width="40" height="6" fill="#FF6600"/>
+      </g>
+    </g>
+
+    <!-- ================= TRUCK CABIN ================= -->
+    <g id="cabin">
+      <!-- Aerodynamic Wind Deflector Roof Shield -->
+      <path d="M 618 60 Q 640 40 680 40 L 730 40 Q 755 45 765 65 L 775 105 L 618 105 Z" fill="url(#cab-shine)" stroke="#CBD5E1" stroke-width="2"/>
+
+      <!-- Main Cabin Shell -->
+      <path d="M 618 105 L 780 105 L 830 180 L 835 320 L 618 320 Z" fill="url(#cab-shine)" stroke="#CBD5E1" stroke-width="3"/>
+      
+      <!-- Windshield / Side Window -->
+      <polygon points="650,120 765,120 805,175 650,175" fill="#0F172A" stroke="#334155" stroke-width="3"/>
+      <polygon points="660,125 755,125 790,170 660,170" fill="#38BDF8" opacity="0.35"/> <!-- Window Reflection -->
+
+      <!-- Side Door Line & Mirror -->
+      <path d="M 645 115 L 775 115 L 815 180 L 815 310 L 645 310 Z" fill="none" stroke="#94A3B8" stroke-width="2"/>
+      <rect x="660" y="210" width="35" height="12" rx="3" fill="#0F172A"/> <!-- Door Handle -->
+      
+      <!-- Side Mirror -->
+      <rect x="800" y="130" width="16" height="42" rx="4" fill="#1E293B"/>
+      <line x1="775" y1="140" x2="800" y2="140" stroke="#1E293B" stroke-width="4"/>
+      <line x1="775" y1="160" x2="800" y2="160" stroke="#1E293B" stroke-width="4"/>
+
+      <!-- Front Grille & Bumper -->
+      <rect x="815" y="210" width="22" height="100" fill="#0F172A"/>
+      <line x1="815" y1="230" x2="835" y2="230" stroke="#475569" stroke-width="3"/>
+      <line x1="815" y1="250" x2="835" y2="250" stroke="#475569" stroke-width="3"/>
+      <line x1="815" y1="270" x2="835" y2="270" stroke="#475569" stroke-width="3"/>
+      <line x1="815" y1="290" x2="835" y2="290" stroke="#475569" stroke-width="3"/>
+
+      <!-- Headlight Unit -->
+      <rect x="820" y="295" width="18" height="22" rx="3" fill="#FDE047"/>
+      <circle cx="829" cy="306" r="6" fill="#FFFFFF"/>
+
+      <!-- Steps & Wheel Arch Flare -->
+      <path d="M 680 320 C 680 260, 770 260, 770 320 Z" fill="#1E293B"/>
+    </g>
+
+    <!-- ================= WHEELS & TIRES ================= -->
+    <!-- Rear Dual Axle Wheels -->
+    <!-- Wheel 1 -->
+    <g transform="translate(140, 320)">
+      <circle cx="0" cy="0" r="48" fill="#0F172A" stroke="#334155" stroke-width="8"/>
+      <circle cx="0" cy="0" r="28" fill="#E2E8F0" stroke="#94A3B8" stroke-width="5"/>
+      <circle cx="0" cy="0" r="14" fill="#475569"/>
+      <circle cx="-12" cy="0" r="3" fill="#0F172A"/>
+      <circle cx="12" cy="0" r="3" fill="#0F172A"/>
+      <circle cx="0" cy="-12" r="3" fill="#0F172A"/>
+      <circle cx="0" cy="12" r="3" fill="#0F172A"/>
+    </g>
+
+    <!-- Wheel 2 -->
+    <g transform="translate(250, 320)">
+      <circle cx="0" cy="0" r="48" fill="#0F172A" stroke="#334155" stroke-width="8"/>
+      <circle cx="0" cy="0" r="28" fill="#E2E8F0" stroke="#94A3B8" stroke-width="5"/>
+      <circle cx="0" cy="0" r="14" fill="#475569"/>
+      <circle cx="-12" cy="0" r="3" fill="#0F172A"/>
+      <circle cx="12" cy="0" r="3" fill="#0F172A"/>
+      <circle cx="0" cy="-12" r="3" fill="#0F172A"/>
+      <circle cx="0" cy="12" r="3" fill="#0F172A"/>
+    </g>
+
+    <!-- Front Steering Wheel -->
+    <g transform="translate(725, 320)">
+      <circle cx="0" cy="0" r="48" fill="#0F172A" stroke="#334155" stroke-width="8"/>
+      <circle cx="0" cy="0" r="28" fill="#E2E8F0" stroke="#94A3B8" stroke-width="5"/>
+      <circle cx="0" cy="0" r="14" fill="#475569"/>
+      <circle cx="-12" cy="0" r="3" fill="#0F172A"/>
+      <circle cx="12" cy="0" r="3" fill="#0F172A"/>
+      <circle cx="0" cy="-12" r="3" fill="#0F172A"/>
+      <circle cx="0" cy="12" r="3" fill="#0F172A"/>
+    </g>
+  </g>
+</svg>
