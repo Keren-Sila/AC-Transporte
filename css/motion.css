@@ -805,3 +805,95 @@ html[data-motion="lite"] .hero-particle--orb { box-shadow: none; }
 @media (prefers-reduced-motion: reduce) {
   .hero-particle-field { display: none; }
 }
+
+/* Scroll storytelling dos serviços e depoimentos */
+#servicos .services-intro { transition-delay: 40ms; }
+#servicos .ac-rules li {
+  overflow: hidden;
+  transition: opacity .7s var(--motion-ease), transform .7s var(--motion-ease), padding-left .45s var(--motion-ease), background-color .35s ease;
+}
+
+#servicos .ac-rules li::before {
+  position: absolute;
+  top: 1.12rem;
+  right: 0;
+  color: var(--laranja);
+  content: '0' counter(service-item);
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  opacity: .45;
+  transform: translate3d(12px, 0, 0);
+  transition: opacity .45s ease, transform .55s var(--motion-ease);
+}
+
+#servicos .ac-rules { counter-reset: service-item; }
+#servicos .ac-rules li { counter-increment: service-item; }
+#servicos .ac-rules li.is-visible::before { opacity: 1; transform: translate3d(0, 0, 0); }
+#servicos .ac-rules li.is-visible strong { color: var(--laranja-esc); }
+
+.testimonials-section {
+  color: #fff;
+  background: #151a1f;
+  background-image: radial-gradient(circle at 80% 20%, rgba(232,97,10,.22), transparent 32%), linear-gradient(120deg, transparent 0 58%, rgba(255,255,255,.04) 58.2%, transparent 58.5%);
+}
+
+.testimonials-section::before { background: linear-gradient(90deg, #ff8a32, transparent); }
+.testimonials-heading { max-width: 670px; margin-bottom: clamp(2rem, 5vw, 3.5rem); }
+.testimonials-heading .ac-h2 { color: #fff; }
+.testimonials-heading .ac-lead { color: rgba(255,255,255,.7); }
+.testimonial-grid { display: grid; gap: 1rem; }
+.testimonial-card {
+  position: relative;
+  min-height: 230px;
+  padding: clamp(1.3rem, 3vw, 2rem);
+  border: 1px solid rgba(255,255,255,.14);
+  background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.025));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+  transition: transform .7s var(--motion-ease), border-color .35s ease, background-color .35s ease, box-shadow .5s ease;
+}
+
+.testimonial-card::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff8a32, transparent 74%);
+  content: '';
+  opacity: .5;
+  transform: scaleX(.18);
+  transform-origin: left center;
+  transition: opacity .35s ease, transform .65s var(--motion-ease);
+}
+
+.testimonial-card:hover { border-color: rgba(255,138,50,.62); background: rgba(255,255,255,.11); box-shadow: 0 18px 40px rgba(0,0,0,.18); transform: translateY(-7px) rotateX(1deg); }
+.testimonial-card:hover::before, .testimonial-card.is-visible::before { opacity: 1; transform: scaleX(1); }
+.testimonial-index { color: #ff9b5b; font-size: .68rem; font-weight: 800; letter-spacing: .12em; }
+.testimonial-card h3 { margin: 2.7rem 0 .65rem; color: #fff; font-size: clamp(1.35rem, 2.2vw, 1.8rem); letter-spacing: -.04em; }
+.testimonial-card p { max-width: 32ch; margin: 0; color: rgba(255,255,255,.75); line-height: 1.65; }
+.testimonial-card small { display: block; margin-top: 1.45rem; color: rgba(255,255,255,.45); font-size: .72rem; }
+
+/* Deslocamento contínuo: o caminhão avança, suspende e volta a encontrar a linha da estrada. */
+@keyframes acTruckCruise {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  22% { transform: translate3d(-10px, -3px, 0) rotate(-.25deg); }
+  50% { transform: translate3d(-34px, 0, 0) rotate(0deg); }
+  74% { transform: translate3d(-18px, -4px, 0) rotate(.2deg); }
+}
+
+@media (min-width: 860px) {
+  .testimonial-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 700px) {
+  .testimonial-card { min-height: 200px; }
+  .testimonial-card h3 { margin-top: 2rem; }
+}
+
+html[data-motion="lite"] .testimonial-card:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(0,0,0,.12); }
+html[data-motion="lite"] .testimonial-card::before { transition-duration: .35s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-card:hover { transform: none; }
+}
