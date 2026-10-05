@@ -39,11 +39,12 @@ export function initStoryMotion() {
       if (truck) {
         const motionScale = profile === 'lite' || window.innerWidth <= 700 ? .58 : 1;
         const drive = Math.sin(progress * Math.PI);
-        truck.style.setProperty('--truck-x', `${(progress * -70 * motionScale).toFixed(2)}px`);
-        truck.style.setProperty('--truck-y', `${(drive * 15 * motionScale).toFixed(2)}px`);
-        truck.style.setProperty('--truck-rotate', `${(progress * -2.2 * motionScale).toFixed(2)}deg`);
+        truck.style.setProperty('--truck-x', '0px');
+        truck.style.setProperty('--truck-y', `${(-progress * 190 * motionScale).toFixed(2)}px`);
+        truck.style.setProperty('--truck-scale', (1 + progress * .62 * motionScale).toFixed(3));
+        truck.style.setProperty('--truck-rotate', `${(-drive * .22 * motionScale).toFixed(2)}deg`);
         if (telemetry) telemetry.textContent = `AC TRANSPORTE · ${Math.round(drive * 68 * motionScale)} KM/H`;
-        if (road) road.style.setProperty('--road-offset-x', `${(-progress * 160).toFixed(1)}px`);
+        if (road) road.style.setProperty('--road-offset-x', `${(-progress * 300).toFixed(1)}px`);
       }
     }
 
