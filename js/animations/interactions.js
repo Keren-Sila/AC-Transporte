@@ -28,25 +28,7 @@ function initHeroTruck(reduceMotion, motionLite) {
   truck.alt = '';
   truck.decoding = 'async';
   truck.src = `${document.body.dataset.root || ''}assets/images/hero/truck-motion.svg`;
-  const readout = document.createElement('div');
-  readout.className = 'truck-drive-readout';
-  const label = document.createElement('span');
-  label.className = 'truck-drive-label';
-  label.textContent = 'AC TRANSPORTE';
-  const speed = document.createElement('span');
-  speed.className = 'truck-drive-speed';
-  const speedValue = document.createElement('b');
-  speedValue.className = 'truck-drive-speed-value';
-  speedValue.textContent = '0';
-  const speedUnit = document.createElement('small');
-  speedUnit.textContent = 'km/h';
-  speed.append(speedValue, speedUnit);
-  const route = document.createElement('span');
-  route.className = 'truck-drive-route';
-  const routeProgress = document.createElement('i');
-  route.append(routeProgress);
-  readout.append(label, speed, route);
-  wrap.append(truck, readout);
+  wrap.append(truck);
 
   const background = hero.querySelector('.ac-hero-bg');
   background ? background.after(wrap) : hero.prepend(wrap);
