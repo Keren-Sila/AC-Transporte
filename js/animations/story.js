@@ -67,8 +67,10 @@ export function initStoryMotion() {
     const roadTop = 84 - 50.6 * roadProgress;
     const roadHeight = 16 + 2 * roadProgress;
     const scale = 1 + roadProgress * (profile === 'lite' || width < 700 ? 0.12 : 0.2);
-    const ground = (roadTop + roadHeight * (0.06 + 0.56 * roadProgress)) * height / 100;
-    const truckY = ground - truckHeight * scale + 3;
+    const laneCenter = (roadTop + roadHeight / 2) * height / 100;
+    // The transparent WebP has 9.7% bottom padding; align the visible tires to the lane.
+    const visibleBottom = 0.903;
+    const truckY = laneCenter - truckHeight * (1 + (visibleBottom - 1) * scale);
 
     truck.style.setProperty('--truck-x', `${truckX.toFixed(2)}px`);
     truck.style.setProperty('--truck-y', `${truckY.toFixed(2)}px`);
@@ -88,8 +90,11 @@ export function initStoryMotion() {
     }
 
     if (copy) {
-      const copyTop = height < 560 ? Math.max(52, roadTop + roadHeight + 0.5) : roadTop + roadHeight + 3;
-      copy.style.top = `${copyTop.toFixed(2)}%`;
+      const roadBottom = (roadTop + roadHeight) * height / 100;
+      const safeBottom = Math.max(24, height * 0.04);
+      const freeSpace = Math.max(0, height - roadBottom - copy.offsetHeight - safeBottom);
+      const copyTop = roadBottom + freeSpace / 2;
+      copy.style.top = `${(copyTop / height * 100).toFixed(2)}%`;
       copy.classList.toggle('is-active', progress > 0.72);
       copyParts.forEach((part, index) => {
         const visible = smooth((progress - (0.58 + index * 0.06)) / 0.22);
