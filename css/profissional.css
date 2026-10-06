@@ -570,7 +570,7 @@ textarea.form-input{min-height:96px}
   .ac-hero-transition-actions .btn, .btn-road-secondary { min-height: 34px; padding-inline: .9rem; font-size: .74rem; }
 }
 
-@media (prefers-reduced-motion: reduce), html[data-motion="reduced"] {
+@media (prefers-reduced-motion: reduce) {
   .ac-hero-scroll { height: auto; }
   .ac-hero-instagram .ac-hero-stage {
     position: relative;
@@ -594,6 +594,31 @@ textarea.form-input{min-height:96px}
     transform: none !important;
     will-change: auto;
   }
+}
+
+html[data-motion="reduced"] .ac-hero-scroll { height: auto; }
+html[data-motion="reduced"] .ac-hero-instagram .ac-hero-stage {
+  position: relative;
+  top: auto;
+  height: min(75svh, 640px);
+  min-height: 440px;
+}
+html[data-motion="reduced"] .ac-hero-instagram .ac-hero-truck-wrap {
+  left: 50%;
+  top: 46%;
+  width: min(80vw, 600px);
+  transform: translate3d(-50%, -50%, 0) !important;
+  will-change: auto;
+}
+html[data-motion="reduced"] .ac-hero-transition-copy {
+  top: auto;
+  bottom: 2.5rem;
+}
+html[data-motion="reduced"] .ac-hero-transition-copy > * {
+  opacity: 1 !important;
+  transform: none !important;
+  will-change: auto;
+}
 }
 
 .ac-sec { padding: clamp(3rem, 7vw, 5.5rem) 0; }
