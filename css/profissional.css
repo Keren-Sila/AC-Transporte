@@ -601,5 +601,16 @@ textarea.form-input{min-height:96px}
 .calc-group .form-input { border: 1px solid #bdb7ad; border-radius: 3px; background: #fff; color: var(--tinta); }
 .consent-field { color: var(--tinta-2); }
 .consent-field a { color: var(--laranja-esc); }
-@media (max-width: 900px) { .ac-hero-truck-wrap { --truck-opacity: .42; width: 66vw; right: -24%; top: 17%; } }
-@media (max-width: 700px) { .ac-hero-inner { padding-top: 3.5rem; } .ac-hero-truck-wrap { display: none; } .ac-facts { grid-template-columns: 1fr; } .ac-facts div { padding: .85rem 0; border-bottom: 1px solid rgba(255,255,255,.14); } }
+
+@media (max-width: 700px) {
+  .ac-hero-inner { padding-top: 2rem; }
+  .ac-hero-instagram .ac-hero-truck-wrap {
+    display: block !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 46% !important;
+    width: min(92vw, 500px) !important;
+    transform: translate3d(-50%, -50%, 0) !important;
+    margin: 0 auto;
+  }
+}
