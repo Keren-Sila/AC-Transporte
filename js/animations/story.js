@@ -88,7 +88,8 @@ export function initStoryMotion() {
     }
 
     if (copy) {
-      copy.style.top = `${(roadTop + roadHeight + 3).toFixed(2)}%`;
+      const copyTop = height < 560 ? Math.max(52, roadTop + roadHeight + 0.5) : roadTop + roadHeight + 3;
+      copy.style.top = `${copyTop.toFixed(2)}%`;
       copy.classList.toggle('is-active', progress > 0.72);
       copyParts.forEach((part, index) => {
         const visible = smooth((progress - (0.58 + index * 0.06)) / 0.22);
