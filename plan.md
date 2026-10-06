@@ -26,3 +26,7 @@
 ## Atualização de execução
 
 A navegação interna agora usa uma camada de transição curta com a marca AC, sem interceptar links externos, âncoras ou novas abas. O scroll foi consolidado em um único ciclo `requestAnimationFrame`, enquanto o perfil automático escolhe `full`, `lite` ou `reduced` usando `saveData`, memória, núcleos e `prefers-reduced-motion`. No modo lite, filtros, órbitas, spotlights e pulsos são reduzidos, mas as entradas, a linha de rota e a direção visual continuam presentes.
+
+## Partículas e ritmo ajustável
+
+O hero agora cria partículas e orbes flutuantes sem canvas, usando elementos simples e `transform`/`opacity` acelerados. Os controles ficam no bloco `/* Controles rápidos de animação */` em `css/motion.css`: `--hero-particle-duration` controla o ciclo das partículas; `--hero-atmosphere-duration`, `--hero-sweep-duration`, `--hero-grid-duration`, `--hero-road-duration` e `--hero-cruise-duration` controlam as camadas do hero; valores menores deixam o movimento mais rápido e valores maiores deixam a cena mais lenta. A lista `HERO_PARTICLES` em `js/animations/interactions.js` controla posição, tamanho, atraso e deriva de cada partícula.

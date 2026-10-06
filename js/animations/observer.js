@@ -17,7 +17,7 @@ export function initObserver() {
     '.inner-page .contact-bottom-inner > *', '.inner-page .tracking-help-inner > *',
     '.ac-facts > div', '.ac-steps li', '.ac-three > *', '.quote-intro', '.calculator-card',
     '.ac-sec .ac-h2', '.ac-sec .ac-h3', '.ac-sec .ac-lead', '.ac-sec .ac-link',
-    '.quote-stepper-shell', '.quote-step-status'
+    '.quote-stepper-shell', '.quote-step-status', '.services-intro', '.testimonials-heading', '.testimonial-card'
   ].join(', '));
 
   if (isReducedMotion || !('IntersectionObserver' in window)) {
@@ -56,13 +56,13 @@ export function initObserver() {
       parent.classList.contains('service-process-list') || parent.classList.contains('fleet-card-grid') ||
       parent.classList.contains('contact-channel-list') || parent.classList.contains('tracking-how-list') ||
       parent.classList.contains('inner-hero-copy') || parent.classList.contains('ac-steps') ||
-      parent.classList.contains('ac-facts') || parent.classList.contains('ac-three')
+      parent.classList.contains('ac-facts') || parent.classList.contains('ac-three') || parent.classList.contains('testimonial-grid')
     )) {
       const childIndex = Array.from(parent.children).indexOf(el);
       el.dataset.staggerDelay = Math.min(childIndex, 4) * (isLiteMotion ? 45 : 95);
     }
 
-    if (el.matches('.hero-aside, .service-detail-card, .fleet-card, .contact-prep-card, .ac-steps li')) el.dataset.reveal = 'scale';
+    if (el.matches('.hero-aside, .service-detail-card, .fleet-card, .contact-prep-card, .ac-steps li, .testimonial-card')) el.dataset.reveal = 'scale';
     else if (el.matches('.story-grid > :first-child, .contact-main-grid > :first-child, .service-process-layout > :first-child, .tracking-how-layout > :first-child')) el.dataset.reveal = 'left';
     else if (el.matches('.story-grid > :last-child, .contact-main-grid > :last-child, .service-process-layout > :last-child, .tracking-how-layout > :last-child')) el.dataset.reveal = 'right';
     observer.observe(el);

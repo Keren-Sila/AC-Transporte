@@ -3,9 +3,21 @@
  * All effects are opt-in for fine pointers and disabled for reduced motion.
  */
 
+const HERO_PARTICLES = [
+  ['12%', '24%', 'dot', '2px', '-1.2s', '9px'], ['26%', '68%', 'dot', '3px', '-4.4s', '14px'],
+  ['43%', '18%', 'orb', '13px', '-6.8s', '20px'], ['58%', '72%', 'dot', '2px', '-2.7s', '12px'],
+  ['69%', '28%', 'dot', '3px', '-8.2s', '17px'], ['82%', '56%', 'orb', '9px', '-3.6s', '26px'],
+  ['91%', '18%', 'dot', '2px', '-5.1s', '11px'], ['36%', '42%', 'dot', '2px', '-7.5s', '8px'],
+  ['52%', '52%', 'orb', '7px', '-1.9s', '22px'], ['76%', '78%', 'dot', '2px', '-9.1s', '15px'],
+  ['18%', '84%', 'dot', '3px', '-2.1s', '10px'], ['62%', '12%', 'dot', '2px', '-5.9s', '13px'],
+  ['88%', '72%', 'orb', '12px', '-6.2s', '24px'], ['47%', '88%', 'dot', '2px', '-3.3s', '9px']
+];
+
 export function initMotionInteractions() {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const motionLite = document.documentElement.dataset.motion === 'lite';
+  initHeroTruck(reduceMotion, motionLite);
+  initHeroParticles(reduceMotion, motionLite);
   if (reduceMotion) return;
 
   if (!motionLite) initScrollProgress();
@@ -13,6 +25,50 @@ export function initMotionInteractions() {
   if (motionLite || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
   initPointerSpotlights();
   initHeroParallax();
+}
+
+function initHeroTruck(reduceMotion, motionLite) {
+  const hero = document.querySelector('.ac-hero');
+  if (!hero || hero.querySelector('.ac-hero-truck-wrap')) return;
+
+  const wrap = document.createElement('div');
+  wrap.className = `ac-hero-truck-wrap${reduceMotion || motionLite ? '' : ' is-arriving'}${motionLite ? ' is-lite' : ''}`;
+  wrap.setAttribute('aria-hidden', 'true');
+  const truck = document.createElement('img');
+  truck.className = 'ac-hero-truck';
+  truck.alt = '';
+  truck.decoding = 'async';
+  truck.loading = 'eager';
+  truck.fetchPriority = 'high';
+  truck.src = `${document.body.dataset.root || ''}assets/images/hero/truck-realistic.png`;
+  wrap.append(truck);
+
+  const background = hero.querySelector('.ac-hero-bg');
+  background ? background.after(wrap) : hero.prepend(wrap);
+}
+
+function initHeroParticles(reduceMotion, motionLite) {
+  const hero = document.querySelector('.ac-hero');
+  if (!hero || reduceMotion || hero.querySelector('.hero-particle-field')) return;
+
+  const field = document.createElement('div');
+  field.className = 'hero-particle-field';
+  field.setAttribute('aria-hidden', 'true');
+  const visibleParticles = motionLite ? HERO_PARTICLES.slice(0, 7) : HERO_PARTICLES;
+
+  visibleParticles.forEach(([x, y, type, size, delay, drift]) => {
+    const particle = document.createElement('span');
+    particle.className = `hero-particle hero-particle--${type}`;
+    particle.style.setProperty('--particle-x', x);
+    particle.style.setProperty('--particle-y', y);
+    particle.style.setProperty('--particle-size', size);
+    particle.style.setProperty('--particle-delay', delay);
+    particle.style.setProperty('--particle-drift', drift);
+    field.append(particle);
+  });
+
+  const truck = hero.querySelector('.ac-hero-truck-wrap');
+  truck ? truck.before(field) : hero.append(field);
 }
 
 function initScrollProgress() {
