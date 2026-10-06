@@ -22,7 +22,6 @@ export function initStoryMotion() {
   const road = hero?.querySelector('.ac-hero-road-band');
   const roadDash = hero?.querySelector('.road-dashed-line');
   const pill = hero?.querySelector('.btn-road-pill');
-  const watermark = hero?.querySelector('.ac-hero-watermark');
   const copy = hero?.querySelector('.ac-hero-transition-copy');
   const copyParts = copy ? [...copy.children] : [];
   const sections = [...document.querySelectorAll('.ac-sec, .quote-section, .inner-hero')];
@@ -81,8 +80,6 @@ export function initStoryMotion() {
     road.style.setProperty('--road-height', `${roadHeight.toFixed(2)}%`);
     road.style.setProperty('--road-offset-x', `${(-progress * 3000).toFixed(1)}px`);
     if (roadDash) roadDash.style.setProperty('--road-offset-x', `${(-progress * 3000).toFixed(1)}px`);
-    if (watermark) watermark.style.setProperty('--ghost-x', `${(6 - 12 * progress).toFixed(2)}vw`);
-
     if (pill) {
       const opacity = 1 - smooth((progress - 0.20) / 0.12);
       pill.style.opacity = opacity.toFixed(3);

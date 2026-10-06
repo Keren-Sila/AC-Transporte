@@ -373,8 +373,11 @@ textarea.form-input{min-height:96px}
 }
 
 .ac-hero-instagram .ac-hero-watermark {
-  top: 12%;
-  transform: translate3d(calc(-50% + var(--ghost-x, 0px)), -50%, 0);
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  font-size: clamp(2.5rem, 10.5vw, 10rem);
+  transform: translate3d(-50%, -50%, 0);
   z-index: 0;
 }
 
@@ -526,7 +529,7 @@ textarea.form-input{min-height:96px}
     min-height: 480px;
   }
   .ac-hero-instagram .ac-hero-watermark {
-    top: 17%;
+    top: 50%;
     font-size: clamp(2.5rem, 11vw, 4.5rem);
   }
   .ac-hero-instagram .ac-hero-truck-wrap {
