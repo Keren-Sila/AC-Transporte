@@ -73,16 +73,19 @@ a{color:inherit}
 .ac-big strong{font-size:1.5rem;font-stretch:90%}
 @media(min-width:700px){.ac-rules li{grid-template-columns:minmax(180px,1fr) 1.4fr;gap:2rem;align-items:baseline}}
 
-.ac-steps{list-style:none;margin:2.5rem 0 0;padding:0;display:grid;gap:0}
-.ac-steps li{display:grid;grid-template-columns:3rem 1fr;column-gap:1rem;padding:1.2rem 0;border-top:1px solid var(--regua)}
-.ac-steps li:last-child{border-bottom:1px solid var(--regua)}
-.ac-steps b{grid-row:span 2;font-size:2rem;font-weight:800;font-stretch:80%;color:var(--laranja);line-height:1}
-.ac-steps h3{font-size:1.25rem;margin:0}
-.ac-steps p{margin:.2rem 0 0;color:var(--tinta-2)}
+.ac-steps { list-style: none; margin: 2.2rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.ac-steps li { display: grid; grid-template-columns: 44px 1fr; gap: 2px 14px; align-items: center; padding: 16px 18px; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 10px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.ac-steps li:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07); }
+.ac-steps b { grid-row: span 2; display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #FFF1E8; color: #FF6600; border-radius: 8px; font-size: 1.35rem; font-weight: 800; line-height: 1; margin: 0; }
+.ac-steps h3 { grid-column: 2; font-size: 1.08rem; font-weight: 800; color: #14181D; margin: 0; }
+.ac-steps p { grid-column: 2; margin: 2px 0 0; color: #5F6E80; font-size: 0.88rem; line-height: 1.5; }
 @media(min-width:900px){
-  .ac-steps{grid-template-columns:repeat(5,1fr);column-gap:1.75rem}
-  .ac-steps li{display:block;border-top:3px solid var(--tinta);border-bottom:0!important;padding:1.1rem 0 0}
-  .ac-steps b{display:block;margin-bottom:.9rem}
+  .ac-steps { display: grid; grid-template-columns: repeat(5, 1fr); column-gap: 1.5rem; row-gap: 0; }
+  .ac-steps li { display: block; background: transparent; border: none; border-top: 3px solid #14181D; border-radius: 0; box-shadow: none; padding: 1.1rem 0 0; }
+  .ac-steps li:hover { transform: none; box-shadow: none; }
+  .ac-steps b { display: block; width: auto; height: auto; background: transparent; color: #FF6600; font-size: 2rem; margin-bottom: 0.8rem; }
+  .ac-steps h3 { font-size: 1.2rem; }
+  .ac-steps p { font-size: 0.92rem; }
 }
 
 /* cotação */
