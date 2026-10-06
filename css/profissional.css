@@ -361,14 +361,14 @@ textarea.form-input{min-height:96px}
 
 .ac-hero-scroll {
   position: relative;
-  height: auto;
+  height: 110svh;
 }
 
 .ac-hero-instagram .ac-hero-stage {
-  position: relative;
-  top: auto;
-  height: clamp(220px, 35vh, 340px);
-  min-height: 220px;
+  position: sticky;
+  top: var(--hero-header-height, 68px);
+  height: clamp(300px, 48vh, 480px);
+  min-height: 300px;
   padding: 0;
   display: block;
   overflow: hidden;
@@ -376,21 +376,18 @@ textarea.form-input{min-height:96px}
 }
 
 .ac-hero-instagram .ac-hero-watermark {
-  top: 45%;
+  top: 50%;
   left: 50%;
   width: 100%;
-  font-size: clamp(2rem, 9.5vw, 4.5rem);
+  font-size: clamp(2.5rem, 10.5vw, 10rem);
   transform: translate3d(-50%, -50%, 0);
   z-index: 0;
 }
 
 .ac-hero-instagram .ac-hero-road-band {
   position: absolute;
-  bottom: 0;
-  top: auto;
-  left: 0;
-  right: 0;
-  height: 48px;
+  inset: var(--road-top, 84%) 0 auto;
+  height: var(--road-height, 16%);
   min-height: 0;
   padding: 0;
   display: block;
@@ -529,20 +526,28 @@ textarea.form-input{min-height:96px}
 
 .ac-hero-transition-copy.is-active { pointer-events: auto; }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .ac-hero-scroll {
-    height: 100svh;
+    height: auto !important;
+    min-height: 0 !important;
   }
   .ac-hero-instagram .ac-hero-stage {
-    height: clamp(260px, 42vh, 400px);
-    min-height: 260px;
+    position: relative !important;
+    top: auto !important;
+    height: clamp(210px, 34vh, 290px) !important;
+    min-height: 210px !important;
   }
   .ac-hero-instagram .ac-hero-watermark {
-    top: 50%;
-    font-size: clamp(2.2rem, 11vw, 4.2rem);
+    top: 45% !important;
+    font-size: clamp(2rem, 9.5vw, 3.8rem) !important;
   }
   .ac-hero-instagram .ac-hero-truck-wrap {
-    width: min(92vw, 520px);
+    width: min(88vw, 440px) !important;
+  }
+  .ac-hero-facts-band {
+    margin-top: 0 !important;
+    position: relative;
+    z-index: 5;
   }
   .ac-facts {
     grid-template-columns: 1fr;

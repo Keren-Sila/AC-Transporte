@@ -66,9 +66,10 @@ export function initStoryMotion() {
     const roadTop = 84 - 50.6 * roadProgress;
     const roadHeight = 16 + 2 * roadProgress;
     const scale = 1 + roadProgress * (profile === 'lite' || width < 700 ? 0.12 : 0.2);
-    const laneCenter = height - 24;
+    const laneCenter = (roadTop + roadHeight / 2) * height / 100;
+    // The transparent WebP has 9.7% bottom padding; align the visible tires to the lane.
     const visibleBottom = 0.903;
-    const truckY = laneCenter - truckHeight * visibleBottom;
+    const truckY = laneCenter - truckHeight * (1 + (visibleBottom - 1) * scale);
 
     truck.style.setProperty('--truck-x', `${truckX.toFixed(2)}px`);
     truck.style.setProperty('--truck-y', `${truckY.toFixed(2)}px`);
