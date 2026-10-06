@@ -404,7 +404,7 @@ html { scroll-padding-top: 92px; }
     width: 88vw;
     --truck-opacity: .34;
   }
-  .ac-hero-instagram .ac-hero-truck-wrap { top: auto; right: auto; display: flex; width: min(92vw, 700px); }
+  .ac-hero-instagram .ac-hero-truck-wrap { display: block; width: min(90vw, 500px); }
   .ac-hero::before { opacity: .1; background-size: 62px 62px, 62px 62px, 100% 100%; }
   .ac-hero h1, .ac-hero p, .ac-actions, .ac-hero-scroll-cue { position: relative; z-index: 2; }
   .ac-hero h1 { max-width: 10ch; font-size: clamp(2.6rem, 13vw, 4.4rem); }
