@@ -358,14 +358,14 @@ textarea.form-input{min-height:96px}
 
 .ac-hero-scroll {
   position: relative;
-  height: 300svh;
+  height: 110svh;
 }
 
 .ac-hero-instagram .ac-hero-stage {
   position: sticky;
   top: var(--hero-header-height, 68px);
-  height: calc(100svh - var(--hero-header-height, 68px));
-  min-height: 380px;
+  height: clamp(300px, 48vh, 480px);
+  min-height: 300px;
   padding: 0;
   display: block;
   overflow: hidden;
