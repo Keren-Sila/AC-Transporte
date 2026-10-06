@@ -361,14 +361,14 @@ textarea.form-input{min-height:96px}
 
 .ac-hero-scroll {
   position: relative;
-  height: 110svh;
+  height: auto;
 }
 
 .ac-hero-instagram .ac-hero-stage {
-  position: sticky;
-  top: var(--hero-header-height, 68px);
-  height: clamp(300px, 48vh, 480px);
-  min-height: 300px;
+  position: relative;
+  top: auto;
+  height: clamp(220px, 35vh, 340px);
+  min-height: 220px;
   padding: 0;
   display: block;
   overflow: hidden;
@@ -376,18 +376,21 @@ textarea.form-input{min-height:96px}
 }
 
 .ac-hero-instagram .ac-hero-watermark {
-  top: 50%;
+  top: 45%;
   left: 50%;
   width: 100%;
-  font-size: clamp(2.5rem, 10.5vw, 10rem);
+  font-size: clamp(2rem, 9.5vw, 4.5rem);
   transform: translate3d(-50%, -50%, 0);
   z-index: 0;
 }
 
 .ac-hero-instagram .ac-hero-road-band {
   position: absolute;
-  inset: var(--road-top, 84%) 0 auto;
-  height: var(--road-height, 16%);
+  bottom: 0;
+  top: auto;
+  left: 0;
+  right: 0;
+  height: 48px;
   min-height: 0;
   padding: 0;
   display: block;
