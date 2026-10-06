@@ -683,6 +683,18 @@ html[data-motion="lite"] .inner-page .service-detail-card:hover, html[data-motio
 html[data-motion="lite"] .page-transition-layer { transition-duration: .35s; }
 html[data-motion="lite"] .page-transition-grid { transform: none; opacity: .12; }
 
+/* The pinned story uses a compact side-on truck, sized for its road landing. */
+.ac-hero-instagram .ac-hero-truck-wrap {
+  display: block;
+  width: clamp(300px, 42vw, 600px);
+  transform-origin: 50% 100%;
+}
+.ac-hero-instagram .ac-hero-truck-img { max-width: none; }
+.ac-hero-instagram .ac-hero-truck-wrap:hover .ac-hero-truck-img { transform: none; }
+@media (max-width: 700px) {
+  .ac-hero-instagram .ac-hero-truck-wrap { width: min(90vw, 560px); }
+}
+
 @media (max-width: 900px) {
   .ac-steps::before { top: 0; bottom: 0; right: auto; left: 0; width: 3px; height: auto; background: repeating-linear-gradient(0deg, rgba(232,97,10,.48) 0 22px, transparent 22px 38px); }
   .ac-steps li::before { top: 1.55rem; left: -5px; }

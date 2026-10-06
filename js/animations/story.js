@@ -1,9 +1,13 @@
 /**
  * AC TRANSPORTE — Scroll story controller
- * One rAF loop for the whole page, with full/lite/reduced motion profiles.
+ * Pins the hero scene while the truck arrives and the road moves into place.
  */
 
 const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
+const smooth = (value) => {
+  const point = clamp(value);
+  return point * point * (3 - 2 * point);
+};
 
 export function initStoryMotion() {
   const root = document.documentElement;
@@ -11,47 +15,117 @@ export function initStoryMotion() {
   const profile = root.dataset.motion || (reduceMotion ? 'reduced' : 'full');
   const header = document.querySelector('.header-site');
   const hero = document.querySelector('.ac-hero-instagram');
+  const story = hero?.querySelector('.ac-hero-scroll');
+  const stage = hero?.querySelector('.ac-hero-stage');
   const truck = hero?.querySelector('.ac-hero-truck-wrap');
   const telemetry = hero?.querySelector('.ac-hero-telemetry span');
-  const road = hero?.querySelector('.road-dashed-line');
+  const road = hero?.querySelector('.ac-hero-road-band');
+  const roadDash = hero?.querySelector('.road-dashed-line');
+  const pill = hero?.querySelector('.btn-road-pill');
+  const watermark = hero?.querySelector('.ac-hero-watermark');
+  const copy = hero?.querySelector('.ac-hero-transition-copy');
+  const copyParts = copy ? [...copy.children] : [];
   const sections = [...document.querySelectorAll('.ac-sec, .quote-section, .inner-hero')];
   const innerHeroes = [...document.querySelectorAll('.inner-hero')];
 
+  const updateHeader = () => {
+    if (!header) return;
+    header.classList.toggle('is-scrolled', window.scrollY > 18);
+    root.style.setProperty('--hero-header-height', `${header.offsetHeight}px`);
+  };
+
   if (header) {
-    const updateHeader = () => header.classList.toggle('is-scrolled', window.scrollY > 18);
     updateHeader();
     window.addEventListener('scroll', updateHeader, { passive: true });
   }
 
-  if (reduceMotion || profile === 'reduced') return;
+  if (reduceMotion || profile === 'reduced') {
+    copy?.classList.add('is-active');
+    return;
+  }
 
   let frame = 0;
-  const update = () => {
-    frame = 0;
-    const viewport = window.innerHeight;
+  let entrance = 0;
+  let entranceStart = null;
+  let previousProgress = 0;
+  let previousTime = 0;
+  let storyStart = story ? story.getBoundingClientRect().top + window.scrollY : 0;
 
-    if (hero) {
-      const heroRect = hero.getBoundingClientRect();
-      const travel = Math.max(hero.offsetHeight - viewport * .42, 1);
-      const progress = clamp((-heroRect.top) / travel);
-      hero.style.setProperty('--hero-progress', progress.toFixed(3));
+  const renderStory = (progress) => {
+    if (!story || !stage || !truck || !road) return;
 
-      if (truck) {
-        const motionScale = profile === 'lite' || window.innerWidth <= 700 ? .58 : 1;
-        const drive = Math.sin(progress * Math.PI);
-        truck.style.setProperty('--truck-x', '0px');
-        truck.style.setProperty('--truck-y', `${(-progress * 190 * motionScale).toFixed(2)}px`);
-        truck.style.setProperty('--truck-scale', (1 + progress * .62 * motionScale).toFixed(3));
-        truck.style.setProperty('--truck-rotate', `${(-drive * .22 * motionScale).toFixed(2)}deg`);
-        if (telemetry) telemetry.textContent = `AC TRANSPORTE · ${Math.round(drive * 68 * motionScale)} KM/H`;
-        if (road) road.style.setProperty('--road-offset-x', `${(-progress * 300).toFixed(1)}px`);
-      }
+    const width = stage.clientWidth;
+    const height = stage.clientHeight;
+    const truckWidth = truck.offsetWidth;
+    const truckHeight = truck.offsetHeight;
+    const entry = clamp(progress / 0.16);
+    const arrive = 1 - Math.pow(1 - entry, 3);
+    const centeredX = (width - truckWidth) / 2;
+    const truckX = -truckWidth - 30 + (centeredX + truckWidth + 30) * arrive;
+
+    const roadProgress = smooth((progress - 0.30) / 0.28);
+    const roadTop = 84 - 50.6 * roadProgress;
+    const roadHeight = 16 + 2 * roadProgress;
+    const scale = 1 + roadProgress * (profile === 'lite' || width < 700 ? 0.12 : 0.2);
+    const ground = (roadTop + roadHeight * (0.06 + 0.56 * roadProgress)) * height / 100;
+    const truckY = ground - truckHeight * scale + 3;
+
+    truck.style.setProperty('--truck-x', `${truckX.toFixed(2)}px`);
+    truck.style.setProperty('--truck-y', `${truckY.toFixed(2)}px`);
+    truck.style.setProperty('--truck-scale', scale.toFixed(3));
+    truck.style.setProperty('--truck-rotate', `${(-Math.sin(roadProgress * Math.PI) * 0.18).toFixed(2)}deg`);
+
+    road.style.setProperty('--road-top', `${roadTop.toFixed(2)}%`);
+    road.style.setProperty('--road-height', `${roadHeight.toFixed(2)}%`);
+    road.style.setProperty('--road-offset-x', `${(-progress * 3000).toFixed(1)}px`);
+    if (roadDash) roadDash.style.setProperty('--road-offset-x', `${(-progress * 3000).toFixed(1)}px`);
+    if (watermark) watermark.style.setProperty('--ghost-x', `${(6 - 12 * progress).toFixed(2)}vw`);
+
+    if (pill) {
+      const opacity = 1 - smooth((progress - 0.20) / 0.12);
+      pill.style.opacity = opacity.toFixed(3);
+      pill.style.visibility = opacity < 0.03 ? 'hidden' : 'visible';
     }
 
+    if (copy) {
+      copy.style.top = `${(roadTop + roadHeight + 3).toFixed(2)}%`;
+      copy.classList.toggle('is-active', progress > 0.72);
+      copyParts.forEach((part, index) => {
+        const visible = smooth((progress - (0.58 + index * 0.06)) / 0.22);
+        part.style.opacity = visible.toFixed(3);
+        part.style.transform = `translateY(${(18 * (1 - visible)).toFixed(2)}px)`;
+      });
+    }
+
+    const now = performance.now();
+    const elapsed = Math.max(now - previousTime, 16);
+    const speed = previousTime ? Math.min(80, Math.round(Math.abs(progress - previousProgress) / elapsed * 60000)) : 0;
+    if (telemetry) telemetry.innerHTML = `AC TRANSPORTE · <b>${speed}</b> KM/H`;
+    previousProgress = progress;
+    previousTime = now;
+  };
+
+  const update = () => {
+    frame = 0;
+    if (story && stage) {
+      const travel = Math.max(story.offsetHeight - stage.offsetHeight, 1);
+      const scrollProgress = clamp((window.scrollY - storyStart) / travel);
+      const target = Math.max(scrollProgress, entrance);
+      const current = Number(story.dataset.progress || 0);
+      let progress = current + (target - current) * 0.14;
+      if (Math.abs(target - progress) < 0.0005) progress = target;
+      story.dataset.progress = progress.toFixed(5);
+      hero.style.setProperty('--hero-progress', progress.toFixed(3));
+      renderStory(progress);
+
+      if (entrance < 0.16 || Math.abs(target - progress) >= 0.0005) schedule();
+    }
+
+    const viewport = window.innerHeight;
     sections.forEach((section) => {
       const rect = section.getBoundingClientRect();
-      const progress = clamp((viewport - rect.top) / (viewport + rect.height));
-      section.style.setProperty('--section-progress', progress.toFixed(3));
+      const sectionProgress = clamp((viewport - rect.top) / (viewport + rect.height));
+      section.style.setProperty('--section-progress', sectionProgress.toFixed(3));
     });
 
     if (profile === 'full') {
@@ -69,7 +143,20 @@ export function initStoryMotion() {
     if (!frame) frame = window.requestAnimationFrame(update);
   };
 
+  const startEntrance = (time) => {
+    if (entranceStart === null) entranceStart = time;
+    entrance = 0.16 * clamp((time - entranceStart) / 2400);
+    schedule();
+    if (entrance < 0.16) window.requestAnimationFrame(startEntrance);
+  };
+
   window.addEventListener('scroll', schedule, { passive: true });
-  window.addEventListener('resize', schedule, { passive: true });
+  window.addEventListener('resize', () => {
+    if (story) storyStart = story.getBoundingClientRect().top + window.scrollY;
+    updateHeader();
+    schedule();
+  }, { passive: true });
+
   schedule();
+  if (story && stage) window.requestAnimationFrame(startEntrance);
 }

@@ -349,6 +349,223 @@ textarea.form-input{min-height:96px}
   }
 }
 
+/* Scroll story: the scene stays pinned while the truck reaches the road. */
+.ac-hero-instagram {
+  display: block;
+  overflow: visible;
+  background: #E6E4DF;
+}
+
+.ac-hero-scroll {
+  position: relative;
+  height: 360svh;
+}
+
+.ac-hero-instagram .ac-hero-stage {
+  position: sticky;
+  top: var(--hero-header-height, 68px);
+  height: calc(100svh - var(--hero-header-height, 68px));
+  min-height: 320px;
+  padding: 0;
+  display: block;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.ac-hero-instagram .ac-hero-watermark {
+  top: 12%;
+  transform: translate3d(calc(-50% + var(--ghost-x, 0px)), -50%, 0);
+  z-index: 0;
+}
+
+.ac-hero-instagram .ac-hero-road-band {
+  position: absolute;
+  inset: var(--road-top, 84%) 0 auto;
+  height: var(--road-height, 16%);
+  min-height: 0;
+  padding: 0;
+  display: block;
+  overflow: hidden;
+  z-index: 1;
+  background: #0B0F12;
+  transition: none;
+}
+
+.ac-hero-instagram .road-dashed-line {
+  top: 50%;
+  height: 3px;
+  background-image: repeating-linear-gradient(90deg, #F26A1B 0 40px, transparent 40px 90px);
+  background-size: auto 3px;
+  background-repeat: repeat-x;
+  background-position: var(--road-offset-x, 0px) 0;
+}
+
+.ac-hero-instagram .btn-road-pill {
+  position: absolute;
+  left: 50%;
+  bottom: 9px;
+  padding: 5px 17px;
+  transform: translateX(-50%);
+  border-color: #4A525C;
+  background: #0B0F12;
+  font-size: .75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.ac-hero-instagram .ac-hero-truck-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  display: block;
+  width: clamp(300px, 42vw, 600px);
+  max-width: none;
+  margin: 0;
+  filter: drop-shadow(0 15px 13px rgba(0, 0, 0, .24));
+  transform: translate3d(var(--truck-x, 0px), var(--truck-y, 0px), 0) scale(var(--truck-scale, 1)) rotate(var(--truck-rotate, 0deg));
+  transform-origin: 50% 100%;
+  will-change: transform;
+}
+
+.ac-hero-instagram .ac-hero-truck-img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  filter: none;
+}
+
+.ac-hero-instagram .ac-hero-truck-logo {
+  position: absolute;
+  left: 3.3%;
+  top: 10.8%;
+  width: 76%;
+  height: 48.8%;
+  object-fit: contain;
+}
+
+.ac-hero-transition-copy {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  z-index: 3;
+  width: min(680px, calc(100% - 2rem));
+  transform: translateX(-50%);
+  text-align: center;
+  pointer-events: none;
+}
+
+.ac-hero-transition-copy > * {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+.ac-hero-transition-copy .eyebrow {
+  display: block;
+  margin-bottom: .4rem;
+  color: #E65100;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.ac-hero-transition-copy h1 {
+  color: #14181D;
+  font-size: clamp(1.7rem, 4vw, 3rem);
+  line-height: 1.06;
+  letter-spacing: -.04em;
+}
+
+.ac-hero-transition-copy h1 em {
+  display: block;
+  color: #F26A1B;
+  font-style: normal;
+}
+
+.ac-hero-transition-copy p {
+  max-width: 52ch;
+  margin: .65rem auto 1rem;
+  color: #4A525C;
+  font-size: clamp(.85rem, 1.35vw, 1rem);
+}
+
+.ac-hero-transition-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .7rem;
+  flex-wrap: wrap;
+}
+
+.ac-hero-transition-actions .btn {
+  min-height: 42px;
+  padding-inline: 1.15rem;
+  border-radius: 999px;
+  font-size: .85rem;
+}
+
+.btn-road-secondary {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  padding: 0 1.15rem;
+  border: 1px solid #525960;
+  border-radius: 999px;
+  color: #14181D;
+  font-size: .85rem;
+  text-decoration: none;
+}
+
+.ac-hero-transition-copy.is-active { pointer-events: auto; }
+
+@media (max-width: 700px) {
+  .ac-hero-instagram .ac-hero-stage {
+    height: calc(100svh - var(--hero-header-height, 64px));
+    min-height: 480px;
+  }
+  .ac-hero-instagram .ac-hero-watermark {
+    top: 17%;
+    font-size: clamp(2.5rem, 11vw, 4.5rem);
+  }
+  .ac-hero-instagram .ac-hero-truck-wrap {
+    width: min(90vw, 560px);
+  }
+  .ac-hero-transition-copy {
+    top: 57%;
+    width: calc(100% - 2rem);
+  }
+  .ac-hero-transition-copy h1 { font-size: clamp(1.65rem, 8vw, 2.4rem); }
+  .ac-hero-transition-copy p { max-width: 38ch; }
+}
+
+@media (prefers-reduced-motion: reduce), html[data-motion="reduced"] {
+  .ac-hero-scroll { height: auto; }
+  .ac-hero-instagram .ac-hero-stage {
+    position: relative;
+    top: auto;
+    height: min(75svh, 640px);
+    min-height: 440px;
+  }
+  .ac-hero-instagram .ac-hero-truck-wrap {
+    left: 50%;
+    top: 46%;
+    width: min(80vw, 600px);
+    transform: translate3d(-50%, -50%, 0) !important;
+    will-change: auto;
+  }
+  .ac-hero-transition-copy {
+    top: auto;
+    bottom: 2.5rem;
+  }
+  .ac-hero-transition-copy > * {
+    opacity: 1 !important;
+    transform: none !important;
+    will-change: auto;
+  }
+}
+
 .ac-sec { padding: clamp(3rem, 7vw, 5.5rem) 0; }
 .ac-alt { background: var(--papel-2); }
 .ac-h2 { color: var(--tinta); }
