@@ -524,23 +524,31 @@ textarea.form-input{min-height:96px}
 .ac-hero-transition-copy.is-active { pointer-events: auto; }
 
 @media (max-width: 700px) {
+  .ac-hero-scroll {
+    height: 100svh;
+  }
   .ac-hero-instagram .ac-hero-stage {
-    height: calc(100svh - var(--hero-header-height, 64px));
-    min-height: 480px;
+    height: clamp(260px, 42vh, 400px);
+    min-height: 260px;
   }
   .ac-hero-instagram .ac-hero-watermark {
     top: 50%;
-    font-size: clamp(2.5rem, 11vw, 4.5rem);
+    font-size: clamp(2.2rem, 11vw, 4.2rem);
   }
   .ac-hero-instagram .ac-hero-truck-wrap {
-    width: min(90vw, 560px);
+    width: min(92vw, 520px);
   }
-  .ac-hero-transition-copy {
-    top: 57%;
-    width: calc(100% - 2rem);
+  .ac-facts {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
-  .ac-hero-transition-copy h1 { font-size: clamp(1.65rem, 8vw, 2.4rem); }
-  .ac-hero-transition-copy p { max-width: 38ch; }
+  .ac-facts div {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .ac-facts div:last-child {
+    border-bottom: none;
+  }
 }
 
 @media (max-height: 600px) and (min-width: 701px) {
