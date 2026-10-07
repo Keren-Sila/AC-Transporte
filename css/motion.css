@@ -852,12 +852,7 @@ html[data-motion="lite"] .testimonial-card::before { transition-duration: .35s; 
     background: #0B0F12 !important;
     z-index: 1 !important;
   }
-<<<<<<< HEAD
-  /* Caminhão 1 (Superior - Indo/Direita, Centralizado) */
-=======
-
   /* Caminhão 1 (Superior - Indo/Direita, Centralizado) - COM ANIMAÇÃO */
->>>>>>> origin/keren-sila-ios-adjustments
   .ac-hero-truck-wrap.truck-going {
     position: absolute !important;
     left: 50% !important;
