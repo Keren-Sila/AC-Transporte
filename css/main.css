@@ -49,8 +49,22 @@ html {
 }
 
 body {
-  overflow-x: clip;
+  overflow-x: hidden;
+  max-width: 100vw;
   min-height: 100vh;
+  min-height: 100svh;
+  -webkit-overflow-scrolling: touch;
+}
+
+button, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+@media (max-width: 768px) {
+  input, select, textarea, .form-input {
+    font-size: 16px !important;
+  }
 }
 
 :focus-visible {
