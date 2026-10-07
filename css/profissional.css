@@ -875,18 +875,27 @@ html[data-motion="reduced"] .ac-hero-transition-copy > * {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
-  padding: 0.85rem 1rem;
+  padding: 0.95rem 1.05rem;
+}
+.ag-item-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.ag-item-header svg {
+  flex-shrink: 0;
 }
 .ag-mini-highlights strong {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: #FFFFFF;
-  margin-bottom: 2px;
 }
 .ag-mini-highlights span {
   display: block;
-  font-size: 0.78rem;
-  color: #94A3B8;
+  font-size: 0.8rem;
+  color: #A9B1BA;
+  line-height: 1.45;
 }
   margin-top: 0.5rem;
   min-height: 48px;
