@@ -13,11 +13,21 @@ export function initPageTransitions() {
   layer.innerHTML = '<span class="page-transition-grid"></span><span class="page-transition-mark">AC</span>';
   document.body.append(layer);
 
-  requestAnimationFrame(() => {
-    layer.classList.add('is-ready');
+  const resetLayer = () => {
+    layer.classList.remove('is-leaving');
+    requestAnimationFrame(() => layer.classList.add('is-ready'));
+  };
+
+  resetLayer();
+
+  // Reset layer on iOS BFCache back/forward swipe navigation
+  window.addEventListener('pageshow', (event) => {
+    resetLayer();
   });
 
   if (profile === 'reduced') return;
+
+  let transitionTimer = null;
 
   document.addEventListener('click', (event) => {
     if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -32,6 +42,14 @@ export function initPageTransitions() {
     event.preventDefault();
     layer.classList.remove('is-ready');
     layer.classList.add('is-leaving');
-    window.setTimeout(() => { window.location.assign(url.href); }, profile === 'lite' ? 260 : 410);
+
+    if (transitionTimer) clearTimeout(transitionTimer);
+
+    // Safety timeout: reset layer after 4s if navigation is interrupted
+    transitionTimer = window.setTimeout(resetLayer, 4000);
+
+    window.setTimeout(() => {
+      window.location.assign(url.href);
+    }, profile === 'lite' ? 260 : 410);
   });
 }

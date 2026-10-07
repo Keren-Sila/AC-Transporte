@@ -25,20 +25,29 @@ async function loadComponents() {
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
+  initMotionProfile();
+
   try {
-    initMotionProfile();
     await loadComponents();
-    initMobileMenu();
-    initScrollAnimations();
-    initPrivacyModal();
-    initQuoteStepper();
-    initQuoteForm();
-    initAdminPanel();
-    initTrackingLookup();
-    initWhatsApp();
-    initPageTransitions();
-    document.querySelectorAll('[data-current-year]').forEach((node) => { node.textContent = new Date().getFullYear(); });
   } catch (error) {
-    console.error('Não foi possível carregar os componentes do site.', error);
+    console.warn('Alguns componentes não puderam ser carregados via fetch:', error.message);
   }
+
+  const safeInit = (fn, name) => {
+    try { fn(); } catch (err) { console.error(`Erro ao inicializar ${name}:`, err); }
+  };
+
+  safeInit(initMobileMenu, 'Menu Mobile');
+  safeInit(initScrollAnimations, 'Animações de Scroll');
+  safeInit(initPrivacyModal, 'Modal de Privacidade');
+  safeInit(initQuoteStepper, 'Stepper de Cotação');
+  safeInit(initQuoteForm, 'Formulário de Cotação');
+  safeInit(initAdminPanel, 'Painel Admin');
+  safeInit(initTrackingLookup, 'Rastreamento');
+  safeInit(initWhatsApp, 'WhatsApp');
+  safeInit(initPageTransitions, 'Transições de Página');
+
+  document.querySelectorAll('[data-current-year]').forEach((node) => {
+    node.textContent = new Date().getFullYear();
+  });
 });

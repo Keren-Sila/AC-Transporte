@@ -23,19 +23,21 @@ export function initQuoteForm() {
     if (!form.reportValidity()) return;
     const submit = form.querySelector('[type="submit"]');
     submit.disabled = true;
+    const name = form.querySelector('#clienteNome')?.value || '';
+    const company = form.querySelector('#clienteEmpresa')?.value || '';
+    const phone = form.querySelector('#clienteTelefone')?.value || '';
+    const email = form.querySelector('#clienteEmail')?.value || '';
+    const origin = form.querySelector('#origemCidade')?.value || '';
+    const destination = form.querySelector('#destinoCidade')?.value || '';
+    const service = form.querySelector('#tipoServicoSelect')?.value || '';
+    const cargo = form.querySelector('#pesoEstimado')?.value || '';
+    const notes = form.querySelector('#observacoesCarga')?.value || '';
+
     try {
       const response = await fetch(`${root()}api/quotes`, {
         method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: form.querySelector('#clienteNome').value,
-          company: form.querySelector('#clienteEmpresa').value,
-          phone: form.querySelector('#clienteTelefone').value,
-          email: form.querySelector('#clienteEmail').value,
-          origin: form.querySelector('#origemCidade').value,
-          destination: form.querySelector('#destinoCidade').value,
-          service: form.querySelector('#tipoServicoSelect').value,
-          cargo: form.querySelector('#pesoEstimado').value,
-          notes: form.querySelector('#observacoesCarga').value,
+          name, company, phone, email, origin, destination, service, cargo, notes,
           consent: form.querySelector('[name="consent"]').checked,
           website: form.querySelector('[name="website"]')?.value || '',
         }),
@@ -45,7 +47,12 @@ export function initQuoteForm() {
       setMessage(feedback, result.reference ? `Pedido recebido. Protocolo ${result.reference}. A equipe entrará em contato.` : 'Pedido recebido.');
       form.reset();
     } catch (error) {
-      setMessage(feedback, error.message || 'Falha de conexão. Tente novamente em instantes.', true);
+      const waText = `Olá! Gostaria de uma cotação.\n\nOrigem: ${origin}\nDestino: ${destination}\nServiço: ${service}\nPeso/Carga: ${cargo || 'Não informado'}\nNome: ${name}\nEmpresa: ${company || 'Não informado'}\nWhatsApp: ${phone}\nE-mail: ${email || 'Não informado'}\nMensagem: ${notes || 'Não informado'}`;
+      const waUrl = `https://wa.me/5511912349106?text=${encodeURIComponent(waText)}`;
+
+      feedback.innerHTML = `Não foi possível conectar ao servidor. <br><a href="${waUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display:inline-flex;margin-top:10px;padding:10px 18px;font-size:0.85rem;">Toque aqui para enviar via WhatsApp ↗</a>`;
+      feedback.className = 'form-feedback is-error';
+      feedback.hidden = false;
     } finally {
       submit.disabled = false;
     }
