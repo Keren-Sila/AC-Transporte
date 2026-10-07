@@ -71,15 +71,15 @@ export function initStoryMotion() {
     // Truck 2 (Returning - Right to Left on Lower Road)
     const truck2X = (width + 30) - (centeredX + truckWidth + 30) * arrive - scrollShift;
 
-    const roadProgress = smooth((progress - 0.30) / 0.28);
-    // Vertical distance: Upper Road at 44%, Lower Road at 76% (32% vertical gap)
-    const r1Top = 44 - 26 * roadProgress;
-    const r1Height = 11 + 2 * roadProgress;
+    const roadProgress = smooth((progress - 0.25) / 0.35);
+    // Wide vertical gap: Upper Road at 24%, Lower Road at 78% (54% vertical gap)
+    const r1Top = 24 - 16 * roadProgress;
+    const r1Height = 8 + 2 * roadProgress;
 
-    const r2Top = 76 - 26 * roadProgress;
-    const r2Height = 11 + 2 * roadProgress;
+    const r2Top = 78 - 16 * roadProgress;
+    const r2Height = 8 + 2 * roadProgress;
 
-    const scale = 1 + roadProgress * (profile === 'lite' || width < 700 ? 0.10 : 0.18);
+    const scale = 1 + roadProgress * (profile === 'lite' || width < 700 ? 0.08 : 0.14);
     const visibleBottom = 0.903;
 
     // Center of Upper Road for Truck 1 (Going)
