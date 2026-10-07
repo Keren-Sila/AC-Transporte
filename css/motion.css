@@ -958,6 +958,15 @@ html[data-motion="lite"] .testimonial-card::before { transition-duration: .35s; 
     filter: none !important;
   }
 
+  .ac-hero-instagram .ac-hero-truck-wrap.truck-returning {
+    z-index: 2 !important;
+    transform: translate3d(var(--truck-x, 0px), var(--truck-y, 0px), 0) scaleX(-1) scale(var(--truck-scale, 1)) rotate(var(--truck-rotate, 0deg)) !important;
+  }
+
+  .ac-hero-instagram .ac-hero-truck-wrap.truck-returning .ac-hero-truck-logo {
+    transform: scaleX(-1) !important;
+  }
+
   .ac-hero-instagram .ac-hero-road-band {
     position: absolute !important;
     inset: var(--road-top, 84%) 0 auto !important;
