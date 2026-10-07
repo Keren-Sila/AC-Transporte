@@ -148,7 +148,7 @@
   }
 }
 
-/* MOBILE HERO RESPONSIVE LAYOUT & JS ANIMATION CONTROL */
+/* MOBILE HERO DUAL TRUCK TWO-WAY ROAD LAYOUT */
 @media (max-width: 768px) {
   .road-bottom, .truck-return {
     display: block !important;
@@ -170,9 +170,9 @@
   .ac-hero-instagram .ac-hero-stage {
     position: relative !important;
     top: auto !important;
-    height: clamp(320px, 78svh, 430px) !important;
-    min-height: 320px !important;
-    max-height: 430px !important;
+    height: 340px !important;
+    min-height: 340px !important;
+    max-height: 340px !important;
     padding: 0 !important;
     overflow: hidden !important;
     display: block !important;
@@ -182,9 +182,16 @@
 
   .ac-hero-instagram .ac-hero-telemetry {
     position: absolute !important;
-    top: 14px !important;
+    top: 12px !important;
     left: 16px !important;
     z-index: 5 !important;
+  }
+
+  .ac-hero-instagram .ac-hero-telemetry span {
+    font-size: 0.68rem !important;
+    font-weight: 800 !important;
+    color: #787672 !important;
+    letter-spacing: 1px !important;
   }
 
   .ac-hero-instagram .ac-hero-watermark {
@@ -192,65 +199,66 @@
     top: 50% !important;
     left: 50% !important;
     transform: translate3d(-50%, -50%, 0) !important;
-    font-size: clamp(2.2rem, 10vw, 4.2rem) !important;
+    font-size: clamp(2rem, 9.5vw, 3.8rem) !important;
     width: 100% !important;
     z-index: 0 !important;
-    opacity: 0.7 !important;
+    opacity: 0.65 !important;
+    color: #E2DFD7 !important;
+    text-align: center !important;
   }
 
   /* Estrada 1 (Superior - Indo) */
   .ac-hero-road-band.road-top {
     position: absolute !important;
-    top: var(--road-top, 38%) !important;
-    height: var(--road-height, 26px) !important;
+    top: 126px !important;
     left: 0 !important;
     right: 0 !important;
+    height: 24px !important;
     background: #0B0F12 !important;
     z-index: 1 !important;
   }
 
-  /* Caminhão 1 (Superior - Indo/Direita) */
+  /* Caminhão 1 (Superior - Indo/Direita, Centralizado) */
   .ac-hero-truck-wrap.truck-going {
     position: absolute !important;
     left: 50% !important;
-    top: 45px !important;
+    top: 18px !important;
     z-index: 2 !important;
     display: block !important;
-    width: clamp(190px, 62vw, 300px) !important;
+    width: clamp(200px, 68vw, 300px) !important;
     max-width: none !important;
     margin: 0 !important;
-    /* Sem transform !important no container para não bloquear a animação JS */
+    transform: translateX(-50%) !important;
   }
 
   /* Estrada 2 (Inferior - Voltando) */
   .ac-hero-road-band.road-bottom {
     position: absolute !important;
-    top: var(--road-top-2, 78%) !important;
-    height: var(--road-height-2, 26px) !important;
+    top: 284px !important;
     left: 0 !important;
     right: 0 !important;
+    height: 24px !important;
     background: #0B0F12 !important;
     z-index: 1 !important;
     display: block !important;
   }
 
-  /* Caminhão 2 (Inferior - Voltando/Esquerda) */
+  /* Caminhão 2 (Inferior - Voltando/Esquerda, Centralizado, Distância de 1 caminhão) */
   .ac-hero-truck-wrap.truck-return {
     position: absolute !important;
     left: 50% !important;
-    top: 215px !important;
+    top: 176px !important;
     z-index: 2 !important;
     display: block !important;
-    width: clamp(190px, 62vw, 300px) !important;
+    width: clamp(200px, 68vw, 300px) !important;
     max-width: none !important;
     margin: 0 !important;
-    /* Sem transform !important no container para não bloquear a animação JS */
+    transform: translateX(-50%) scaleX(-1) !important;
   }
 
-  /* Inverte a imagem do caminhão voltando sem sobrepor o transform do JS */
   .ac-hero-truck-wrap.truck-return .ac-hero-truck-img,
   .ac-hero-truck-wrap.truck-return .ac-hero-truck-logo {
-    transform: scaleX(-1);
+    transform: none !important;
   }
 
   .ac-hero-instagram .ac-hero-truck-img {
@@ -258,15 +266,15 @@
     width: 100% !important;
     max-width: none !important;
     height: auto !important;
-    filter: drop-shadow(0 10px 14px rgba(0,0,0,0.18)) !important;
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.16)) !important;
   }
 
   /* Animação contínua das linhas das pistas no mobile */
   .ac-hero-road-band.road-top .road-dashed-line {
-    animation: roadMoveRight 2.5s linear infinite !important;
+    animation: roadMoveRight 2.2s linear infinite !important;
   }
   .ac-hero-road-band.road-bottom .road-dashed-line {
-    animation: roadMoveLeft 2.5s linear infinite !important;
+    animation: roadMoveLeft 2.2s linear infinite !important;
   }
 
   .ac-hero-facts-band {
@@ -281,34 +289,36 @@
 /* TELAS PEQUENAS (ATÉ 430PX) */
 @media (max-width: 430px) {
   .ac-hero-instagram .ac-hero-stage {
-    height: clamp(310px, 76svh, 380px) !important;
+    height: 310px !important;
     min-height: 310px !important;
-    max-height: 380px !important;
+    max-height: 310px !important;
   }
 
   .ac-hero-truck-wrap.truck-going {
-    width: clamp(180px, 60vw, 260px) !important;
-    top: 38px !important;
+    width: clamp(185px, 64vw, 250px) !important;
+    top: 16px !important;
+  }
+
+  .ac-hero-road-band.road-top {
+    top: 112px !important;
   }
 
   .ac-hero-truck-wrap.truck-return {
-    width: clamp(180px, 60vw, 260px) !important;
-    top: 185px !important;
+    width: clamp(185px, 64vw, 250px) !important;
+    top: 156px !important;
+  }
+
+  .ac-hero-road-band.road-bottom {
+    top: 252px !important;
   }
 
   .ac-hero-watermark {
-    font-size: clamp(1.8rem, 9.5vw, 3.2rem) !important;
+    font-size: clamp(1.7rem, 9vw, 3rem) !important;
   }
 }
 
 /* SAFARI / IOS COMPATIBILITY ENHANCEMENTS */
 @supports (-webkit-touch-callout: none) {
-  .ac-hero-instagram .ac-hero-stage {
-    min-height: 0 !important;
-    height: 76svh !important;
-    position: -webkit-sticky !important;
-  }
-
   .ac-hero-facts-band {
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
