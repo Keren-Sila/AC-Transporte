@@ -361,6 +361,7 @@ textarea.form-input{min-height:96px}
 
 .ac-hero-scroll {
   position: relative;
+  height: 110vh;
   height: 110svh;
 }
 
