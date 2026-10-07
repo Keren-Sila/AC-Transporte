@@ -967,16 +967,30 @@ html[data-motion="lite"] .testimonial-card::before { transition-duration: .35s; 
     transform: scaleX(-1) !important;
   }
 
-  .ac-hero-instagram .ac-hero-road-band {
+  .ac-hero-instagram .ac-hero-road-band,
+  .ac-hero-instagram .ac-hero-road-band.road-top {
     position: absolute !important;
-    inset: var(--road-top, 84%) 0 auto !important;
-    height: var(--road-height, 16%) !important;
+    inset: var(--road-top, 68%) 0 auto !important;
+    height: var(--road-height, 12%) !important;
     min-height: 0 !important;
     padding: 0 !important;
     display: block !important;
     overflow: hidden !important;
     z-index: 1 !important;
     background: #0B0F12 !important;
+  }
+
+  .ac-hero-instagram .ac-hero-road-band.road-bottom {
+    position: absolute !important;
+    inset: var(--road-top-2, 84%) 0 auto !important;
+    height: var(--road-height-2, 12%) !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+    background: #07090C !important;
+    border-top: 1px dashed rgba(242, 106, 27, 0.35) !important;
   }
 
   .ac-hero-transition-copy {
