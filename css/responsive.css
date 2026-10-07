@@ -273,3 +273,44 @@
     z-index: 5 !important;
   }
 }
+
+/* TELAS PEQUENAS (ATÉ 430PX) */
+@media (max-width: 430px) {
+  .ac-hero-instagram .ac-hero-stage {
+    height: 340px !important;
+    min-height: 340px !important;
+    max-height: 340px !important;
+  }
+
+  .ac-hero-truck-wrap.truck-going {
+    width: clamp(200px, 78vw, 290px) !important;
+    top: 40px !important;
+  }
+
+  .ac-hero-road-band.road-top {
+    top: 124px !important;
+  }
+
+  .ac-hero-truck-wrap.truck-return {
+    width: clamp(200px, 78vw, 290px) !important;
+    top: 190px !important;
+  }
+
+  .ac-hero-road-band.road-bottom {
+    top: 274px !important;
+  }
+
+  .ac-hero-watermark {
+    font-size: clamp(1.8rem, 9.5vw, 3.2rem) !important;
+  }
+}
+
+/* SAFARI / IOS COMPATIBILITY ENHANCEMENTS */
+@supports (-webkit-touch-callout: none) {
+  .ac-hero-instagram .ac-hero-stage {
+    position: -webkit-sticky !important;
+  }
+  .whatsapp-fab {
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
