@@ -387,8 +387,8 @@ textarea.form-input{min-height:96px}
 .ac-hero-instagram .ac-hero-road-band,
 .ac-hero-instagram .ac-hero-road-band.road-top {
   position: absolute;
-  inset: var(--road-top, 68%) 0 auto;
-  height: var(--road-height, 12%);
+  inset: var(--road-top, 56%) 0 auto;
+  height: var(--road-height, 11%);
   min-height: 0;
   padding: 0;
   display: block;
@@ -400,8 +400,8 @@ textarea.form-input{min-height:96px}
 
 .ac-hero-instagram .ac-hero-road-band.road-bottom {
   position: absolute;
-  inset: var(--road-top-2, 84%) 0 auto;
-  height: var(--road-height-2, 12%);
+  inset: var(--road-top-2, 88%) 0 auto;
+  height: var(--road-height-2, 11%);
   min-height: 0;
   padding: 0;
   display: block;
@@ -733,8 +733,8 @@ html[data-motion="reduced"] .ac-hero-transition-copy > * {
   .ac-hero-instagram .ac-hero-road-band,
   .ac-hero-instagram .ac-hero-road-band.road-top {
     position: absolute !important;
-    inset: var(--road-top, 68%) 0 auto !important;
-    height: var(--road-height, 12%) !important;
+    inset: var(--road-top, 56%) 0 auto !important;
+    height: var(--road-height, 11%) !important;
     min-height: 0 !important;
     padding: 0 !important;
     display: block !important;
@@ -745,8 +745,8 @@ html[data-motion="reduced"] .ac-hero-transition-copy > * {
 
   .ac-hero-instagram .ac-hero-road-band.road-bottom {
     position: absolute !important;
-    inset: var(--road-top-2, 84%) 0 auto !important;
-    height: var(--road-height-2, 12%) !important;
+    inset: var(--road-top-2, 88%) 0 auto !important;
+    height: var(--road-height-2, 11%) !important;
     min-height: 0 !important;
     padding: 0 !important;
     display: block !important;
