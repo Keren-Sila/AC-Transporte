@@ -19,9 +19,9 @@
   /* Cena com altura ajustada e sem sobreposição da telemetria */
   html .ac-hero-instagram .ac-hero-stage { height: 350px !important; min-height: 350px !important; max-height: 350px !important; }
   html .ac-hero-instagram .ac-hero-telemetry { top: 10px !important; left: 16px !important; z-index: 10 !important; }
-  html .ac-hero-instagram .ac-hero-truck-wrap.truck-going { top: 42px !important; width: clamp(190px, 64vw, 260px) !important; }
+  html .ac-hero-instagram .ac-hero-truck-wrap.truck-going { top: auto !important; bottom: calc(100% - 138px) !important; width: clamp(180px, 62vw, 250px) !important; }
   html .ac-hero-instagram .ac-hero-road-band.road-top { top: 138px !important; height: 22px !important; }
-  html .ac-hero-instagram .ac-hero-truck-wrap.truck-return { top: 186px !important; width: clamp(190px, 64vw, 260px) !important; }
+  html .ac-hero-instagram .ac-hero-truck-wrap.truck-return { top: auto !important; bottom: calc(100% - 282px) !important; width: clamp(180px, 62vw, 250px) !important; }
   html .ac-hero-instagram .ac-hero-road-band.road-bottom { top: 282px !important; height: 22px !important; }
   html:not([data-motion="reduced"]) .ac-hero-truck-wrap.truck-going {
     translate: var(--m-shift, 0px) 0;

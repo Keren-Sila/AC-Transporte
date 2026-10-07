@@ -218,10 +218,11 @@
   .ac-hero-truck-wrap.truck-going {
     position: absolute !important;
     left: 50% !important;
-    top: 42px !important;
+    top: auto !important;
+    bottom: calc(100% - 138px) !important;
     z-index: 2 !important;
     display: block !important;
-    width: clamp(190px, 64vw, 260px) !important;
+    width: clamp(180px, 62vw, 250px) !important;
     max-width: none !important;
     margin: 0 !important;
     transform: translateX(-50%) !important;
@@ -243,10 +244,11 @@
   .ac-hero-truck-wrap.truck-return {
     position: absolute !important;
     left: 50% !important;
-    top: 186px !important;
+    top: auto !important;
+    bottom: calc(100% - 282px) !important;
     z-index: 2 !important;
     display: block !important;
-    width: clamp(190px, 64vw, 260px) !important;
+    width: clamp(180px, 62vw, 250px) !important;
     max-width: none !important;
     margin: 0 !important;
     transform: translateX(-50%) !important;
@@ -290,34 +292,36 @@
 /* TELAS PEQUENAS (ATÉ 430PX) */
 @media (max-width: 430px) {
   .ac-hero-instagram .ac-hero-stage {
-    height: 330px !important;
-    min-height: 330px !important;
-    max-height: 330px !important;
+    height: 350px !important;
+    min-height: 350px !important;
+    max-height: 350px !important;
   }
 
   .ac-hero-instagram .ac-hero-telemetry {
-    top: 8px !important;
+    top: 10px !important;
     left: 14px !important;
   }
 
   .ac-hero-truck-wrap.truck-going {
-    width: clamp(175px, 60vw, 220px) !important;
-    top: 38px !important;
+    width: clamp(180px, 62vw, 250px) !important;
+    top: auto !important;
+    bottom: calc(100% - 138px) !important;
   }
 
   .ac-hero-road-band.road-top {
-    top: 124px !important;
-    height: 20px !important;
+    top: 138px !important;
+    height: 22px !important;
   }
 
   .ac-hero-truck-wrap.truck-return {
-    width: clamp(175px, 60vw, 220px) !important;
-    top: 168px !important;
+    width: clamp(180px, 62vw, 250px) !important;
+    top: auto !important;
+    bottom: calc(100% - 282px) !important;
   }
 
   .ac-hero-road-band.road-bottom {
-    top: 254px !important;
-    height: 20px !important;
+    top: 282px !important;
+    height: 22px !important;
   }
 
   .ac-hero-watermark {
