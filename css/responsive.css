@@ -141,56 +141,112 @@
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
 
-/* MOBILE HERO COMPACT SCROLL ANIMATION */
+@media (min-width: 769px) {
+  .ac-hero-road-band.road-bottom,
+  .ac-hero-truck-wrap.truck-return {
+    display: none !important;
+  }
+}
+
+/* MOBILE HERO DUAL TRUCK TWO-WAY ROAD LAYOUT */
 @media (max-width: 768px) {
+  .road-bottom, .truck-return {
+    display: block !important;
+  }
+
   .ac-hero-instagram {
     display: block !important;
     position: relative !important;
     background: #E6E4DF !important;
-    overflow: visible !important;
+    overflow: hidden !important;
   }
 
   .ac-hero-scroll {
     position: relative !important;
-    height: 165vh !important;
-    min-height: 580px !important;
-    max-height: 780px !important;
+    height: auto !important;
+    min-height: 0 !important;
   }
 
   .ac-hero-instagram .ac-hero-stage {
-    position: sticky !important;
-    top: var(--hero-header-height, 68px) !important;
-    height: clamp(350px, 52vh, 460px) !important;
-    min-height: 350px !important;
-    max-height: 460px !important;
+    position: relative !important;
+    top: auto !important;
+    height: 380px !important;
+    min-height: 380px !important;
+    max-height: 380px !important;
     padding: 0 !important;
     overflow: hidden !important;
     display: block !important;
     isolation: isolate !important;
+    background: #E6E4DF !important;
+  }
+
+  .ac-hero-instagram .ac-hero-telemetry {
+    position: absolute !important;
+    top: 14px !important;
+    left: 16px !important;
+    z-index: 5 !important;
   }
 
   .ac-hero-instagram .ac-hero-watermark {
     position: absolute !important;
-    top: 40% !important;
+    top: 50% !important;
     left: 50% !important;
     transform: translate3d(-50%, -50%, 0) !important;
-    font-size: clamp(2.4rem, 11vw, 4.8rem) !important;
+    font-size: clamp(2.2rem, 10vw, 4.2rem) !important;
     width: 100% !important;
     z-index: 0 !important;
+    opacity: 0.7 !important;
   }
 
-  .ac-hero-instagram .ac-hero-truck-wrap {
+  /* Estrada 1 (Superior - Indo) */
+  .ac-hero-road-band.road-top {
     position: absolute !important;
+    top: 142px !important;
     left: 0 !important;
-    top: 0 !important;
+    right: 0 !important;
+    height: 26px !important;
+    background: #0B0F12 !important;
+    z-index: 1 !important;
+    inset: auto 0 auto 0 !important;
+  }
+
+  /* Caminhão 1 (Superior - Indo/Direita, Centralizado) */
+  .ac-hero-truck-wrap.truck-going {
+    position: absolute !important;
+    left: 50% !important;
+    top: 45px !important;
     z-index: 2 !important;
     display: block !important;
-    width: clamp(200px, 58vw, 340px) !important;
+    width: clamp(230px, 75vw, 360px) !important;
     max-width: none !important;
     margin: 0 !important;
-    transform: translate3d(var(--truck-x, 0px), var(--truck-y, 0px), 0) scale(var(--truck-scale, 1)) rotate(var(--truck-rotate, 0deg)) !important;
-    transform-origin: 50% 100% !important;
-    will-change: transform !important;
+    transform: translateX(-50%) !important;
+  }
+
+  /* Estrada 2 (Inferior - Voltando) */
+  .ac-hero-road-band.road-bottom {
+    position: absolute !important;
+    top: 312px !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 26px !important;
+    background: #0B0F12 !important;
+    z-index: 1 !important;
+    display: block !important;
+    inset: auto 0 auto 0 !important;
+  }
+
+  /* Caminhão 2 (Inferior - Voltando/Esquerda, Centralizado, Distância de 1 caminhão) */
+  .ac-hero-truck-wrap.truck-return {
+    position: absolute !important;
+    left: 50% !important;
+    top: 215px !important;
+    z-index: 2 !important;
+    display: block !important;
+    width: clamp(230px, 75vw, 360px) !important;
+    max-width: none !important;
+    margin: 0 !important;
+    transform: translateX(50%) scaleX(-1) !important;
   }
 
   .ac-hero-instagram .ac-hero-truck-img {
@@ -198,72 +254,15 @@
     width: 100% !important;
     max-width: none !important;
     height: auto !important;
-    filter: none !important;
+    filter: drop-shadow(0 10px 14px rgba(0,0,0,0.18)) !important;
   }
 
-  .ac-hero-instagram .ac-hero-truck-wrap.truck-returning {
-    z-index: 2 !important;
-    transform: translate3d(var(--truck-x, 0px), var(--truck-y, 0px), 0) scaleX(-1) scale(var(--truck-scale, 1)) rotate(var(--truck-rotate, 0deg)) !important;
+  /* Animação contínua das linhas das pistas no mobile */
+  .ac-hero-road-band.road-top .road-dashed-line {
+    animation: roadMoveRight 2.5s linear infinite !important;
   }
-
-  .ac-hero-instagram .ac-hero-truck-wrap.truck-returning .ac-hero-truck-logo {
-    transform: scaleX(-1) !important;
-  }
-
-  .ac-hero-instagram .ac-hero-road-band,
-  .ac-hero-instagram .ac-hero-road-band.road-top {
-    position: absolute !important;
-    inset: var(--road-top, 24%) 0 auto !important;
-    height: var(--road-height, 8%) !important;
-    min-height: 0 !important;
-    padding: 0 !important;
-    display: block !important;
-    overflow: hidden !important;
-    z-index: 1 !important;
-    background: #0B0F12 !important;
-  }
-
-  .ac-hero-instagram .ac-hero-road-band.road-bottom {
-    position: absolute !important;
-    inset: var(--road-top-2, 78%) 0 auto !important;
-    height: var(--road-height-2, 8%) !important;
-    min-height: 0 !important;
-    padding: 0 !important;
-    display: block !important;
-    overflow: hidden !important;
-    z-index: 1 !important;
-    background: #07090C !important;
-    border-top: 1px dashed rgba(242, 106, 27, 0.35) !important;
-  }
-
-  .ac-hero-transition-copy {
-    position: absolute !important;
-    left: 50% !important;
-    z-index: 3 !important;
-    width: min(92vw, 440px) !important;
-    transform: translateX(-50%) !important;
-    text-align: center !important;
-  }
-
-  .ac-hero-transition-copy h1 {
-    font-size: clamp(1.35rem, 5vw, 1.9rem) !important;
-    line-height: 1.1 !important;
-  }
-
-  .ac-hero-transition-copy p {
-    font-size: clamp(0.82rem, 3vw, 0.95rem) !important;
-    margin: 0.35rem auto 0.75rem !important;
-  }
-
-  .ac-hero-transition-actions {
-    gap: 0.6rem !important;
-  }
-
-  .ac-hero-transition-actions .btn,
-  .btn-road-secondary {
-    min-height: 40px !important;
-    padding: 8px 16px !important;
-    font-size: 0.82rem !important;
+  .ac-hero-road-band.road-bottom .road-dashed-line {
+    animation: roadMoveLeft 2.5s linear infinite !important;
   }
 
   .ac-hero-facts-band {

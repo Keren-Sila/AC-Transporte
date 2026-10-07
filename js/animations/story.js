@@ -17,12 +17,10 @@ export function initStoryMotion() {
   const hero = document.querySelector('.ac-hero-instagram');
   const story = hero?.querySelector('.ac-hero-scroll');
   const stage = hero?.querySelector('.ac-hero-stage');
-  const truckGoing = hero?.querySelector('.ac-hero-truck-wrap.truck-going') || hero?.querySelector('.ac-hero-truck-wrap');
-  const truckReturning = hero?.querySelector('.ac-hero-truck-wrap.truck-returning');
-  const roadTop = hero?.querySelector('.ac-hero-road-band.road-top') || hero?.querySelector('.ac-hero-road-band');
-  const roadBottom = hero?.querySelector('.ac-hero-road-band.road-bottom');
-  const roadDashTop = roadTop?.querySelector('.road-dashed-line');
-  const roadDashBottom = roadBottom?.querySelector('.road-dashed-line');
+  const truck = hero?.querySelector('.ac-hero-truck-wrap');
+  const telemetry = hero?.querySelector('.ac-hero-telemetry span');
+  const road = hero?.querySelector('.ac-hero-road-band');
+  const roadDash = hero?.querySelector('.road-dashed-line');
   const pill = hero?.querySelector('.btn-road-pill');
   const copy = hero?.querySelector('.ac-hero-transition-copy');
   const copyParts = copy ? [...copy.children] : [];
@@ -53,66 +51,35 @@ export function initStoryMotion() {
   let storyStart = story ? story.getBoundingClientRect().top + window.scrollY : 0;
 
   const renderStory = (progress) => {
-    if (!story || !stage || !truckGoing || !roadTop) return;
+    if (!story || !stage || !truck || !road) return;
 
     const width = stage.clientWidth;
     const height = stage.clientHeight;
-    const truckWidth = truckGoing.offsetWidth || 320;
-    const truckHeight = truckGoing.offsetHeight || 150;
-    const centeredX = (width - truckWidth) / 2;
-
+    const truckWidth = truck.offsetWidth;
+    const truckHeight = truck.offsetHeight;
     const entry = clamp(progress / 0.16);
     const arrive = 1 - Math.pow(1 - entry, 3);
-    const scrollShift = Math.max(0, progress - 0.16) * width * 0.35;
+    const centeredX = (width - truckWidth) / 2;
+    const truckX = -truckWidth - 30 + (centeredX + truckWidth + 30) * arrive;
 
-    // Truck 1 (Going - Left to Right on Upper Road)
-    const truck1X = (-truckWidth - 30) + (centeredX + truckWidth + 30) * arrive + scrollShift;
-
-    // Truck 2 (Returning - Right to Left on Lower Road)
-    const truck2X = (width + 30) - (centeredX + truckWidth + 30) * arrive - scrollShift;
-
-    const roadProgress = smooth((progress - 0.25) / 0.35);
-    // Wide vertical gap: Upper Road at 24%, Lower Road at 78% (54% vertical gap)
-    const r1Top = 24 - 16 * roadProgress;
-    const r1Height = 8 + 2 * roadProgress;
-
-    const r2Top = 78 - 16 * roadProgress;
-    const r2Height = 8 + 2 * roadProgress;
-
-    const scale = 1 + roadProgress * (profile === 'lite' || width < 700 ? 0.08 : 0.14);
+    const roadProgress = smooth((progress - 0.30) / 0.28);
+    const roadTop = 84 - 50.6 * roadProgress;
+    const roadHeight = 16 + 2 * roadProgress;
+    const scale = 1 + roadProgress * (profile === 'lite' || width < 700 ? 0.12 : 0.2);
+    const laneCenter = (roadTop + roadHeight / 2) * height / 100;
+    // The transparent WebP has 9.7% bottom padding; align the visible tires to the lane.
     const visibleBottom = 0.903;
+    const truckY = laneCenter - truckHeight * (1 + (visibleBottom - 1) * scale);
 
-    // Center of Upper Road for Truck 1 (Going)
-    const lane1Center = (r1Top + r1Height / 2) * height / 100;
-    const truck1Y = lane1Center - truckHeight * (1 + (visibleBottom - 1) * scale);
+    truck.style.setProperty('--truck-x', `${truckX.toFixed(2)}px`);
+    truck.style.setProperty('--truck-y', `${truckY.toFixed(2)}px`);
+    truck.style.setProperty('--truck-scale', scale.toFixed(3));
+    truck.style.setProperty('--truck-rotate', `${(-Math.sin(roadProgress * Math.PI) * 0.18).toFixed(2)}deg`);
 
-    // Center of Lower Road for Truck 2 (Returning)
-    const lane2Center = (r2Top + r2Height / 2) * height / 100;
-    const truck2Y = lane2Center - truckHeight * (1 + (visibleBottom - 1) * scale);
-
-    truckGoing.style.setProperty('--truck-x', `${truck1X.toFixed(2)}px`);
-    truckGoing.style.setProperty('--truck-y', `${truck1Y.toFixed(2)}px`);
-    truckGoing.style.setProperty('--truck-scale', scale.toFixed(3));
-    truckGoing.style.setProperty('--truck-rotate', `${(-Math.sin(roadProgress * Math.PI) * 0.18).toFixed(2)}deg`);
-
-    if (truckReturning) {
-      truckReturning.style.setProperty('--truck-x', `${truck2X.toFixed(2)}px`);
-      truckReturning.style.setProperty('--truck-y', `${truck2Y.toFixed(2)}px`);
-      truckReturning.style.setProperty('--truck-scale', (scale * 0.95).toFixed(3));
-      truckReturning.style.setProperty('--truck-rotate', `${(Math.sin(roadProgress * Math.PI) * 0.18).toFixed(2)}deg`);
-    }
-
-    if (roadTop) {
-      roadTop.style.setProperty('--road-top', `${r1Top.toFixed(2)}%`);
-      roadTop.style.setProperty('--road-height', `${r1Height.toFixed(2)}%`);
-      if (roadDashTop) roadDashTop.style.setProperty('--road-offset-x', `${(-progress * 3000).toFixed(1)}px`);
-    }
-
-    if (roadBottom) {
-      roadBottom.style.setProperty('--road-top-2', `${r2Top.toFixed(2)}%`);
-      roadBottom.style.setProperty('--road-height-2', `${r2Height.toFixed(2)}%`);
-      if (roadDashBottom) roadDashBottom.style.setProperty('--road-offset-x', `${(progress * 3000).toFixed(1)}px`);
-    }
+    road.style.setProperty('--road-top', `${roadTop.toFixed(2)}%`);
+    road.style.setProperty('--road-height', `${roadHeight.toFixed(2)}%`);
+    road.style.setProperty('--road-offset-x', `${(-progress * 3000).toFixed(1)}px`);
+    if (roadDash) roadDash.style.setProperty('--road-offset-x', `${(-progress * 3000).toFixed(1)}px`);
     if (pill) {
       const opacity = 1 - smooth((progress - 0.20) / 0.12);
       pill.style.opacity = opacity.toFixed(3);
