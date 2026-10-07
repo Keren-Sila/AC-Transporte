@@ -1,12 +1,12 @@
-/** Progressive, accessible quote form. */
-export function initQuoteStepper() {
-  const form = document.getElementById('quoteForm');
+/** Progressive, accessible multi-step forms (quoteForm & driverForm). */
+export function initFormStepper(formId, prefix = 'quote') {
+  const form = document.getElementById(formId);
   if (!form) return;
 
-  const panels = [...form.querySelectorAll('[data-quote-step-panel]')];
-  const indicators = [...form.querySelectorAll('[data-quote-step-indicator]')];
-  const status = form.querySelector('[data-quote-step-status]');
-  const progress = form.querySelector('[data-quote-step-progress]');
+  const panels = [...form.querySelectorAll(`[data-${prefix}-step-panel]`)];
+  const indicators = [...form.querySelectorAll(`[data-${prefix}-step-indicator]`)];
+  const status = form.querySelector(`[data-${prefix}-step-status]`);
+  const progress = form.querySelector(`[data-${prefix}-step-progress]`);
   if (panels.length < 2 || panels.length !== indicators.length) return;
 
   const titles = indicators.map((indicator) => indicator.querySelector('small')?.textContent.trim() || 'Etapa');
@@ -35,8 +35,8 @@ export function initQuoteStepper() {
   };
 
   form.addEventListener('click', (event) => {
-    const nextButton = event.target.closest('[data-quote-next]');
-    const backButton = event.target.closest('[data-quote-back]');
+    const nextButton = event.target.closest(`[data-${prefix}-next]`);
+    const backButton = event.target.closest(`[data-${prefix}-back]`);
     if (!nextButton && !backButton) return;
 
     if (backButton) {
@@ -56,4 +56,9 @@ export function initQuoteStepper() {
 
   form.addEventListener('reset', () => window.setTimeout(() => showStep(0, false), 0));
   showStep(0, false);
+}
+
+export function initQuoteStepper() {
+  initFormStepper('quoteForm', 'quote');
+  initFormStepper('driverForm', 'driver');
 }
