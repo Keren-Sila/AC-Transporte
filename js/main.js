@@ -1,6 +1,6 @@
 import { initMobileMenu } from './menu.js';
 import { initScrollAnimations, initPrivacyModal } from './animations.js';
-import { initQuoteForm, initAdminPanel, initTrackingLookup } from './form.js';
+import { initQuoteForm, initDriverForm, initAdminPanel, initTrackingLookup } from './form.js';
 import { initQuoteStepper } from './animations/quote-stepper.js';
 import { initWhatsApp } from './whatsapp.js';
 import { initPageTransitions } from './page-transition.js';
@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   safeInit(initPrivacyModal, 'Modal de Privacidade');
   safeInit(initQuoteStepper, 'Stepper de Cotação');
   safeInit(initQuoteForm, 'Formulário de Cotação');
+  safeInit(initDriverForm, 'Cadastro de Motoristas');
   safeInit(initAdminPanel, 'Painel Admin');
   safeInit(initTrackingLookup, 'Rastreamento');
   safeInit(initWhatsApp, 'WhatsApp');

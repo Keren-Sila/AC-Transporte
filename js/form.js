@@ -59,6 +59,52 @@ export function initQuoteForm() {
   });
 }
 
+export function initDriverForm() {
+  const form = document.getElementById('driverForm');
+  if (!form) return;
+
+  let feedback = form.querySelector('[data-driver-feedback]');
+  if (!feedback) {
+    feedback = document.createElement('p');
+    feedback.className = 'form-feedback';
+    feedback.dataset.driverFeedback = '';
+    feedback.setAttribute('role', 'status');
+    feedback.hidden = true;
+    form.append(feedback);
+  }
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+
+    const name = form.querySelector('#nomeDriver')?.value.trim() || '';
+    const phone = form.querySelector('#telefDriver')?.value.trim() || '';
+    const vehicle = form.querySelector('#veiculoSelect')?.value || '';
+    const yearModel = form.querySelector('#anoVeiculo')?.value.trim() || 'Não informado';
+    const city = form.querySelector('#cidadeDriver')?.value.trim() || '';
+    const experience = form.querySelector('#experienciaSelect')?.value || 'Não informado';
+    const notes = form.querySelector('#obsDriver')?.value.trim() || 'Nenhuma';
+
+    const text = `🚚 *NOVO CADASTRO DE MOTORISTA AGREGADO*\n\n` +
+                 `👤 *Nome:* ${name}\n` +
+                 `📱 *WhatsApp:* ${phone}\n` +
+                 `🚛 *Veículo:* ${vehicle}\n` +
+                 `🗓️ *Ano/Modelo:* ${yearModel}\n` +
+                 `📍 *Cidade/Base:* ${city}\n` +
+                 `⭐ *Experiência:* ${experience}\n` +
+                 `📝 *Observações:* ${notes}`;
+
+    const waUrl = `https://wa.me/5511975156404?text=${encodeURIComponent(text)}`;
+
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+
+    feedback.innerHTML = `✅ Cadastro gerado! Caso o WhatsApp não tenha aberto, <a href="${waUrl}" target="_blank" rel="noopener noreferrer" style="color:var(--laranja-esc);font-weight:800;text-decoration:underline;">clique aqui para enviar</a>.`;
+    feedback.className = 'form-feedback';
+    feedback.hidden = false;
+    form.reset();
+  });
+}
+
 async function adminRequest(path, csrfToken, options = {}) {
   const response = await fetch(`${root()}api/admin${path}`, {
     credentials: 'same-origin',
