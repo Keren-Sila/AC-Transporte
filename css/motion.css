@@ -905,7 +905,7 @@ html[data-motion="lite"] .testimonial-card::before { transition-duration: .35s; 
   }
 }
 
-/* MOBILE HERO DUAL TRUCK TWO-WAY ROAD LAYOUT */
+/* MOBILE HERO RESPONSIVE LAYOUT & JS ANIMATION CONTROL */
 @media (max-width: 768px) {
   .road-bottom, .truck-return {
     display: block !important;
@@ -927,9 +927,9 @@ html[data-motion="lite"] .testimonial-card::before { transition-duration: .35s; 
   .ac-hero-instagram .ac-hero-stage {
     position: relative !important;
     top: auto !important;
-    height: 380px !important;
-    min-height: 380px !important;
-    max-height: 380px !important;
+    height: clamp(320px, 78svh, 430px) !important;
+    min-height: 320px !important;
+    max-height: 430px !important;
     padding: 0 !important;
     overflow: hidden !important;
     display: block !important;
@@ -958,52 +958,56 @@ html[data-motion="lite"] .testimonial-card::before { transition-duration: .35s; 
   /* Estrada 1 (Superior - Indo) */
   .ac-hero-road-band.road-top {
     position: absolute !important;
-    top: 142px !important;
+    top: var(--road-top, 38%) !important;
+    height: var(--road-height, 26px) !important;
     left: 0 !important;
     right: 0 !important;
-    height: 26px !important;
     background: #0B0F12 !important;
     z-index: 1 !important;
-    inset: auto 0 auto 0 !important;
   }
 
-  /* Caminhão 1 (Superior - Indo/Direita, Centralizado) */
+  /* Caminhão 1 (Superior - Indo/Direita) */
   .ac-hero-truck-wrap.truck-going {
     position: absolute !important;
     left: 50% !important;
     top: 45px !important;
     z-index: 2 !important;
     display: block !important;
-    width: clamp(230px, 75vw, 360px) !important;
+    width: clamp(190px, 62vw, 300px) !important;
     max-width: none !important;
     margin: 0 !important;
-    transform: translateX(-50%) !important;
+    /* Sem transform !important no container para não bloquear a animação JS */
   }
 
   /* Estrada 2 (Inferior - Voltando) */
   .ac-hero-road-band.road-bottom {
     position: absolute !important;
-    top: 312px !important;
+    top: var(--road-top-2, 78%) !important;
+    height: var(--road-height-2, 26px) !important;
     left: 0 !important;
     right: 0 !important;
-    height: 26px !important;
     background: #0B0F12 !important;
     z-index: 1 !important;
     display: block !important;
-    inset: auto 0 auto 0 !important;
   }
 
-  /* Caminhão 2 (Inferior - Voltando/Esquerda, Centralizado, Distância de 1 caminhão) */
+  /* Caminhão 2 (Inferior - Voltando/Esquerda) */
   .ac-hero-truck-wrap.truck-return {
     position: absolute !important;
     left: 50% !important;
     top: 215px !important;
     z-index: 2 !important;
     display: block !important;
-    width: clamp(230px, 75vw, 360px) !important;
+    width: clamp(190px, 62vw, 300px) !important;
     max-width: none !important;
     margin: 0 !important;
-    transform: translateX(50%) scaleX(-1) !important;
+    /* Sem transform !important no container para não bloquear a animação JS */
+  }
+
+  /* Inverte a imagem do caminhão voltando sem sobrepor o transform do JS */
+  .ac-hero-truck-wrap.truck-return .ac-hero-truck-img,
+  .ac-hero-truck-wrap.truck-return .ac-hero-truck-logo {
+    transform: scaleX(-1);
   }
 
   .ac-hero-instagram .ac-hero-truck-img {
@@ -1028,6 +1032,46 @@ html[data-motion="lite"] .testimonial-card::before { transition-duration: .35s; 
     background: #10151B !important;
     position: relative !important;
     z-index: 5 !important;
+  }
+}
+
+/* TELAS PEQUENAS (ATÉ 430PX) */
+@media (max-width: 430px) {
+  .ac-hero-instagram .ac-hero-stage {
+    height: clamp(310px, 76svh, 380px) !important;
+    min-height: 310px !important;
+    max-height: 380px !important;
+  }
+
+  .ac-hero-truck-wrap.truck-going {
+    width: clamp(180px, 60vw, 260px) !important;
+    top: 38px !important;
+  }
+
+  .ac-hero-truck-wrap.truck-return {
+    width: clamp(180px, 60vw, 260px) !important;
+    top: 185px !important;
+  }
+
+  .ac-hero-watermark {
+    font-size: clamp(1.8rem, 9.5vw, 3.2rem) !important;
+  }
+}
+
+/* SAFARI / IOS COMPATIBILITY ENHANCEMENTS */
+@supports (-webkit-touch-callout: none) {
+  .ac-hero-instagram .ac-hero-stage {
+    min-height: 0 !important;
+    height: 76svh !important;
+    position: -webkit-sticky !important;
+  }
+
+  .ac-hero-facts-band {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .whatsapp-fab {
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important;
   }
 }
 
