@@ -213,7 +213,7 @@
   .ac-hero-instagram .ac-hero-road-band,
   .ac-hero-instagram .ac-hero-road-band.road-top {
     position: absolute !important;
-    inset: var(--road-top, 56%) 0 auto !important;
+    inset: var(--road-top, 44%) 0 auto !important;
     height: var(--road-height, 11%) !important;
     min-height: 0 !important;
     padding: 0 !important;
@@ -225,7 +225,7 @@
 
   .ac-hero-instagram .ac-hero-road-band.road-bottom {
     position: absolute !important;
-    inset: var(--road-top-2, 88%) 0 auto !important;
+    inset: var(--road-top-2, 76%) 0 auto !important;
     height: var(--road-height-2, 11%) !important;
     min-height: 0 !important;
     padding: 0 !important;

@@ -57,27 +57,29 @@ export function initStoryMotion() {
 
     const width = stage.clientWidth;
     const height = stage.clientHeight;
-    const truckWidth = truckGoing.offsetWidth || 300;
+    const truckWidth = truckGoing.offsetWidth || 320;
     const truckHeight = truckGoing.offsetHeight || 150;
-    // Truck 1 (Going - Left to Right on Upper Road)
-    const entry1 = clamp(progress / 0.16);
-    const arrive1 = 1 - Math.pow(1 - entry1, 3);
-    const truck1X = -truckWidth - 30 + (centeredX + truckWidth + 30) * arrive1;
+    const centeredX = (width - truckWidth) / 2;
 
-    // Truck 2 (Returning - Right to Left on Lower Road, staggered horizontal distance)
-    const entry2 = clamp((progress - 0.05) / 0.16);
-    const arrive2 = 1 - Math.pow(1 - entry2, 3);
-    const truck2X = width + 30 - (centeredX + truckWidth + 30) * arrive2;
+    const entry = clamp(progress / 0.16);
+    const arrive = 1 - Math.pow(1 - entry, 3);
+    const scrollShift = Math.max(0, progress - 0.16) * width * 0.35;
+
+    // Truck 1 (Going - Left to Right on Upper Road)
+    const truck1X = (-truckWidth - 30) + (centeredX + truckWidth + 30) * arrive + scrollShift;
+
+    // Truck 2 (Returning - Right to Left on Lower Road)
+    const truck2X = (width + 30) - (centeredX + truckWidth + 30) * arrive - scrollShift;
 
     const roadProgress = smooth((progress - 0.30) / 0.28);
-    // Increased vertical distance: Upper road at 56%, Lower road at 88% (32% vertical gap)
-    const r1Top = 56 - 40 * roadProgress;
+    // Vertical distance: Upper Road at 44%, Lower Road at 76% (32% vertical gap)
+    const r1Top = 44 - 26 * roadProgress;
     const r1Height = 11 + 2 * roadProgress;
 
-    const r2Top = 88 - 40 * roadProgress;
+    const r2Top = 76 - 26 * roadProgress;
     const r2Height = 11 + 2 * roadProgress;
 
-    const scale = 1 + roadProgress * (profile === 'lite' || width < 700 ? 0.12 : 0.2);
+    const scale = 1 + roadProgress * (profile === 'lite' || width < 700 ? 0.10 : 0.18);
     const visibleBottom = 0.903;
 
     // Center of Upper Road for Truck 1 (Going)
