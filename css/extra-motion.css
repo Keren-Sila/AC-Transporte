@@ -8,7 +8,6 @@
    Aqui a animação usa as propriedades individuais translate/rotate, que não brigam com o transform. */
 @media (max-width: 768px) {
   /* Corrige o logo espelhado do caminhão de volta: vira só a imagem, não o conjunto. */
-  .ac-hero-instagram .ac-hero-truck-wrap.truck-return { transform: translateX(-50%) !important; }
   .ac-hero-instagram .ac-hero-truck-wrap.truck-return .ac-hero-truck-img { transform: scaleX(-1) !important; }
   .ac-hero-instagram .ac-hero-truck-wrap.truck-return .ac-hero-truck-logo { left: auto; right: 3.3%; }
 
