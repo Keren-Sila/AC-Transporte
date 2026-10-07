@@ -10,8 +10,8 @@ function initMotionProfile() {
   const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
   const mobile = window.matchMedia('(max-width: 700px)').matches;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const lowPower = connection?.saveData || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) || (navigator.deviceMemory && navigator.deviceMemory <= 2);
-  root.dataset.motion = reduced ? 'reduced' : (mobile && lowPower ? 'lite' : 'full');
+  const lowPower = connection?.saveData;
+  root.dataset.motion = reduced ? 'reduced' : (lowPower ? 'lite' : 'full');
 }
 
 async function loadComponents() {

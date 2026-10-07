@@ -12,6 +12,7 @@ import { initMagneticButtons } from './magnetic.js';
 import { initMapAnimations } from './map.js';
 import { initMotionInteractions } from './interactions.js';
 import { initStoryMotion } from './story.js';
+import { initExtraMotion } from './extra.js';
 
 export function initScrollAnimations() {
   initObserver();
@@ -23,6 +24,7 @@ export function initScrollAnimations() {
   initMapAnimations();
   initMotionInteractions();
   initStoryMotion();
+  initExtraMotion();
 }
 
 export function initPrivacyModal() {
