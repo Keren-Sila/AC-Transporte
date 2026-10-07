@@ -6,12 +6,12 @@
 /* ---------- HERO NO CELULAR ----------
    No celular o CSS antigo trava os caminhões com transform !important, então eles nunca andavam.
    Aqui a animação usa as propriedades individuais translate/rotate, que não brigam com o transform. */
+   
 @media (max-width: 768px) {
+  
   /* Corrige o logo espelhado do caminhão de volta: vira só a imagem, não o conjunto. */
-  .ac-hero-instagram .ac-hero-truck-wrap.truck-return { transform: translateX(-50%) !important; }
   .ac-hero-instagram .ac-hero-truck-wrap.truck-return .ac-hero-truck-img { transform: scaleX(-1) !important; }
   .ac-hero-instagram .ac-hero-truck-wrap.truck-return .ac-hero-truck-logo { left: auto; right: 3.3%; }
-
   html:not([data-motion="reduced"]) .ac-hero-truck-wrap.truck-going {
     translate: var(--m-shift, 0px) 0;
     animation: acDriveInLeft 1.8s cubic-bezier(.16, 1, .3, 1) .1s backwards;
@@ -20,8 +20,9 @@
     translate: calc(var(--m-shift, 0px) * -1) 0;
     animation: acDriveInRight 1.8s cubic-bezier(.16, 1, .3, 1) .5s backwards;
   }
-
+  
   /* Suspensão: o caminhão freia ao chegar e depois balança de leve, como se estivesse ligado. */
+  
   html:not([data-motion="reduced"]) .truck-going .ac-hero-truck-img,
   html:not([data-motion="reduced"]) .truck-going .ac-hero-truck-logo {
     transform-origin: 50% 90%;
@@ -41,6 +42,7 @@
 @keyframes acBob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -2px; } }
 
 /* ---------- FAIXA CORRENDO (logo abaixo do hero) ---------- */
+
 .ac-marquee {
   position: relative;
   z-index: 6;
@@ -71,6 +73,7 @@
 @keyframes acMarquee { to { transform: translate3d(-50%, 0, 0); } }
 
 /* ---------- TÍTULOS PALAVRA POR PALAVRA ---------- */
+
 html:not([data-motion="reduced"]) .ac-h2.has-split .w,
 html:not([data-motion="reduced"]) .ac-h3.has-split .w {
   display: inline-block;
@@ -88,6 +91,7 @@ html:not([data-motion="reduced"]) .ac-h3.has-split.is-visible .w {
 }
 
 /* ---------- NÚMEROS DAS ETAPAS ---------- */
+
 html:not([data-motion="reduced"]) .ac-steps li.is-visible b {
   animation: acNumberPop .7s cubic-bezier(.34, 1.56, .64, 1) .2s backwards;
 }
@@ -97,6 +101,7 @@ html:not([data-motion="reduced"]) .ac-steps li.is-visible b {
 }
 
 /* ---------- WHATSAPP: ANEL PULSANTE ---------- */
+
 html:not([data-motion="reduced"]) .whatsapp-fab::before {
   content: "";
   position: absolute;
@@ -112,11 +117,13 @@ html:not([data-motion="reduced"]) .whatsapp-fab::before {
 }
 
 /* ---------- BOTÕES: BRILHO PASSANDO ---------- */
+
 html:not([data-motion="reduced"]) .btn-nav-cta,
 html:not([data-motion="reduced"]) .btn-calc-submit {
   position: relative;
   overflow: hidden;
 }
+
 html:not([data-motion="reduced"]) .btn-nav-cta::after,
 html:not([data-motion="reduced"]) .btn-calc-submit::after {
   content: "";
@@ -127,12 +134,14 @@ html:not([data-motion="reduced"]) .btn-calc-submit::after {
   transform: translateX(-130%);
   animation: acShine 4.6s ease-in-out 1.5s infinite;
 }
+
 @keyframes acShine {
   0%, 62% { transform: translateX(-130%); }
   100%    { transform: translateX(130%); }
 }
 
 /* ---------- TOQUE (o iPhone não tem hover) ---------- */
+
 .tap-ripple {
   position: absolute;
   border-radius: 50%;
@@ -141,8 +150,8 @@ html:not([data-motion="reduced"]) .btn-calc-submit::after {
   transform: scale(0);
   animation: acRipple .6s ease-out forwards;
 }
-@keyframes acRipple { to { transform: scale(1); opacity: 0; } }
 
+@keyframes acRipple { to { transform: scale(1); opacity: 0; } }
 html:not([data-motion="reduced"]) .btn,
 html:not([data-motion="reduced"]) .ac-rules li,
 html:not([data-motion="reduced"]) .ac-steps li,

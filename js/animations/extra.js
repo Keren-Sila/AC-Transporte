@@ -4,7 +4,6 @@
  */
 
 const reduced = () => document.documentElement.dataset.motion === 'reduced';
-
 function initMarquee() {
   const band = document.querySelector('.ac-hero-facts-band');
   if (!band || document.querySelector('.ac-marquee')) return;
@@ -19,6 +18,7 @@ function initMarquee() {
     });
     return el;
   };
+
   const marquee = document.createElement('div');
   marquee.className = 'ac-marquee';
   marquee.setAttribute('aria-hidden', 'true');
@@ -28,7 +28,6 @@ function initMarquee() {
   marquee.append(track);
   band.after(marquee);
 }
-
 function initWordReveal() {
   document.querySelectorAll('.ac-sec .ac-h2, .ac-sec .ac-h3').forEach((heading) => {
     if (heading.children.length || heading.classList.contains('has-split')) return;
@@ -89,7 +88,6 @@ function initTapRipple() {
     ripple.addEventListener('animationend', () => ripple.remove(), { once: true });
   }, { passive: true });
 }
-
 export function initExtraMotion() {
   if (reduced()) return;
   initMarquee();
