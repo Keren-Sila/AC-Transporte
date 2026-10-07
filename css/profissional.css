@@ -668,9 +668,9 @@ html[data-motion="reduced"] .ac-hero-transition-copy > * {
   .ac-hero-instagram .ac-hero-stage {
     position: relative !important;
     top: auto !important;
-    height: 340px !important;
-    min-height: 340px !important;
-    max-height: 340px !important;
+    height: 350px !important;
+    min-height: 350px !important;
+    max-height: 350px !important;
     padding: 0 !important;
     overflow: hidden !important;
     display: block !important;
@@ -680,9 +680,9 @@ html[data-motion="reduced"] .ac-hero-transition-copy > * {
 
   .ac-hero-instagram .ac-hero-telemetry {
     position: absolute !important;
-    top: 12px !important;
+    top: 10px !important;
     left: 16px !important;
-    z-index: 5 !important;
+    z-index: 10 !important;
   }
 
   .ac-hero-instagram .ac-hero-telemetry span {
@@ -700,7 +700,7 @@ html[data-motion="reduced"] .ac-hero-transition-copy > * {
     font-size: clamp(2rem, 9.5vw, 3.8rem) !important;
     width: 100% !important;
     z-index: 0 !important;
-    opacity: 0.65 !important;
+    opacity: 0.35 !important;
     color: #E2DFD7 !important;
     text-align: center !important;
   }
@@ -708,10 +708,10 @@ html[data-motion="reduced"] .ac-hero-transition-copy > * {
   /* Estrada 1 (Superior - Indo) */
   .ac-hero-road-band.road-top {
     position: absolute !important;
-    top: 126px !important;
+    top: 138px !important;
     left: 0 !important;
     right: 0 !important;
-    height: 24px !important;
+    height: 22px !important;
     background: #0B0F12 !important;
     z-index: 1 !important;
   }
@@ -720,10 +720,10 @@ html[data-motion="reduced"] .ac-hero-transition-copy > * {
   .ac-hero-truck-wrap.truck-going {
     position: absolute !important;
     left: 50% !important;
-    top: 18px !important;
+    top: 42px !important;
     z-index: 2 !important;
     display: block !important;
-    width: clamp(200px, 68vw, 300px) !important;
+    width: clamp(190px, 64vw, 260px) !important;
     max-width: none !important;
     margin: 0 !important;
     transform: translateX(-50%) !important;
@@ -732,10 +732,10 @@ html[data-motion="reduced"] .ac-hero-transition-copy > * {
   /* Estrada 2 (Inferior - Voltando) */
   .ac-hero-road-band.road-bottom {
     position: absolute !important;
-    top: 284px !important;
+    top: 282px !important;
     left: 0 !important;
     right: 0 !important;
-    height: 24px !important;
+    height: 22px !important;
     background: #0B0F12 !important;
     z-index: 1 !important;
     display: block !important;
@@ -745,10 +745,10 @@ html[data-motion="reduced"] .ac-hero-transition-copy > * {
   .ac-hero-truck-wrap.truck-return {
     position: absolute !important;
     left: 50% !important;
-    top: 176px !important;
+    top: 186px !important;
     z-index: 2 !important;
     display: block !important;
-    width: clamp(200px, 68vw, 300px) !important;
+    width: clamp(190px, 64vw, 260px) !important;
     max-width: none !important;
     margin: 0 !important;
     transform: translateX(-50%) !important;
@@ -792,27 +792,34 @@ html[data-motion="reduced"] .ac-hero-transition-copy > * {
 /* TELAS PEQUENAS (ATÉ 430PX) */
 @media (max-width: 430px) {
   .ac-hero-instagram .ac-hero-stage {
-    height: 310px !important;
-    min-height: 310px !important;
-    max-height: 310px !important;
+    height: 330px !important;
+    min-height: 330px !important;
+    max-height: 330px !important;
+  }
+
+  .ac-hero-instagram .ac-hero-telemetry {
+    top: 8px !important;
+    left: 14px !important;
   }
 
   .ac-hero-truck-wrap.truck-going {
-    width: clamp(185px, 64vw, 250px) !important;
-    top: 16px !important;
+    width: clamp(175px, 60vw, 220px) !important;
+    top: 38px !important;
   }
 
   .ac-hero-road-band.road-top {
-    top: 112px !important;
+    top: 124px !important;
+    height: 20px !important;
   }
 
   .ac-hero-truck-wrap.truck-return {
-    width: clamp(185px, 64vw, 250px) !important;
-    top: 156px !important;
+    width: clamp(175px, 60vw, 220px) !important;
+    top: 168px !important;
   }
 
   .ac-hero-road-band.road-bottom {
-    top: 252px !important;
+    top: 254px !important;
+    height: 20px !important;
   }
 
   .ac-hero-watermark {
