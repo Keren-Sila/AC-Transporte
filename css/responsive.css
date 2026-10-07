@@ -152,17 +152,17 @@
 
   .ac-hero-scroll {
     position: relative !important;
-    height: 140vh !important;
-    min-height: 480px !important;
-    max-height: 650px !important;
+    height: 165vh !important;
+    min-height: 580px !important;
+    max-height: 780px !important;
   }
 
   .ac-hero-instagram .ac-hero-stage {
     position: sticky !important;
-    top: var(--hero-header-height, 60px) !important;
-    height: clamp(250px, 36vh, 320px) !important;
-    min-height: 250px !important;
-    max-height: 320px !important;
+    top: var(--hero-header-height, 68px) !important;
+    height: clamp(350px, 52vh, 460px) !important;
+    min-height: 350px !important;
+    max-height: 460px !important;
     padding: 0 !important;
     overflow: hidden !important;
     display: block !important;
@@ -171,10 +171,10 @@
 
   .ac-hero-instagram .ac-hero-watermark {
     position: absolute !important;
-    top: 42% !important;
+    top: 40% !important;
     left: 50% !important;
     transform: translate3d(-50%, -50%, 0) !important;
-    font-size: clamp(2rem, 9vw, 3.5rem) !important;
+    font-size: clamp(2.4rem, 11vw, 4.8rem) !important;
     width: 100% !important;
     z-index: 0 !important;
   }
@@ -185,7 +185,7 @@
     top: 0 !important;
     z-index: 2 !important;
     display: block !important;
-    width: clamp(250px, 70vw, 380px) !important;
+    width: clamp(280px, 78vw, 440px) !important;
     max-width: none !important;
     margin: 0 !important;
     transform: translate3d(var(--truck-x, 0px), var(--truck-y, 0px), 0) scale(var(--truck-scale, 1)) rotate(var(--truck-rotate, 0deg)) !important;
@@ -217,35 +217,35 @@
     position: absolute !important;
     left: 50% !important;
     z-index: 3 !important;
-    width: min(92vw, 420px) !important;
+    width: min(92vw, 440px) !important;
     transform: translateX(-50%) !important;
     text-align: center !important;
   }
 
   .ac-hero-transition-copy h1 {
-    font-size: clamp(1.2rem, 4.5vw, 1.65rem) !important;
+    font-size: clamp(1.35rem, 5vw, 1.9rem) !important;
     line-height: 1.1 !important;
   }
 
   .ac-hero-transition-copy p {
-    font-size: clamp(0.78rem, 2.8vw, 0.88rem) !important;
-    margin: 0.25rem auto 0.5rem !important;
+    font-size: clamp(0.82rem, 3vw, 0.95rem) !important;
+    margin: 0.35rem auto 0.75rem !important;
   }
 
   .ac-hero-transition-actions {
-    gap: 0.5rem !important;
+    gap: 0.6rem !important;
   }
 
   .ac-hero-transition-actions .btn,
   .btn-road-secondary {
-    min-height: 36px !important;
-    padding: 6px 14px !important;
-    font-size: 0.78rem !important;
+    min-height: 40px !important;
+    padding: 8px 16px !important;
+    font-size: 0.82rem !important;
   }
 
   .ac-hero-facts-band {
     margin-top: 0 !important;
-    padding-top: 14px !important;
+    padding-top: 16px !important;
     background: #10151B !important;
     position: relative !important;
     z-index: 5 !important;
