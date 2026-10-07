@@ -977,7 +977,7 @@ html[data-motion="lite"] .testimonial-card::before { transition-duration: .35s; 
     z-index: 1 !important;
   }
 
-  /* Caminhão 1 (Superior - Indo/Direita, Centralizado) */
+  /* Caminhão 1 (Superior - Indo/Direita, Centralizado) - COM ANIMAÇÃO */
   .ac-hero-truck-wrap.truck-going {
     position: absolute !important;
     left: 50% !important;
@@ -988,6 +988,16 @@ html[data-motion="lite"] .testimonial-card::before { transition-duration: .35s; 
     max-width: none !important;
     margin: 0 !important;
     transform: translateX(-50%) !important;
+  }
+
+  /* Animação do caminhão de cima (igual do desktop) */
+  html:not([data-motion="reduced"]) .ac-hero-truck-wrap.truck-going {
+    animation: acTruckEntrance 1.2s cubic-bezier(.16, 1, .3, 1) .2s backwards;
+  }
+
+  html:not([data-motion="reduced"]) .ac-hero-truck-wrap.truck-going .ac-hero-truck-img,
+  html:not([data-motion="reduced"]) .ac-hero-truck-wrap.truck-going .ac-hero-truck-logo {
+    animation: acTruckCruise 3.2s ease-in-out 1.5s infinite;
   }
 
   /* Estrada 2 (Inferior - Voltando) */
@@ -1002,7 +1012,7 @@ html[data-motion="lite"] .testimonial-card::before { transition-duration: .35s; 
     display: block !important;
   }
 
-  /* Caminhão 2 (Inferior - Voltando/Esquerda, Centralizado, Distância de 1 caminhão) */
+  /* Caminhão 2 (Inferior - Voltando/Esquerda, Centralizado) - SEM ANIMAÇÃO */
   .ac-hero-truck-wrap.truck-return {
     position: absolute !important;
     left: 50% !important;
@@ -1018,6 +1028,11 @@ html[data-motion="lite"] .testimonial-card::before { transition-duration: .35s; 
   .ac-hero-truck-wrap.truck-return .ac-hero-truck-img,
   .ac-hero-truck-wrap.truck-return .ac-hero-truck-logo {
     transform: none !important;
+  }
+
+  /* Opacidade no caminhão de baixo (sem animação) */
+  .ac-hero-instagram .ac-hero-truck-wrap.truck-return {
+    opacity: .72;
   }
 
   .ac-hero-instagram .ac-hero-truck-img {
