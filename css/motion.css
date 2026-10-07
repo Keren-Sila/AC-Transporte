@@ -22,6 +22,7 @@ html { scroll-padding-top: 92px; }
 
 .ac-hero {
   isolation: isolate;
+  min-height: min(760px, calc(100vh - 76px));
   min-height: min(760px, calc(100svh - 76px));
   display: flex;
   flex-direction: column;
@@ -74,6 +75,7 @@ html { scroll-padding-top: 92px; }
 
 .ac-hero-inner {
   z-index: 1;
+  min-height: min(560px, 71vh);
   min-height: min(560px, 71svh);
   display: flex;
   flex-direction: column;
@@ -1093,4 +1095,44 @@ html[data-motion="lite"] .testimonial-card::before { transition-duration: .35s; 
 @keyframes roadMoveLeft {
   0% { background-position: 0 0; }
   100% { background-position: -90px 0; }
+}
+
+
+/* =========================================================
+   AJUSTES SAFARI / iOS
+   ========================================================= */
+
+/* O iOS aumenta o texto sozinho quando o iPhone gira para paisagem. */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Campos: tira o visual nativo do iOS (sombra interna) e devolve a seta ao select. */
+.form-input {
+  -webkit-appearance: none;
+  appearance: none;
+}
+select.form-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23526479' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 12px 8px;
+  padding-right: 40px;
+}
+
+/* Link de WhatsApp mostrado quando o envio pelo site não está disponível. */
+.form-feedback a {
+  color: inherit;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* iPhone em paisagem: mantém o conteúdo fora da área do notch (viewport-fit=cover). */
+@supports (padding: max(0px)) {
+  .container {
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0px);
+  }
 }
