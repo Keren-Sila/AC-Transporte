@@ -1006,7 +1006,7 @@ html[data-motion="lite"] .testimonial-card::before { transition-duration: .35s; 
   .ac-hero-truck-wrap.truck-return {
     position: absolute !important;
     left: 50% !important;
-    top: 176px !important;
+    top: 192px !important;
     z-index: 2 !important;
     display: block !important;
     width: clamp(200px, 68vw, 300px) !important;
